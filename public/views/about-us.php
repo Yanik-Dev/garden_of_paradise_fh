@@ -6,6 +6,7 @@
 <body>
     <div class="container">
       <div class="us-1">
+<<<<<<< HEAD
         <img id="side-img" src="../img/about-us-casket.jpg">
 
         <p>
@@ -25,6 +26,9 @@
           <img src="../img/phone-receiver.png">
           <p>Digicel: (1-876) 870-5848</p>
         </div>
+=======
+      <p>this</p>
+>>>>>>> 1378d2add142a78e63703ee35821991a22f52ac5
       </div>
       <div class="us-2">
         <h1>Welcome</h1>

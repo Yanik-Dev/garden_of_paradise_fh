@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 
 body{
     padding:0;
@@ -9,10 +10,53 @@ body{
     height: 100px;
     flex-direction: row;
     flex-wrap: nowrap;
+=======
+body{
+    padding:0;
+    margin:0;
 }
 
-.social-bar{
-    flex: 1;
-    height: 40px;
-    background-color: red;
-}   
+.header{
+    width: 100%;
+    background-color: #3498db;
+    padding: 5px;
+    
+}
+
+
+#location {
+   display: block;
+   float: right;
+}
+#location span{
+    display: block;
+    float: left;
+}
+
+#location img{
+    width: 20px;
+    height: 20px; 
+    margin-right: 5px;
+    display: block;
+    float: left;
+}
+#location {
+    text-decoration: none;
+    font-family: 'Segoe UI';
+    color: #eee;
+}
+.social-icon{
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+>>>>>>> 1378d2add142a78e63703ee35821991a22f52ac5
+}
+
+.social-bar .social-icon:hover{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
