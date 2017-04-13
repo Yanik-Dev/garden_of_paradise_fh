@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+}
+
+.us-1{
+  padding: 20px;
+  flex: 1;
+}
+
+.us-2{
+  padding: 20px;
+  flex: 4;
+}
