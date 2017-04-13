@@ -1,29 +1,49 @@
 
-.container{
-  display: flex;
-}
-
-.us-1{
-  padding: 20px;
-  flex: 1;
-}
-
-.us-2{
-  padding: 20px;
-  flex: 4;
-}
 body{
     padding:0;
     margin:0;
 }
+
 .header{
-    display: flex;
-    height: 100px;
-    flex-direction: row;
+    width: 100%;
+    background-color: #3498db;
+    padding: 5px;
+    
 }
 
-.social-bar{
-    flex: 1;
-    height: 40px;
-    background-color: red;
-}   
+
+#location {
+   display: block;
+   float: right;
+}
+#location span{
+    display: block;
+    float: left;
+}
+
+#location img{
+    width: 20px;
+    height: 20px; 
+    margin-right: 5px;
+    display: block;
+    float: left;
+}
+#location {
+    text-decoration: none;
+    font-family: 'Segoe UI';
+    color: #eee;
+}
+.social-icon{
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+}
+
+.social-bar .social-icon:hover{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
