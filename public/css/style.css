@@ -1,16 +1,4 @@
 
-<<<<<<< HEAD
-
-body{
-    padding:0;
-    margin:0;
-}
-.header{
-    display: flex;
-    height: 100px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-=======
 body{
     padding:0;
     margin:0;
@@ -51,12 +39,4 @@ body{
     width: 20px;
     height: 20px;
     margin-right: 5px;
-    -webkit-transition: -webkit-transform .8s ease-in-out;
-          transition:         transform .8s ease-in-out;
->>>>>>> 1378d2add142a78e63703ee35821991a22f52ac5
-}
-
-.social-bar .social-icon:hover{
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
 }
