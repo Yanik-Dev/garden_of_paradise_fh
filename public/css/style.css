@@ -1,0 +1,15 @@
+body{
+    padding:0;
+    margin:0;
+}
+.header{
+    display: flex;
+    height: 100px;
+    flex-direction: row;
+}
+
+.social-bar{
+    flex: 1;
+    height: 40px;
+    background-color: red;
+}   
