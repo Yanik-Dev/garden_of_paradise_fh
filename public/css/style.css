@@ -1,17 +1,5 @@
 
-.container{
-  display: flex;
-}
 
-.us-1{
-  padding: 20px;
-  flex: 1;
-}
-
-.us-2{
-  padding: 20px;
-  flex: 4;
-}
 body{
     padding:0;
     margin:0;
@@ -20,6 +8,7 @@ body{
     display: flex;
     height: 100px;
     flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .social-bar{

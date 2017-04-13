@@ -1,0 +1,29 @@
+*{
+    padding:0px;
+    margin: 0px;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  font-family: 'Franklin Gothic Book';
+  position: relative;
+}
+
+.us-1{
+    display: block;
+    float: left;
+  width: 20%;
+  background-color: blue;
+}
+.us-1 side-img{
+   width: 100%;
+   height: auto;
+   padding: 20px; 
+}
+.us-2{
+    width:80%;
+    display: block;
+    float: left;
+    background-color: red;
+}
