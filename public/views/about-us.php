@@ -1,6 +1,7 @@
 
 <link rel="stylesheet" href="../css/us.css">
-  
+<?php $title = "About Us";?>
+<?php require_once('header.php'); ?>  
   <body>
     <div class="us-container">
     <div class="us-1">
@@ -73,3 +74,5 @@
 
   </body>
 </html>
+
+<?php require_once('footer.php'); ?>

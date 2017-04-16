@@ -1,10 +1,8 @@
 <link rel="stylesheet" href="../css/us.css">
-
+<?php $title = "Contact Us";?>
+<?php require_once('header.php'); ?>     
 <body>
-    
     <div class="contact-container">
-
-
     <div class="contact-us-1">    
     <div class="contact-email">
         <img src="../img/icons/email-contact.png" alt="Email">
@@ -63,3 +61,4 @@
      </div>
 </body>
 </html>
+<?php require_once('footer.php'); ?>
