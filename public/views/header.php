@@ -52,7 +52,8 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="./home.php" class="<?= ($title =="Home")?'nav-active':''?>">Home</a></li>
-              <li><a href="./obituary.php" class="<?= ($title =="Obitutary")?'nav-active':''?>">Obituary</a></li>
+              <li><a href="./obituary.php" class="<?= ($title =="Obituary")?'nav-active':''?>">Obituary</a></li>
+              <li><a href="./dedication.php" class="<?= ($title =="Dedication")?'nav-active':''?>">Dedication</a></li>
               <li><a href="./about-us.php" class="<?= ($title =="About Us")?'nav-active':''?>">About Us</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
