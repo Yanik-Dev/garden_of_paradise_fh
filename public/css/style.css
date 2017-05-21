@@ -265,3 +265,65 @@ h1, h2, h3, h4{
         color: #6c6260;
         font-size: 30px;
 }
+
+/*Gallery Style*/
+
+.sub-gallery-nav{
+    text-align: center;
+    color: #592131;
+}
+
+.sub-gallery-nav h1{
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.social-sidebar{
+    height: 31%;
+    width: 3.7%;
+    background-image: url('../img/contact-us-2-background.png');
+    position: fixed;
+}
+
+.social1 img{
+    width:30px;
+    height:30px;
+    margin:10px;
+}
+
+.social2 img{
+    width:30px;
+    height:30px;
+    margin:10px;
+}
+
+.social3 img{
+    width:30px;
+    height:30px;
+    margin:10px;
+}
+
+.social4 img{
+    width:30px;
+    height:30px;
+    margin:10px;
+}
+
+.gallery-block img{
+    width: 300px;
+    height: 300px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+.gallery-block1 img{
+    width: 300px;
+    height: 300px;
+    padding-bottom: 20px;
+}
+
+.gallery-block2 img{
+    width: 300px;
+    height: 300px;
+    padding-bottom: 20px;
+}

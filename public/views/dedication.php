@@ -1,6 +1,6 @@
 <?php require_once('header.php'); ?>  
 
-<body>
+
 
 <div class="container-fiuld">
 <div class="dedication-container">
@@ -34,5 +34,4 @@
 </div>
 <?php require_once('footer.php'); ?>
 
-</body>
-</html>
+
