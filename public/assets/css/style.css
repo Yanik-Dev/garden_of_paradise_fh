@@ -450,7 +450,7 @@ h1, h2, h3, h4{
         color: #8c8b8b;
     }
 
-    .button {
+    .contact-send .button {
         background-color: #F1AD48;
         border: none;
         color: white;
@@ -472,17 +472,17 @@ h1, h2, h3, h4{
 
 /** admin login styles **/
 
-.admin-login input {
-        background-color: #E3E1DE;
-        height: 50px;
-        float: left;
-        border: 1px solid #E3E1DE;
-        color: #8c8b8b;
-        font-family: 'Franklin Gothic Book';
-        font-size: 16px;
-        border-radius: 0px;
-        margin-bottom: 10px;
-        margin-right: 10px;    
+input {
+        background-color: #E3E1DE !important;
+        height: 50px !important;
+        float: left !important;
+        border: 1px solid #E3E1DE !important;
+        color: #8c8b8b !important;
+        font-family: 'Franklin Gothic Book' !important;
+        font-size: 16px !important;
+        border-radius: 0px !important;
+        margin-bottom: 10px !important;
+        margin-right: 10px !important;   
 }
 
 .admin-login  .button {
@@ -514,4 +514,23 @@ h1, h2, h3, h4{
 
 .admin-login .error{
     color: red;
+}
+
+/** gallery management **/
+.gallery-management input{
+    width: 100% !important;
+}
+.gallery-management .card{
+    margin-bottom: 40px !important;
+}
+
+.gallery-management button{
+    height: 50px !important;
+    width: 100% !important; 
+     background-color: #5da4ea;
+    border: none !important;
+    color: white !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-size: 16px !important;
 }

@@ -4,8 +4,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Garden Of Paradise - <?=$title?> </title>
-      <link rel="stylesheet" type="Text/css" href="../assets/css/style.css">
       <link rel="stylesheet" type="Text/css" href="../assets/lib/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" type="Text/css" href="../assets/css/style.css">
       <link rel="stylesheet" href="../assets/css/animate.css">
     </head>
     <body>

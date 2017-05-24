@@ -15,7 +15,7 @@ $title = "Login";
                         <input type="text" name="username"  class="form-control" placeholder="Username" required />
                         <input type="password" name="email"  class="form-control" placeholder="Password" required />
                         <p class="error"><?=(isset($_SESSION["errors"]))?$_SESSION["errors"]:""?><p>
-                        <button class="button" type="button">Sign in</button>
+                        <button class="button" type="submit">Sign in</button>
                     </form>
                 </div>
             </div>
