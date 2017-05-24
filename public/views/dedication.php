@@ -1,21 +1,19 @@
 <?php require_once('header.php'); ?>  
 
-
-
 <div class="container-fiuld">
 <div class="dedication-container">
    <div class="row">
     <div class="col-md-4">
        <center> 
            <div class="woman">
-             <img src="../img/Francine.png">
+             <img src="../assets/img/Francine.png">
            </div>
         </center>
     </div>
     <div class="col-md-8">
         <div class="text">
             <h1>FRANCINE VESNA DILLON</h1>
-            <p>Francine Vesna Dillon, affectionately called “Pang” was born to a beautiful and strong woman by the name of Sonya Binns on May 31, 1986. Weighing a measly 3lb 10 ounces, she was an immediate bundle of joy to her older sister Sweets. 
+        <p>Francine Vesna Dillon, affectionately called “Pang” was born to a beautiful and strong woman by the name of Sonya Binns on May 31, 1986. Weighing a measly 3lb 10 ounces, she was an immediate bundle of joy to her older sister Sweets. 
         Francine grew to be an inspiration, always smiling, and always offering a kind word to all who met her acquaintance. Her captivating beauty ignited everywhere and her presence was always welcomed.</p>
 
         <p>In February 2005, Francine began complaining of chest pains, little did we know that her days; begun a count-down without proper notification. The radiance she possessed never wavered, instead, she shone even more. In October 2005 after months of visitation to various doctors and numerous miss-diagnosis, it was discovered that this gentle angel had Thymic carcinoma, a rare type of cancer detected in persons 40-60 years old.</p>

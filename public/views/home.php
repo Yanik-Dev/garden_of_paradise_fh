@@ -1,6 +1,6 @@
 <?php $title = "Home";?>
 <?php require_once('header.php'); ?>      
-<link rel="stylesheet" href="../css/carousel.css">
+<link rel="stylesheet" href="../assets/css/carousel.css">
 <div class="container-fiuld">
     <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
         <!-- Wrapper for slides -->

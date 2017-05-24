@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row">
             <div class="col-md-3">
-                <center><h1><img src="../img/logo.png" width="150px" height="150px" class="img-responsive" alt="Garden of Paradise Logo"></h1></center>
+                <center><h1><img src="../assets/img/logo.png" width="150px" height="150px" class="img-responsive" alt="Garden of Paradise Logo"></h1></center>
                 <p>
                 Our professional and caring staff is dedicated to working with your 
                 family to provide assistance in selecting high quality and affordable 
@@ -55,7 +55,7 @@
             </div>
             </div>
         </div>   
-       <script type="text/JavaScript" src="../lib/jquery/jquery-3.2.1.min.js"></script>
-       <script type="text/JavaScript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
+       <script type="text/JavaScript" src="../assets/lib/jquery/jquery-3.2.1.min.js"></script>
+       <script type="text/JavaScript" src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
     </body>
 </html>

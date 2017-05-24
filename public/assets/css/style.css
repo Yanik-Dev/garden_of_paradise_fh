@@ -70,13 +70,15 @@ h1, h2, h3, h4{
 }
 .header-content-right{
     margin-top: 20px;
-    min-width: 300px;
-    float: right;
 }
+
 .header-content-right img{
     margin-right: 10px;
 }
 
+.header-content-right > h5{
+    margin-top: 50px;
+}
 
 .back-to-top{
     width: 100px;
@@ -326,4 +328,141 @@ h1, h2, h3, h4{
     width: 300px;
     height: 300px;
     padding-bottom: 20px;
+}
+
+
+/** About us **/
+ .about-us-container {
+        width: 100%;
+        margin-top: -20px;
+  }
+ .about-us-container p{
+     color: #867A77;
+        font-family: 'Franklin Gothic Book';
+        font-size: 15px;
+ }
+
+ .about-us-container .content{
+     padding: 20px;
+ }
+
+ .about-us-container .side-content{
+     margin-top: 40px;
+ }
+
+ .side-content .side-icon{
+     width: 40px;
+     height: 40px;
+     margin-right: 20px;
+ }
+ .side-content .col-sm-12{
+    margin-bottom: 20px;
+ }
+ .side-content .side-icon-info{
+     margin-top: 15px;
+ }
+    
+/*Contact Us*/
+    
+    .contact-container {
+        width: 100%;
+        font-family: "Copperplate Gothic Light";
+        color: #6c6260;
+        font-size: 15px;
+    }
+    
+    .contact-container .info-content img{
+        margin-top: 40px;
+        margin-bottom: 20px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .contact-us-2 {
+        height: 70%;
+        background-image: url("../img/contact-us-2-background.png");
+        margin-top: 100px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .contact-us-2 h1 {
+        font-family: "Copperplate Gothic Light";
+        text-align: center;
+        padding-top: 40px;
+        color: #706360;
+    }
+    
+    .contact-us-2 .line {
+        height: 30px;
+        border-style: solid;
+        border-color: #8c8b8b;
+        border-width: 1px 0 0 0;
+        border-radius: 20px;
+        width: 150px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+    }
+    
+    .contact-us-2 .line:before {
+        display: block;
+        content: "";
+        height: 30px;
+        margin-top: -31px;
+        border-style: solid;
+        border-color: #8c8b8b;
+        border-width: 0 0 1px 0;
+        border-radius: 20px;
+    }
+    
+    .contact-send {
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .contact-send input {
+        background-color: #E3E1DE;
+        height: 50px;
+        float: left;
+        border: 1px solid #E3E1DE;
+        color: #8c8b8b;
+        font-family: 'Franklin Gothic Book';
+        font-size: 16px;
+        border-radius: 0px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        
+    }
+
+    .contact-send textarea {    
+        background-color: #E3E1DE;
+        border: 1px solid #E3E1DE;
+        color: #8c8b8b;
+    }
+
+    .button {
+        background-color: #F1AD48;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+
+
+.map img{
+    width: 100%;
+
 }
