@@ -57,5 +57,18 @@
         </div>   
        <script type="text/JavaScript" src="../assets/lib/jquery/jquery-3.2.1.min.js"></script>
        <script type="text/JavaScript" src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
+       <script src="../assets/lib/wow.min.js"></script>
+        <script>
+            wow = new WOW(
+            {
+                animateClass: 'animated',
+                offset:       100,
+                callback:     function(box) {
+                console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                }
+            }
+            );
+            wow.init();
+        </script>
     </body>
 </html>

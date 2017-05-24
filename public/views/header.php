@@ -6,35 +6,36 @@
       <title>Garden Of Paradise - <?=$title?> </title>
       <link rel="stylesheet" type="Text/css" href="../assets/css/style.css">
       <link rel="stylesheet" type="Text/css" href="../assets/lib/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../assets/css/animate.css">
     </head>
     <body>
     <div class="header">
         <div class="container-fluid social-bar">
             <div class ="container ">
-                <a href="#"><img src="../assets/img/icons/gmail.svg" class="social-icon" alt=""> </a>
                 <a href="#"><img src="../assets/img/icons/facebook.svg" class="social-icon" alt=""> </a>
                 <a href="#"><img src="../assets/img/icons/twitter.svg" class="social-icon" alt=""></a>
-                <a href="#"><img src="../assets/img/icons/youtube.svg" class="social-icon" alt=""></a>
                 <a href="#" id="location"> 
+                  <img style="border: 5px solid #E0E0E0"src="../assets/img/phone.jpg" width="40px" height="40px" class="" alt="" align="left">              
+                  (1-876) 327-9729 | (1-876) 870-5848 
                 </a>
             </div>
+             
             </div>
           
         <div class="container-fluid">
             <div class ="container header-content">
               <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12" >
-                     <a href="#"><img src="../assets/img/logo.png"  class="img-responsive" alt=""> </a>
-                 </div>
-                 <div class="col-md-6 col-sm-6 col-xs-12">
-                   <div class="header-content-right">
-                     <img style="border: 5px solid #E0E0E0"src="../assets/img/phone.jpg" width="50px" height="50px" class="" alt="" align="left">              
-                    <h5>
-                        (1-876) 327-9729 <br>
-                        (1-876) 870-5848 
-                      </h5>
-                   </div>
-                 </div>
+                  <div class="col-md-4 " ></div>
+                  <div class="col-md-4" >
+                      <div class="header-frame">
+                         <center><a href="#"><img src="../assets/img/logo.png"  class="img-responsive" alt=""> </a></center>
+                      </div>
+                      <center>
+                  <h3>Granting Relief in Times of Grief</h3>
+                </center>
+                  </div>
+                  <div class="col-md-4" ></div>
+                </div>
               </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+<?php $title = "Dedication";?>
 <?php require_once('header.php'); ?>  
 
 <div class="container-fiuld">

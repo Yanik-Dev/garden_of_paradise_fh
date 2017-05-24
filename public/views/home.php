@@ -24,22 +24,22 @@
             </div>
         </div>
         <!-- Controls -->
-        <a class="left carousel-control" href="#carouselHacked" role="button" data-slide="prev">
+        <!--<a class="left carousel-control" href="#carouselHacked" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
         <a class="right carousel-control" href="#carouselHacked" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a>
+        </a>-->
     </div>
 </div>
 <div class="container-fiuld home-content">
 <div class="container">
     <div class="row welcome">
-            <div class="col-md-8 ">
+            <div class="col-md-8 wow slideInLeft">
                 <h2>Welcome</h2>
-                <img src="../img/mark.png" alt="" align="right"> 
+                <img src="../assets/img/mark.png" alt="" align="right"> 
                 <p>
                     We understand that under the circumstances in which our services are needed, we aim to offer the best care to your loved ones and to ensure that you receive professional services in a calm and serene environment.
                     We have created a home-like atmosphere for you to gather with family at the loss of your loved one. Strict attention is given to every detail of funeral services to ensure your satisfaction. We have expertise in all types of funeral services whether it is simple or elaborate. 
@@ -108,7 +108,7 @@
      <div class="container">
          <div class="row">
             <div class="col-md-3 col-sm-6 ">
-            <div class="card">
+            <div class="card wow slideInRight" data-wow-delay="0.5s">
                     <h3>Basic Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -121,11 +121,11 @@
                         <li>100 Prayer Cards/Book Markers</li>
                         <li>TVJ's Death Announcement</li>
                     </ul>
-                    <a href="#" class="btn">Contact Us</a>
+                   <center> <a href="#" class="btn">Contact Us</a> </center>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-            <div class="card">
+            <div class="card wow slideInRight" data-wow-delay="1s">
                     <h3>Garden Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -138,11 +138,11 @@
                         <li>150 Prayer Cards/Book Markers</li>
                         <li>Two (2) TVJ's Death Announcement + One (1) Gleaner Advertisement</li>
                     </ul>
-                    <a href="#" class="btn">Contact Us</a>
+                    <center> <a href="#" class="btn">Contact Us</a></center>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                 <div class="card">
+                 <div class="card wow slideInRight" data-wow-delay="1.5s">
                     <h3>Paradise Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -156,13 +156,13 @@
                         <li>200 Prayer Cards/Book Markers</li>
                         <li>Two (2) TVJ's Death Announcement + One (1) Gleaner Advertisement</li>
                     </ul>
-                    <a href="#" class="btn">Contact Us</a></center>
+                   <center> <a href="#" class="btn">Contact Us</a></center>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-            <div class="card">
+            <div class="card wow slideInRight" data-wow-delay="2s">
                     <h3>Customized Package</h3>
-                    <a href="#" class="btn btn-custom">Click Here To Get Started</a>
+                   <center> <a href="#" class="btn btn-custom">Click Here To Get Started</a></center>
                 </div>
             </div>
         </div>
