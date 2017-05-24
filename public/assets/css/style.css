@@ -124,7 +124,9 @@ h1, h2, h3, h4{
 .navbar li a, .navbar-header a {
     color:#fff !important;
 }
-
+.navbar-header .icon-bar{
+    background-color: #fff !important;
+}
 .nav-active, .navbar li a:hover, .navbar .open{
     background-color: #F1AD48 !important;
 }
@@ -463,9 +465,53 @@ h1, h2, h3, h4{
         margin-top: 10px;
     }
 
-
-
 .map img{
     width: 100%;
 
+}
+
+/** admin login styles **/
+
+.admin-login input {
+        background-color: #E3E1DE;
+        height: 50px;
+        float: left;
+        border: 1px solid #E3E1DE;
+        color: #8c8b8b;
+        font-family: 'Franklin Gothic Book';
+        font-size: 16px;
+        border-radius: 0px;
+        margin-bottom: 10px;
+        margin-right: 10px;    
+}
+
+.admin-login  .button {
+    background-color: #5da4ea;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.admin-login .card{
+    height: 330px !important;
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 150px;
+    text-align: center;
+    background-color: #fff;
+    
+    background-image: url('../img/white_bg.jpg');
+}
+
+.admin-login .error{
+    color: red;
 }

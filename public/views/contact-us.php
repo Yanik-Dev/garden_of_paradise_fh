@@ -8,7 +8,6 @@
         <center>
             <img src="../assets/img/icons/email-contact.png" alt="Email">
             <p>gardenofparadisefh@gmail.com</p>
-            <p>www.gardenofparadisefh.com</p>
             </center>
         </div>
 
