@@ -534,3 +534,42 @@ input {
     display: inline-block !important;
     font-size: 16px !important;
 }
+
+/*Service Page Styles*/
+
+.s-block-1{
+    width: 250px;
+    height:120px;
+    background-image: url('../img/contact-us-2-background.png');
+   margin-bottom: 30px;
+   padding-top: 20px;
+}
+
+.s-block-1 img{
+   padding: 10px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   height: 50px;
+   width: 50px;
+   background-color: #592131;
+   border-radius: 50%;
+}
+
+.s-block-1 p{
+    padding: 10px;
+    text-align: center;
+    font-family: 'Franklin Gothic Book';
+    color: #592131;
+}
+
+.sub-gallery-nav1{
+    text-align: center;
+    color: #592131;
+}
+
+.sub-gallery-nav1 h1{
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+}s

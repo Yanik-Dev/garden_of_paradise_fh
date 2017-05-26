@@ -58,13 +58,10 @@
               <li><a href="./gallery.php" class="<?= ($title =="Gallery")?'nav-active':''?>">Gallery</a></li>
               <li><a href="./about-us.php" class="<?= ($title =="About Us")?'nav-active':''?>">About Us</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services & Packages<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Pre-Funeral Arrangments</a></li>
-                  <li><a href="#">Exquisite Funeral Arrangments</a></li>
-                  <li><a href="#">Grief Counselling</a></li>
-                  <li><a href="#">Cremation</a></li>
-                  <li><a href="#">Death Announcements</a></li>
+                  <li><a href="./services.php" class="<?= ($title =="Services")?'nav-active':''?>">Services</a></li>
+                  <li><a href="./packages.php" class="<?= ($title =="Packages")?'nav-active':''?>">Packages</a></li>
                 </ul>
               </li>
             </ul>
