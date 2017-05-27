@@ -1,7 +1,7 @@
 <?php
  session_start();
  require('../services/AlbumService.php');
- $title = "Gallery Management";
+ $title = "Album Management";
  require_once('header.php');
 ?> 
 
@@ -109,7 +109,7 @@
                     
                     <?php for( $i =1; $i <= $numberOfPages; $i++):?>
                     
-                    <li class="page-item <?=($page_num == $i)?'active':''?>"><a class="page-link" <?=($page_num == $i)?' ':"href= 'album-view.php?page_num=$i'"?> > <?=$i ?></a></li>
+                    <li class="page-item <?=($page_num == $i)?'active':''?>"><a class="page-link" <?=($page_num == $i)?' ':"href= 'album-management.php?page_num=$i'"?> > <?=$i ?></a></li>
                         
                     <?php endfor;?>
                     
