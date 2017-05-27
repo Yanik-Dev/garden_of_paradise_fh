@@ -2,7 +2,8 @@
 
 class Album{
     private $_id = 0;
-    private $_name = 0;
+    private $_name = "";
+    private $_description="";
     private $_images = [];
 
     public function getId(){
@@ -19,6 +20,14 @@ class Album{
 
     public function setName($name){
         $this->_name = $name;
+    }
+    
+    public function getDescription(){
+        return $this->_description;
+    }
+
+    public function setDescription($description){
+        $this->_description = $description;
     }
 
     public function getImages(){

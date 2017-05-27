@@ -13,8 +13,8 @@ $title = "Login";
                     <br>
                     <form action="../actions/login.php" method="post">
                         <input type="text" name="username"  class="form-control" placeholder="Username" required />
-                        <input type="password" name="email"  class="form-control" placeholder="Password" required />
-                        <p class="error"><?=(isset($_SESSION["errors"]))?$_SESSION["errors"]:""?><p>
+                        <input type="password" name="password"  class="form-control" placeholder="Password" required />
+                        <p class="error"><?=(isset($_GET["error"]))?"*Invalid username or password":""?><p>
                         <button class="button" type="submit">Sign in</button>
                     </form>
                 </div>
