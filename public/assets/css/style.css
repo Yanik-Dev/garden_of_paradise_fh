@@ -580,4 +580,63 @@ input {
     margin-bottom: 40px;
 }
 
+/*Packages Style*/
 
+.price_table_container{
+	text-align:center;
+	color:#666;
+	margin-top:35px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.price_table_heading{
+	font-size:26px;
+	padding:10px;
+	background:#EEE;
+}
+
+
+.price_table_row {
+    padding:15px;
+	background: #FFF;
+}
+
+
+.price_table_row:nth-of-type(even) {
+    background: #F8F8F8;
+}
+.btn{
+	border-radius:0px;
+}
+
+.recommended{
+background:#FF3A3A; 
+color:#FFF;
+padding:3px 0 3px 0;
+margin-top:10px;  
+text-align:center;
+margin-bottom:-35px;
+font-family: 'Open Sans', sans-serif;
+}
+
+
+.btn-primary {
+  color: #fff;
+  background-color: #592131;
+  border-color: #592131;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-dark {
+  color: #fff;
+  background-color: #592131;
+  border-color: #592131;
+}
+
+.package-text{
+    text-align: center;
+    padding-top: 20px;
+}
