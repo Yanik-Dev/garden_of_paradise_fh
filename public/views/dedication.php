@@ -2,7 +2,7 @@
 <?php require_once('header.php'); ?>  
 
 <div class="container-fiuld">
-<div class="dedication-container">
+<div class="dedication-container container">
    <div class="row">
     <div class="col-md-4">
        <center> 
@@ -13,7 +13,10 @@
     </div>
     <div class="col-md-8">
         <div class="text">
+            <center>
+            <h3>In Memory of</h3>
             <h1>FRANCINE VESNA DILLON</h1>
+            </center>
         <p>Francine Vesna Dillon, affectionately called “Pang” was born to a beautiful and strong woman by the name of Sonya Binns on May 31, 1986. Weighing a measly 3lb 10 ounces, she was an immediate bundle of joy to her older sister Sweets. 
         Francine grew to be an inspiration, always smiling, and always offering a kind word to all who met her acquaintance. Her captivating beauty ignited everywhere and her presence was always welcomed.</p>
 

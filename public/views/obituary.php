@@ -5,6 +5,7 @@
         <div class="col-md-8 obituary-content">
             <div id="search-wrapper">
                 <input type="search" placeholder="Search Obituary">
+                <br>
             </div>
             <div class="search-result">    
                 <div class="row search-item">

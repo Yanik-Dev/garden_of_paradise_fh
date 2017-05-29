@@ -14,7 +14,7 @@ include_once("../config/Config.php");
      */
     public static function getInstance(){
         global $_CONFIG;
-        if(self::$instance == null){
+        if(!isset(self::$instance)){
              self::$instance = new Mysqli(  $_CONFIG["DATABASECONFIG"]["SERVER"], 
                                             $_CONFIG["DATABASECONFIG"]["USERNAME"],
                                             $_CONFIG["DATABASECONFIG"]["PASSWORD"] , 
@@ -22,6 +22,7 @@ include_once("../config/Config.php");
                                          );
             if (self::$instance->connect_errno) {
                 echo "Failed to connect to MySQL: (" . self::$instance->connect_errno . ") " . self::$instance->connect_error;
+                
             }
         }
         return self::$instance;
