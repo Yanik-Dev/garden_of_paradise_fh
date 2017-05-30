@@ -49,7 +49,6 @@
 
                     We have a dynamic team who is able to assist in any way possible during your time of bereavement or to lend an extra shoulder to cry on. We understand the pain of losing a loved one and are pleased to say we autograph our services with one word-Excellence! 
                 </p>
-                <center> <a href="#" class="btn">Read More</a></center>
             </div>
             <div class="col-md-4">
             </div>
@@ -101,14 +100,14 @@
             </div>
         </div>
         <br />
-         <center><a href="#" class="btn">View All Obituaries</a></center>
+         <center><a href="./obituary.php" class="btn">View All Obituaries</a></center>
      </div>
 </div>
  <div class="container-fiuld packages">
      <div class="container">
          <div class="row">
             <div class="col-md-3 col-sm-6 ">
-            <div class="card wow slideInRight" data-wow-delay="0.5s">
+            <div class="card wow slideInRight" data-wow-delay="0.2s">
                     <h3>Basic Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -121,11 +120,13 @@
                         <li>100 Prayer Cards/Book Markers</li>
                         <li>TVJ's Death Announcement</li>
                     </ul>
-                   <center> <a href="#" class="btn">Contact Us</a> </center>
+                    <div class="custom-card-footer">
+                       <center> <a href="./request-quote.php?type=bp" class="btn">Request Quote</a> </center>
+                   </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-            <div class="card wow slideInRight" data-wow-delay="1s">
+            <div class="card wow slideInRight" data-wow-delay="0.4s">
                     <h3>Garden Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -138,11 +139,13 @@
                         <li>150 Prayer Cards/Book Markers</li>
                         <li>Two (2) TVJ's Death Announcement + One (1) Gleaner Advertisement</li>
                     </ul>
-                    <center> <a href="#" class="btn">Contact Us</a></center>
+                    <div class="custom-card-footer">
+                      <center> <a href="./request-quote.php?type=gp" class="btn">Request Quote</a></center>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                 <div class="card wow slideInRight" data-wow-delay="1.5s">
+                 <div class="card wow slideInRight" data-wow-delay="0.6s">
                     <h3>Paradise Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -156,11 +159,13 @@
                         <li>200 Prayer Cards/Book Markers</li>
                         <li>Two (2) TVJ's Death Announcement + One (1) Gleaner Advertisement</li>
                     </ul>
-                   <center> <a href="#" class="btn">Contact Us</a></center>
+                    <div class="custom-card-footer">
+                      <center> <a href="./request-quote.php?type=pp" class="btn">Request Quote</a></center>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-            <div class="card wow slideInRight" data-wow-delay="2s">
+            <div class="card wow slideInRight" data-wow-delay="0.8s">
                     <h3>Customized Package</h3>
                    <center> <a href="#" class="btn btn-custom">Click Here To Get Started</a></center>
                 </div>

@@ -31,15 +31,32 @@
 
         <h1>CONTACT US TODAY</h1>
         <div class="line"></div>
-
+        <form action="../actions/contact-us-action.php" method="post">
         <div class="contact-send">
-
-            <input type="text" name="Name"  class="form-control" placeholder="Name *" colspan="4" required />
-            <input type="email" name="Email"  class="form-control" placeholder="Email *" required />
-            <input type="text" name="Subject"  class="form-control" placeholder="Subject"/>
-            <textarea rows="6" cols="" placeholder="Message" class="form-control"></textarea>
-
-        <button class="button" type="button">Send Message</button>
+             <?php 
+                  if(isset($_GET["error"])){
+                      if($_GET["error"] == 1){
+                        echo"<p class='error'>*There was an error sending your email</p>";
+                      }
+                      if(isset($_GET["error-name"])){
+                        echo"<p class='error'>*Your name is required</p>";
+                      }
+                      if(isset($_GET["error-email"])){
+                        echo"<p class='error'>*A valid email is required</p>";
+                      }
+                      if(isset($_GET["error-message"])){
+                        echo"<p class='error'>*A message is required</p>";
+                      }
+                  }
+                ?>
+            <p class="success"><?=(isset($_GET["success"]))?"Your message has been sent successfully!":""?><p>
+            <input type="text" name="name"  class="form-control" placeholder="Name *" colspan="4" required maxlength="15" />
+            <input type="email" name="email"  class="form-control" placeholder="Email *" required />
+            <input type="text" name="subject"  class="form-control" placeholder="Subject"/>
+            <textarea rows="6" cols="" name="message" placeholder="message" class="form-control" require></textarea>
+        <button class="button" type="submit">Send Message</button>
+            
+        </form>
 
      </div>
     </div>

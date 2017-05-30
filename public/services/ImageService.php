@@ -3,7 +3,7 @@ require_once '../common/Databaseservice.php';
 require_once '../classes/Image.php'; 
 include_once("../config/Config.php");
 
-class UserService 
+class ImageService 
 {
     private $_count;
     private $_LIMIT;
@@ -12,9 +12,7 @@ class UserService
         $this->_LIMIT = 10;
     }
 
-    public function getNumberOfPages(){
-        return ceil($this->_count /$this->_LIMIT);
-    }
+
     
     public function getCount(){
         $db = Database::getInstance();
@@ -23,7 +21,7 @@ class UserService
         return $this->_count;
     }
 
-    public function getImagesbyLimit($page_num = 1, $limit = 10, $name = ''){
+    public function getImagesbyLimit($page_num = 1, $limit = 20, $id = 0){
 
         $db = Database::getInstance();
         $this->_LIMIT = $limit;         
@@ -31,7 +29,7 @@ class UserService
 		$start = $this->_LIMIT * ($page_num-1);
 	    $list = [];
 	    $limitQuery = "{$start},{$this->_LIMIT}";
-	    $nameQuery = " name like '%{$name}' ";
+	    $nameQuery = " fk_album_id = {$id} ";
 
 		if($result = $db->query("select * from images where {$nameQuery} order by id desc limit {$limitQuery}"))
 		{
@@ -73,52 +71,60 @@ class UserService
             ?>
     */
     public static function insert($imagePaths = [], $albumId){
-        try{
-            Database::getInstance()->setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            Database::getInstance()->beginTransaction ();
-            
-            foreach($imagePaths as $path){
-                if (move_uploaded_file($path["file"]["tmp_name"], $_CONFIG["UPLOADS"])) {
-                    
-                } else {
-                     Database::getInstance()->rollback ();
-                }
-                if( $statement = @Database::getInstance()->prepare("INSERT INTO users SET path = ?, fk_album_id = ?")){
-                    $statement->bind_param("s", $path);
-                    $statement->bind_param("i", $albumId);
+          global $_CONFIG;
+          $i = 0;
+          $result = true;
+          Database::getInstance()->autocommit (false);
+            foreach($imagePaths["tmp_name"] as $path){
+                if (!@move_uploaded_file($path, $_CONFIG["UPLOADS"].$imagePaths["name"][$i])) {
+                    $result = false;
+                    break;
+                } 
+                if( $statement = @Database::getInstance()->prepare("INSERT INTO images SET path = ?, fk_album_id = ?")){
+                    $statement->bind_param("si", $imagePaths["name"][$i], $albumId);
                     $statement->execute();
+                    
+                }else{
+                    $result = false;
+                    break;
+                }
+                $i++;
+            }
+
+            if($result){
+                if(Database::getInstance()->commit()){      
+                        
+                    return true;
                 }
             }
-            Database::getInstance()->commit();
-            return true;
-        }
-        catch (Exception $e) { 
-            if (Database::getInstance() != null) {
-                Database::getInstance()->rollback();
-                echo "Error:  " . $e; 
+            foreach($imagePaths["tmp_name"] as $path){
+                $i=0;
+                if(@unlink($_CONFIG["UPLOADS"].$imagePaths["name"][$i])){
+                    continue;
+                }
+                $i++;
             }
-        }
-        foreach($imagePaths as $path){
-            unlink($_CONFIG["UPLOADS"].$path['file']);
-        }
+
+           Database::getInstance()->rollback();
         return false;
 	}
 
     public static function delete($id){
+        global $_CONFIG;
         $path = "";
-         if( $statement = @Database::getInstance()->prepare("SELECT path FROM gallery WHERE id = ?")){
-			$statement->bind_param("s", $id);
+         if( $statement = @Database::getInstance()->prepare("SELECT path FROM images WHERE id = ?")){
+			$statement->bind_param("i", $id);
             $statement->execute();
-
-            $statement->bind_result($col1);
-            while ($statement->fetch()) {
-               $path = $col1;
+            if($rows = $statement->get_result()){
+                while ($row=$rows->fetch_assoc()) {
+                $path = $row["path"];
+                }
             }
-            $row = $statement->fetch_assoc();
-            if( $statement = @Database::getInstance()->prepare("DELETE * FROM gallery WHERE id = ?")){
-                $statement->bind_param("s", $id);
+
+            if( $statement = @Database::getInstance()->prepare("DELETE FROM images WHERE id = ?")){
+                $statement->bind_param("i", $id);
                 $statement->execute();
-                unlink($_CONFIG["UPLOADS"].$path);
+                @unlink($_CONFIG["UPLOADS"].$path);
                 
                 return true;
             }

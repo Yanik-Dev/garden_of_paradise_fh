@@ -1,0 +1,12 @@
+{
+    "name": "yanik/garden_of_paradise_fh",
+    "authors": [
+        {
+            "name": "Yanik-Dev",
+            "email": "yanikblake@live.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "~5.2"
+    }
+}

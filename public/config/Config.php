@@ -20,6 +20,6 @@ $_CONFIG = [
             "PASSWORD" => "",
             "DATABASE" => "gardenfh_db"
         ],
-        "UPLOADS"=> "",
+        "UPLOADS"=> "..\\uploads\\",
 ];
 

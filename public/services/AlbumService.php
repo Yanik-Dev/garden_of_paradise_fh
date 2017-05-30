@@ -1,6 +1,7 @@
 <?php 
 require_once '../common/Databaseservice.php'; 
 require_once '../classes/Album.php'; 
+require_once '../classes/Image.php'; 
 
 class AlbumService 
 {
@@ -19,7 +20,6 @@ class AlbumService
         $db = Database::getInstance();
         $result = $db->query('select count(*) as count from albums');
         $this->_count = $result->fetch_assoc()['count'];
-        //$db->close();
         return $this->_count;
     }
 
@@ -53,6 +53,7 @@ class AlbumService
 		             $image->setId($row["id"]);
 		             $image->setPath($row["path"]);
                      $images[$x] = $image;
+                     $x++;
                   }
                   $album->setImages($images);
                }
@@ -84,13 +85,28 @@ class AlbumService
             @$statement->bind_param("i", $id);
             $statement->execute();
             if($rows = $statement->get_result()){
-                while($row = $rows->fetch_assoc()){
-                   $album->setName($row["name"]);
-                   $album->setDescription($row["description"]);
-                   $album->setId($row["id"]);
+                while($obj = $rows->fetch_assoc()){
+                    $album->setId($obj["id"]);
+                    $album->setName($obj["name"]);
+                    $album->setDescription($obj["description"]);
+
+                    $images = [];
+                    $id = $obj["id"];
+                    if($result2 = @Database::getInstance()->query("select * from images where fk_album_id = {$id}"))
+                    {
+                        $x = 0;
+                        while($row = $result2->fetch_assoc()){
+                            $image = new Image();
+                            $image->setId($row["id"]);
+                            $image->setPath($row["path"]);
+                            $images[$x] = $image;
+                            $x++;
+                        }
+                        $album->setImages($images);
+                    }
                 }
-            }
-        }
+	        }
+	    }
 
         return $album;
 	}
@@ -122,6 +138,7 @@ class AlbumService
 	}
 
     public static function delete($id){
+        global $_CONFIG;
         $paths = [];
         $i = 0;
 
@@ -130,7 +147,6 @@ class AlbumService
             $statement->bind_param("i", $id);
             $statement->execute();
 
-        
             if($rows = $statement->get_result()){
                 while($row = $rows->fetch_assoc()){
                     $path[i] = $row["path"];
@@ -138,9 +154,9 @@ class AlbumService
                 }
             }else{
                 Database::getInstance()->rollback();
+                return false;
             }
 
-    
             if( $statement = @Database::getInstance()->prepare("DELETE  FROM images WHERE fk_album_id = ?")){
                 $statement->bind_param("i", $id);
                 $statement->execute();
@@ -166,8 +182,5 @@ class AlbumService
       
         return false;
 	}
-
-    
-	
 }
 ?>

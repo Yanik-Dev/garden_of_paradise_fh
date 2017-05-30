@@ -14,6 +14,7 @@ h1, h2, h3, h4{
     
     font-family : "cinzel" !important;
 }
+
 /** social bar styles **/
 .social-bar{
     padding: 5px;
@@ -311,25 +312,6 @@ h1, h2, h3, h4{
     margin:10px;
 }
 
-.gallery-block img{
-    width: 300px;
-    height: 300px;
-    padding-bottom: 20px;
-    margin-top: 20px;
-}
-
-.gallery-block1 img{
-    width: 300px;
-    height: 300px;
-    padding-bottom: 20px;
-}
-
-.gallery-block2 img{
-    width: 300px;
-    height: 300px;
-    padding-bottom: 20px;
-}
-
 
 /** About us **/
  .about-us-container {
@@ -468,16 +450,16 @@ h1, h2, h3, h4{
 /** admin login styles **/
 
 input {
-        background-color: #E3E1DE !important;
-        height: 50px !important;
-        float: left !important;
-        border: 1px solid #E3E1DE !important;
-        color: #8c8b8b !important;
-        font-family: 'Franklin Gothic Book' !important;
-        font-size: 16px !important;
-        border-radius: 0px !important;
-        margin-bottom: 10px !important;
-        margin-right: 10px !important;   
+    background-color: #E3E1DE !important;
+    height: 50px !important;
+    float: left !important;
+    border: 1px solid #E3E1DE !important;
+    color: #8c8b8b !important;
+    font-family: 'Franklin Gothic Book' !important;
+    font-size: 16px !important;
+    border-radius: 0px !important;
+    margin-bottom: 10px !important;
+    margin-right: 10px !important;   
 }
 
 .admin-login  .button {
@@ -580,3 +562,32 @@ input {
     margin-bottom: 40px;
 }
 
+
+
+.request textarea {    
+    background-color: #E3E1DE;
+    border: 1px solid #E3E1DE;
+    color: #8c8b8b;
+}
+
+.request .button {
+    background-color: #5da4ea;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.custom-card-footer{
+    position: absolute !important;  
+    left: 0px !important; 
+    bottom: 20  px !important; 
+    width: 100% !important; 
+}

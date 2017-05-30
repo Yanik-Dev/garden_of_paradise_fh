@@ -50,7 +50,6 @@
                       }
                   }
                 ?>
-                <p>
                 <form action="<?= (isset($album))?'../actions/album-actions.php?id='.$album->getId():'../actions/album-actions.php'?>" method="post">
                     <input type="text" value="<?=(isset($album))?$album->getName():''?>" class="form-control" name="name" placeholder="Album Name">
                     <div class="form-group">
@@ -86,7 +85,7 @@
                             <td><?= $album->getName()?></td>
                             <td><?= $album->getDescription()?></td>
                             <td>
-                                <a href="">View Gallery</a> &nbsp|
+                                <a href=<?= './gallery-management.php?id='.$album->getId()?>>View Gallery</a> &nbsp|
                                 <a href=<?= './album-management.php?id='.$album->getId()?>>Edit</a> &nbsp | &nbsp
                                 <a href="<?='../actions/album-actions.php?id='.$album->getId().'&delete=yes'?>">Delete</a>
                             </td>
