@@ -12,8 +12,6 @@ class ImageService
         $this->_LIMIT = 10;
     }
 
-
-    
     public function getCount(){
         $db = Database::getInstance();
         $result = $db->query('select count(*) as count from images');
@@ -29,7 +27,7 @@ class ImageService
 		$start = $this->_LIMIT * ($page_num-1);
 	    $list = [];
 	    $limitQuery = "{$start},{$this->_LIMIT}";
-	    $nameQuery = " fk_album_id = {$id} ";
+	    $nameQuery = " fk_testimony_id = {$id} ";
 
 		if($result = $db->query("select * from images where {$nameQuery} order by id desc limit {$limitQuery}"))
 		{
@@ -42,46 +40,39 @@ class ImageService
 	    }
 		 return $list;
     }
-    /*
-                
 
-            Multiple files can be selected and then uploaded using the
-            <input type='file' name='file[]' multiple>
-            The sample php script that does the uploading:
+    public static function findOne($id){
+        $testimony = null;
+        if( $statement = @Database::getInstance()->prepare("SELECT * FROM testimonies WHERE id = ?")){
+            @$statement->bind_param("i", $id);
+            $statement->execute();
+            if($rows = $statement->get_result()){
+                while($obj = $rows->fetch_assoc()){
+                    $testimony = new Testimony();
+                    $testimony->setId($obj["id"]);
+                    $testimony->setName($obj["name"]);
+                    $testimony->setDetails($obj["details"]);
 
-            <html>
-            <title>Upload</title>
-            <?php
-                session_start();
-                $target=$_POST['directory'];
-                    if($target[strlen($target)-1]!='/')
-                            $target=$target.'/';
-                        $count=0;
-                        foreach ($_FILES['file']['name'] as $filename) 
-                        {
-                            $temp=$target;
-                            $tmp=$_FILES['file']['tmp_name'][$count];
-                            $count=$count + 1;
-                            $temp=$temp.basename($filename);
-                            move_uploaded_file($tmp,$temp);
-                            $temp='';
-                            $tmp='';
-                        }
-                header("location:../../views/upload.php");
-            ?>
-    */
-    public static function insert($imagePaths = [], $albumId){
+                }
+	        }
+	    }
+        return $testimony;
+    }
+
+    public static function insert($imagePaths = [], $testimonyId){
           global $_CONFIG;
           $i = 0;
           $result = true;
           Database::getInstance()->autocommit (false);
             foreach($imagePaths["tmp_name"] as $path){
-                if (!@move_uploaded_file($path, $_CONFIG["UPLOADS"].$imagePaths["name"][$i])) {
+                $temp = explode(".", $imagePaths["name"][$i]);
+                $newfilename = round(microtime(true)) . '.' . end($temp);
+                if (!@move_uploaded_file($path, $_CONFIG["UPLOADS"].$newfilename)) {
                     $result = false;
                     break;
                 } 
-                if( $statement = @Database::getInstance()->prepare("INSERT INTO images SET path = ?, fk_album_id = ?")){
-                    $statement->bind_param("si", $imagePaths["name"][$i], $albumId);
+                if( $statement = @Database::getInstance()->prepare("INSERT INTO images SET path = ?, fk_testimony_id = ?")){
+                    $statement->bind_param("si", $imagePaths["name"][$i], $testimonyId);
                     $statement->execute();
                     
                 }else{

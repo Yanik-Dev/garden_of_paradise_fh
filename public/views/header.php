@@ -1,4 +1,4 @@
-<!doctype html>
+<!Doctype html>
 <html>
     <head> 
       <meta charset="utf-8">
@@ -15,7 +15,7 @@
                 <a href="#"><img src="../assets/img/icons/facebook.svg" class="social-icon" alt=""> </a>
                 <a href="#"><img src="../assets/img/icons/twitter.svg" class="social-icon" alt=""></a>
                 <a href="#" id="location"> 
-                  <img style="border: 5px solid #E0E0E0"src="../assets/img/phone.jpg" width="40px" height="40px" class="" alt="" align="left">              
+                  <img style="border: 5px solid #E0E0E0" src="../assets/img/phone.jpg" width="40px" height="40px" class="" alt="" align="left">              
                   (1-876) 327-9729 | (1-876) 870-5848 
                 </a>
             </div>
@@ -71,7 +71,7 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-    </div>
     <div class="back-to-top">
       <a href="#">Back to top</a>
     </div>
+    <img src="../assets/img/logo.png" class ="watermark" alt="garden_of_paradise_logo">

@@ -2,7 +2,7 @@
  session_start();
  require('../services/ImageService.php');
  $title = "Gallery Management";
- require_once('header.php');
+ require_once('admin-sidebar.php');
 ?> 
 <style>
 .controls{
@@ -32,13 +32,20 @@
 
 <div class="container">
   <form action="../actions/gallery-upload-action.php" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" name="files[]" id="exampleInputFile" multiple>
-            <input type="hidden" name="album" id="" value=<?= $_GET['id'] ?>>
-            <p class="help-block">Example block-level help text here.</p>
+     
+        <div style="max-width: 400px; height:auto; background-color:#fff;padding: 20px">
+           <div class="row">
+            <div class="form-group col-md-9">
+                <label for="exampleInputFile">Click To select images to upload</label>
+                <input type="file" name="files[]" id="exampleInputFile" multiple>
+                <input type="hidden" name="album" id="" value=<?= $_GET['id'] ?>>
+                <p class="help-block">Limited to 20 Images</p>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-warning" style="margin-top: 20px;">Upload</button>
+            </div>
         </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    </div>
    </form>
     <div class="row">
      <?php $i = 0; foreach($imageList as $image) :?>
@@ -49,6 +56,11 @@
           </a>
         </div>
         <?php endforeach; ?>
+         <?php if(count($imageList) < 1): ?>
+          <div style="margin-bottom: 60px;">
+            <center><h3>No Images has been added to this album as yet </h3></center>
+          </div>
+        <?php endif; ?>
     </div>
 </div>
 
@@ -60,7 +72,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<?php require_once('footer.php'); ?>
+<?php require_once('admin-footer.php'); ?>
 <script>
     $(document).ready(function(){
    $('a img').on('click',function(){

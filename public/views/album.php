@@ -36,7 +36,7 @@
  <h1>Albums</h1>  
 <br>
 <div class="row">
-     <?php $i = 0; foreach($albumList as $album) :?>
+     <?php foreach($albumList as $album) :?>
   	    <div class="col-xs-3">
           <a href="<?= ".\\gallery.php?id=".$album->getId() ?>">
           <div  class="thumbnail">
@@ -48,8 +48,13 @@
           </div>
           </a>
         </div>
-        <?php endforeach; ?>
-    </div>
+     <?php endforeach; ?>
+      <?php if(count($albumList) < 1): ?>
+          <div style="margin-bottom: 60px;">
+            <center><h3>No Album has been added as yet </h3></center>
+          </div>
+     <?php endif; ?>
+</div>
     
 <div class="row text-center">
 <!--Pagination -->

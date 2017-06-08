@@ -3,6 +3,7 @@
  require('../services/ObituaryService.php');
  $title = "Obituary Management";
  require_once('header.php');
+ 
 ?> 
 
 <?php
@@ -41,6 +42,12 @@
                       if($_GET["error"] == 1){
                         echo"<p class='error'>*You must supply a obituary name</p>";
                       }
+                      if($_GET["error"] == 3){
+                        echo"<p class='error'>*You must supply a date</p>";
+                      }
+                      if($_GET["error"] == 4){
+                        echo"<p class='error'>*You must supply details about the person</p>";
+                      }
                       if($_GET["error"] == 2){
                         echo"<p class='error'>*Person already exist</p>";
                       }
@@ -49,21 +56,27 @@
                       }
                   }
                 ?>
-                <form action="<?= (isset($obituary))?'../actions/obituary-actions.php?id='.$obituary->getId():'../actions/obituary-actions.php'?>" method="post">
-                    <input type="text" value="<?=(isset($obituary))?$obituary->getName():''?>" class="form-control" name="name" placeholder="Name">
-                    <input type="date" value="<?=(isset($obituary))?$obituary->getDate():''?>" class="form-control" name="name" >
-                    <select>
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                    </select>
+                <form action="<?= (isset($obituary))?'../actions/obituary-actions.php?id='.$obituary->getId():'../actions/obituary-actions.php'?>" method="post" enctype="multipart/form-data">
+                     <div class="form-group">
+                        <label for="exampleInputFile">Photo</label>
+                        <input type="file" name="file" id="exampleInputFile">
+                        <p class="help-block"></p>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" value="<?=(isset($obituary))?$obituary->getName():''?>" class="form-control" name="name" minlength="2" maxlength="90" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" value="<?=(isset($obituary))?$obituary->getDate():''?>" class="form-control" name="date" placeholder="eg. July 12, 1880 - June 28, 1946" required>
+                    </div>
                     <div class="form-group">
                         <label for="details">Details</label>
-                        <textarea id="details" type="text" name="description" class="ckeditor" id="detail" required><?=(isset($obituary))?$obituary->getDetails():''?></textarea>
+                        <textarea id="details" type="text" name="details" class="ckeditor" required><?=(isset($obituary))?$obituary->getDetails():''?></textarea>
                     </div>
-                    <button type="submit" class=""><?= (isset($obituary))?'Save Changes':'Create'?></button>
+                    <button type="submit" class="btn btn-success"><?= (isset($obituary))?'Save Changes':'Create'?></button>
                 </form>
-
+                <br />
+                <br />
+                <br />
         </div>
         </div>
 

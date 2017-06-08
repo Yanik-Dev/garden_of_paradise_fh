@@ -9,13 +9,15 @@
         header('Location: ./album.php');
     }
     $albumService = new AlbumService();
-    $imageList = $albumService->findOne($_GET['id'])->getImages();
+    $album = $albumService->findOne($_GET['id']);
+    $imageList = $album->getImages();
 ?>
 <div class="container-fluid">
 <div class="row">
   <div class="col-md-12">
     <div class="sub-gallery-nav">
       <h1> Gallery </h1>
+      <h4> <?= 'Album: '.$album->getName() ?><h4>
     </div>
   </div>
 </div>
@@ -29,6 +31,11 @@
           </a>
         </div>
         <?php endforeach; ?>
+        <?php if(count($imageList) < 1): ?>
+          <div style="margin-bottom: 60px;">
+            <center><h3>No Images has been added to this album as yet </h3></center>
+          </div>
+        <?php endif; ?>
     </div>
 </div>
 

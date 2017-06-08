@@ -1,14 +1,14 @@
 <?php 
-$title = "Obituary";
+$title = "Testimonals";
 
-require('../services/ObituaryService.php');
+require('../services/TestimonyService.php');
  
- $obituaryService = new ObituaryService();
+ $testimonyService = new TestimonyService();
     $page_num = 1;
     $album = null;
 
     if(isset($_GET['page_num'])){
-         if($_GET['page_num'] > 1 && $_GET['page_num'] > $obituaryService->getCount()){
+         if($_GET['page_num'] > 1 && $_GET['page_num'] > $testimonyService->getCount()){
              $page_num = 1;
          }
          else if($_GET['page_num']>1){
@@ -16,39 +16,33 @@ require('../services/ObituaryService.php');
          }
     }
     if(isset($_GET["q"])){
-       $obituaryList = $obituaryService->getByLimit($page_num, 10, $_GET["q"]);
+       $testimonyList = $testimonyService->get($page_num, 10, $_GET["q"]);
     }else{
-       $obituaryList = $obituaryService->getByLimit($page_num, 10);
+       $testimonyList = $testimonyService->get($page_num, 10);
     }
-    $numberOfPages = $obituaryService->getNumberOfPages();
+    $numberOfPages = $testimonyService->getNumberOfPages();
 ?>
 <?php require_once('header.php'); ?>
 <div class="container">
     <div class="row">
         <div class="col-md-8 obituary-content">
-            <div id="search-wrapper">
-                <input type="search" placeholder="Search Obituary">
-                <br>
-            </div>
+              <center>
+                 <h1>Testimonals</h1>
+              </center>
             <div class="search-result">  
-               <?php foreach($obituaryList as $obituary) : ?>  
+               <?php foreach($testimonyList as $testimony) : ?>  
                     <div class="row search-item">
-                        <div class="col-md-2">
-                            <br/>
-                        <img src="<?=($obituary->getPath() == null)?'../assets/img/Francine.png':$obituary->getPath()?>" width="120px" height="125px">
-                        </div>
-                        <div class="col-md-10">
-                            <h2> <?= $obituary->getName() ?> </h2>
-                            <?php $end= (strlen($obituary->getDetails()) > 200 )? 200 : strlen($obituary->getDetails());  ?>
-                            <?= substr($obituary->getDetails(), 0, $end).'...'; ?>
-                            <br>
-                            <a href="<?= 'obituary-view.php?id='.$obituary->getId() ?>">Read Life Story</a>
+                        <div class="col-md-12">
+                            <blockquote>
+                                <p>"<?= $testimony->getComment() ?>"</p>
+                            <footer><cite title="Source Title"><?= $testimony->getName() ?></cite></footer>
+                            </blockquote>
                         </div>
                     </div>
                 <?php endforeach; ?>
                 
-                <?php if(count($obituaryList) < 1): ?>
-                  <center><h3>No obituary Listed </h3></center>
+                <?php if(count($testimonyList) < 1): ?>
+                  <center><h3>No Testimonals available </h3></center>
                 <?php endif; ?>
             </div>
             <div class="row text-center">
@@ -71,7 +65,7 @@ require('../services/ObituaryService.php');
                     <?php endfor;?>
                     
 
-                    <?php if($page_num != $obituaryService->getNumberOfPages() &&  $obituaryService->getNumberOfPages() != 0): ?>
+                    <?php if($page_num != $testimonyService->getNumberOfPages() &&  $testimonyService->getNumberOfPages() != 0): ?>
                         <li class="page-item">
                         <a class="page-link" href="obituary.php?page_num=<?=$page_num + 1?>" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>

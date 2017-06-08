@@ -15,6 +15,21 @@ h1, h2, h3, h4{
     font-family : "cinzel" !important;
 }
 
+.watermark
+{
+  z-index: -1;
+  position:fixed;
+  top: 250px;
+  bottom: 250px;
+  opacity:0.2;
+  width: 500px;
+  height: auto;
+  margin: 5% auto;
+  left: 0;
+  right: 0;
+ color:white;
+}
+
 /** social bar styles **/
 .social-bar{
     padding: 5px;
@@ -149,6 +164,7 @@ h1, h2, h3, h4{
 
 /** footer styles **/
 .footer{
+    z-index: 2;
     background-image: url('../img/white_bg.jpg');
     background-color: #fff;
 }
@@ -187,7 +203,6 @@ h1, h2, h3, h4{
 .packages{
     
     background-image: url("../img/paradise1.jpg");
-    background-size: cover;
     padding: 20px;
     background-attachment: fixed;
     background-position: center;
@@ -449,7 +464,7 @@ h1, h2, h3, h4{
 
 /** admin login styles **/
 
-input {
+.admin-login input {
     background-color: #E3E1DE !important;
     height: 50px !important;
     float: left !important;

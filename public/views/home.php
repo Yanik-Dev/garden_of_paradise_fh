@@ -1,4 +1,14 @@
-<?php $title = "Home";?>
+<?php 
+$title = "Home";
+
+require('../services/ObituaryService.php');
+ 
+ $obituaryService = new ObituaryService();
+    $page_num = 1;
+    
+    $obituaryList = $obituaryService->getByLimit($page_num, 3);
+
+?>
 <?php require_once('header.php'); ?>      
 <link rel="stylesheet" href="../assets/css/carousel.css">
 <div class="container-fiuld">
@@ -39,7 +49,7 @@
     <div class="row welcome">
             <div class="col-md-8 wow slideInLeft">
                 <h2>Welcome</h2>
-                <img src="../assets/img/mark.png" alt="" align="right"> 
+                <img src="../assets/img/building.jpg" width="300px" height="250px" alt="" align="right"> 
                 <p>
                     We understand that under the circumstances in which our services are needed, we aim to offer the best care to your loved ones and to ensure that you receive professional services in a calm and serene environment.
                     We have created a home-like atmosphere for you to gather with family at the loss of your loved one. Strict attention is given to every detail of funeral services to ensure your satisfaction. We have expertise in all types of funeral services whether it is simple or elaborate. 
@@ -59,48 +69,27 @@
      <div class="container">
          <center><h1>Current Obituaries</h1></center>
          <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-6 row">
-               <div class="col-md-5">
-                    <br/>
-                    <img src="" width="120px" height="120px">
-               </div>
-                <div class="col-md-7">
-                    <h3> Kady Moris </h3>
-                    <p> May 10, 2015</p>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla et,
-                            repellat...
-                    </p>
-                </div>
-             </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 row">
-                 <div class="col-md-5">
-                    <br/>
-                    <img src="" width="120px" height="120px">
-               </div>
-                <div class="col-md-7">
-                    <h3> Kady Moris </h3>
-                    <p> May 10, 2015</p>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla et,
-                            repellat...
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-6 row">
-                <div class="col-md-5">
-                    <br/>
-                    <img src="" width="120px" height="120px">
-               </div>
-                <div class="col-md-7">
-                    <h3> Kady Moris </h3>
-                    <p> May 10, 2015</p>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla et,
-                            repellat...
-                    </p>
-                </div>
-            </div>
+            <?php foreach($obituaryList as $obituary) : ?>  
+                    <div class="col-md-4 col-sm-4 col-xs-6 row">
+                        <div class="col-md-5">
+                            <br/>
+                            <img src="<?=($obituary->getPath() == null)?'../assets/img/Francine.png':$obituary->getPath()?>" width="120px" height="120px">
+                        </div>
+                        <div class="col-md-7">
+                            <h2> <?= $obituary->getName() ?> </h2>
+                            <?php $end= (strlen($obituary->getDetails()) > 70 )? 70 : strlen($obituary->getDetails());  ?>
+                            <?= substr($obituary->getDetails(), 0, $end).'...'; ?>
+                            <a href="<?= 'obituary-view.php?id='.$obituary->getId() ?>">Read Life Story</a>
+                        </div>
+                    </div>
+             <?php endforeach; ?>
         </div>
         <br />
-         <center><a href="./obituary.php" class="btn">View All Obituaries</a></center>
+         <?php if(count($obituaryList) < 1): ?>
+             <center><h3>No obituary Listed </h3></center>
+         <?php else : ?>
+             <center><a href="./obituary.php" class="btn">View All Obituaries</a></center>
+        <?php endif; ?>
      </div>
 </div>
  <div class="container-fiuld packages">

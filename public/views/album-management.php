@@ -2,7 +2,7 @@
  session_start();
  require('../services/AlbumService.php');
  $title = "Album Management";
- require_once('header.php');
+ require_once('admin-sidebar.php');
 ?> 
 
 <?php
@@ -34,7 +34,7 @@
 ?>
 <div class="container album-management">
     <div class="row">
-        <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="card">
                 
                 <?php 
@@ -53,14 +53,14 @@
                 <form action="<?= (isset($album))?'../actions/album-actions.php?id='.$album->getId():'../actions/album-actions.php'?>" method="post">
                     <input type="text" value="<?=(isset($album))?$album->getName():''?>" class="form-control" name="name" placeholder="Album Name">
                     <div class="form-group">
-                        <label for="details">Description</label>
-                        <textarea id="details" type="text" name="description" class="ckeditor" id="detail" required><?=(isset($album))?$album->getDescription():''?></textarea>
+                        <label for="details"></label>
+                        <textarea id="details" type="text" name="description" maxlength="120" placeholder="Description" class="form-control" id="detail" required><?=(isset($album))?$album->getDescription():''?></textarea>
                     </div>
                     <button type="submit" class=""><?= (isset($album))?'Save Changes':'Create'?></button>
                 </form>
             </div>
         </div>
-        <div class="col-md-8 col-sm-12 col-xs-12"> 
+        <div class="col-md-8 col-sm-8 col-xs-12"> 
             <div class="card">
                 <form class="form-inline" >
                     <div class="col-sm-10"> 
@@ -68,7 +68,7 @@
                     </div>
                     
                     <div class="col-sm-2"> 
-                    <button type="submit" class="">Go</button>
+                       <button type="submit" class="" style="height: 35px !important;">Go</button>
                     </div>
                 </form>
                 <table class="table table-striped">
@@ -130,6 +130,6 @@
     </div>
 </div>
 
-<?php require_once('footer.php'); ?>
+<?php require_once('admin-footer.php'); ?>
 
 <script src='../assets/lib/ckeditor/ckeditor.js'></script>

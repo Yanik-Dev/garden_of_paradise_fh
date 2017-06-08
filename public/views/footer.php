@@ -1,3 +1,15 @@
+<?php
+    
+ require_once('../services/AlbumService.php');
+ require_once('../services/TestimonyService.php');
+ 
+    $testimonyService = new TestimonyService();
+    $testimonyList = $testimonyService->get(1, 1);
+    $albumService = new AlbumService();
+    $albumList = $albumService->getAlbumbyLimit(1, 6);
+
+?>
+
       <div class="contianer-fiuld footer">
         <div class="container">
             <div class="row">
@@ -11,15 +23,18 @@
             </div>
             <div class="col-md-3">
                 <h2>Testimonals</h2>
+                 <?php if(count($testimonyList) > 0): ?>
                 <blockquote>
-                    <p>"I wanted to take a moment and thank you again for the
-                    very nice service you performed for Iran's memorial. 
-                    I had several people come up to me to say "what a wonderful funeral".
-                    It was a nice tribute to him."</p>
-                   <footer><cite title="Source Title"> Alexander Davis</cite></footer>
+                    <p>"<?=$testimonyList[0]->getComment();?>"</p>
+                   <footer><cite title="Source Title"><?=$testimonyList[0]->getName();?></cite></footer>
                 </blockquote>
-                
-                <a href="#">View All Testimonials</a>
+                <a href="testimonals.php">View All Testimonials</a>
+               
+               <?php else: ?>
+                    <br />
+                    <br />
+                    <center><h5>No Testimonals Available </h5></center>
+                <?php endif; ?>
             </div>
             <div class="col-md-3">
                 <h2>Contact Info</h2>
@@ -31,21 +46,20 @@
             </div>
             <div class="col-md-3">
                 <h2>Photo Gallery</h2>
+                <?php if(count($albumList) > 0): ?>
                 <div class="row">
                    <div class="col-md-12">
-                    <img src="" class="photo">
-                    <img src="" class="photo">
-                    <img src="" class="photo">
-                   </div>
-                   </div>
-                   <div class="row">
-                    <div class="col-md-12">
-                        <img src="" class="photo">
-                        <img src="" class="photo">
-                        <img src="" class="photo">
+                     <?php $i = 0; foreach($albumList as $album) :?>
+                       <a href="<?='gallery.php?id='.$album->getId()?>" style="text-decoration: none;"> 
+                         <img src="<?= ($album->getImages() != null)?'..\\uploads\\'.$album->getImages()[0]->getPath():'../assets/img/placeholder.png' ?>" class="photo">
+                       </a>
+                     <?php endforeach; ?>
                     </div>
                 </div>
-                <a href="#nav-bar">View More Photos</a>
+                <a href="album.php">View More Photos</a>
+                <?php else: ?>
+                    <center><h5>No Photos </h6></center>
+                <?php endif; ?>
             </div>
             </div>
         </div>

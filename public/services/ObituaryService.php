@@ -23,30 +23,32 @@ class ObituaryService
     }
 
     public function getByLimit($page_num = 1, $limit = 10, $name = ''){
+         global $_CONFIG;
         $db = Database::getInstance();
         $this->_LIMIT = $limit;         
         $this->getCount();
 		$start = $this->_LIMIT * ($page_num-1);
 	    $list = [];
-	    $limitQuery = "{$start},{$this->_LIMIT}";
+	    $limitQuery = "{$start},{$limit}";
         $name = $db->escape_string($name);
 	    $nameQuery = " name like '%{$name}%' ";
 
-		if($result = $db->query("select * from obituaries where {$nameQuery} order by id desc limit {$limitQuery}"))
+		if($results = $db->query("select * from obituaries where {$nameQuery} order by id desc limit {$limitQuery}"))
 		{
-           
+          
 		    $i =0;
-		    while($obj = $result->fetch_assoc()){
-               $result = new Obituray();
+		    while($obj = $results->fetch_assoc()){
+               $result = new Obituary();
                $result->setId($obj["id"]);
                $result->setName($obj["name"]);
                $result->setDetails($obj["details"]);
-               $result->setGender($obj["gender"]);
-               $result->setPath($obj["path"]);
-               $result->setPath($obj["date"]);
+               if(isset($obj["photo"])){
+                      $result->setPath($_CONFIG["UPLOADS"].$obj["photo"]);
+               }
+               $result->setDate($obj["date"]);
                
-            $list[$i] = $result;
-            $i++;
+                $list[$i] = $result;
+                $i++;
             }
 	    }
 		 return $list;
@@ -68,18 +70,21 @@ class ObituaryService
 	}
 
     public static function findOne($id){
-        $result = new Obituray();
+         global $_CONFIG;
+        $result = null;
         if( $statement = @Database::getInstance()->prepare("SELECT * FROM obituaries WHERE id = ?")){
             @$statement->bind_param("i", $id);
             $statement->execute();
             if($rows = $statement->get_result()){
                 while($obj = $rows->fetch_assoc()){
+                    $result = new Obituary();
                     $result->setId($obj["id"]);
                     $result->setName($obj["name"]);
                     $result->setDetails($obj["details"]);
-                    $result->setGender($obj["gender"]);
-                    $result->setPath($obj["path"]);
-                    $result->setPath($obj["date"]);
+                    if(isset($obj["photo"])){
+                      $result->setPath($_CONFIG["UPLOADS"].$obj["photo"]);
+                    }
+                    $result->setDate($obj["date"]);
                 }
 	        }
 	    }
@@ -88,28 +93,62 @@ class ObituaryService
 
     public static function insert($obj, $file){
          global $_CONFIG;
-         
-        if (!@move_uploaded_file($file["tmp_name"], $_CONFIG["UPLOADS"].$file["name"])) {
-            $result = false;
-            return false;
-        } 
-        if( $statement = @Database::getInstance()->prepare("INSERT INTO obituaries SET name = ?, details = ?, gender =?, date=?, path =?")){
-            @$statement->bind_param("sssss", $obj->getName(),$obj->getDetails(), $obj->getGender(), $obj->getDate(), $file["name"]);
-            $statement->execute();
-            return true;
-        }
+
+         if( strcmp($file["name"], "") != 0){
+            $temp = explode(".", $file["name"]);
+            $newfilename = round(microtime(true)) . '.' . end($temp);
+            if (!@move_uploaded_file($file["tmp_name"], $_CONFIG["UPLOADS"].$newfilename)) {
+                $result = false;
+                
+                return false;
+            } 
+            $str ="INSERT INTO obituaries SET name = ?, details = ?,  date=?, photo =?";
+            if( $statement = @Database::getInstance()->prepare($str)){
+                @$statement->bind_param("ssss", $obj->getName(),$obj->getDetails(), $obj->getDate(), $file["name"]);
+                $statement->execute();
+                return true;
+            }
+         }else{
+             $str = "INSERT INTO obituaries SET name = ?, details = ?,  date=?";
+             if( $statement = @Database::getInstance()->prepare($str)){
+                @$statement->bind_param("sss", $obj->getName(),$obj->getDetails(), $obj->getDate());
+                $statement->execute();
+                return true;
+            }
+         }
+        
 
         return false;
 	}
 
-    public static function update($obj){
+    public static function update($obj, $file){
         
-        if( $statement = @Database::getInstance()->prepare("INSERT INTO obituaries SET name = ?, details = ?, gender =?, date=?, path =? where id = ?")){
-            @$statement->bind_param("sssssi", $obj->getName(),$obj->getDetails(), $obj->getGender(), $obj->getDate(), $obj->getPath(),$obj->getId());
-            $statement->execute();
-            return true;
-        }
-
+         global $_CONFIG;
+         
+         if( strcmp($file["name"], "") != 0){
+            $temp = explode(".", $file["name"]);
+            $newfilename = round(microtime(true)) . '.' . end($temp);
+            if (!@move_uploaded_file($file["tmp_name"], $_CONFIG["UPLOADS"].$newfilename)) {
+                $result = false;
+                
+                return false;
+            } 
+            $str ="UPDATE obituaries SET name = ?, details = ?,  date=?, photo =? where id = ?";
+            if( $statement = @Database::getInstance()->prepare($str)){
+                @$statement->bind_param("ssssi", $obj->getName(),$obj->getDetails(), $obj->getDate(), $file["name"], $obj->getId());
+                if($statement->execute()){
+                    return true;
+                }
+            }
+         }else{
+             $str = "UPDATE obituaries SET name = ?, details = ?,  date=? where id = ?";
+             if( $statement = @Database::getInstance()->prepare($str)){
+                @$statement->bind_param("sssi", $obj->getName(),$obj->getDetails(), $obj->getDate(),$obj->getId());
+                if($statement->execute()){
+                    return true;
+                }
+            }
+         }
         return false;
 	}
 
@@ -119,13 +158,13 @@ class ObituaryService
         $i = 0;
 
         Database::getInstance()->autocommit (false);
-        if( $statement = @Database::getInstance()->prepare("SELECT path FROM obituaries WHERE id = ?")){
+        if( $statement = @Database::getInstance()->prepare("SELECT photo FROM obituaries WHERE id = ?")){
             $statement->bind_param("i", $id);
             $statement->execute();
 
             if($rows = $statement->get_result()){
                 while($row = $rows->fetch_assoc()){
-                    $path[i] = $row["path"];
+                    $path[i] = $row["photo"];
                     $i++;
                 }
             }else{
