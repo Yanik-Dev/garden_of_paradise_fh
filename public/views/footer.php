@@ -40,9 +40,9 @@
                 <h2>Contact Info</h2>
                 <p>1 North Avenue</p>
                 <p> Kingston 5, Jamaica</p>
-                <p>(876) 890-7750</p>
-                <p>info@gardenofparadise.com</p>
-                <p>Map & Directions</p>
+                <p>(1-876) 327-9729</p>
+                <p>(1-876) 870-5848</p>
+                <p>gardenofparadisefh@gmail.com</p>
             </div>
             <div class="col-md-3">
                 <h2>Photo Gallery</h2>

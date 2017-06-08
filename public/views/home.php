@@ -73,7 +73,7 @@ require('../services/ObituaryService.php');
                     <div class="col-md-4 col-sm-4 col-xs-6 row">
                         <div class="col-md-5">
                             <br/>
-                            <img src="<?=($obituary->getPath() == null)?'../assets/img/Francine.png':$obituary->getPath()?>" width="120px" height="120px">
+                            <img src="<?=($obituary->getPath() == null)?'../assets/img/blank.png':$obituary->getPath()?>" width="120px" height="120px">
                         </div>
                         <div class="col-md-7">
                             <h2> <?= $obituary->getName() ?> </h2>

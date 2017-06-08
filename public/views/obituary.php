@@ -35,7 +35,7 @@ require('../services/ObituaryService.php');
                     <div class="row search-item">
                         <div class="col-md-2">
                             <br/>
-                        <img src="<?=($obituary->getPath() == null)?'../assets/img/Francine.png':$obituary->getPath()?>" width="120px" height="125px">
+                        <img src="<?=($obituary->getPath() == null)?'../assets/img/blank.png':$obituary->getPath()?>" width="120px" height="125px">
                         </div>
                         <div class="col-md-10">
                             <h2> <?= $obituary->getName() ?> </h2>

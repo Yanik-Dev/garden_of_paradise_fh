@@ -28,7 +28,7 @@
         <div class="text">
             <center> 
            <div class="woman">
-             <img src="<?=($person->getPath() == null)?'../assets/img/Francine.png':$person->getPath()?>">
+             <img src="<?=($person->getPath() == null)?'../assets/img/blank.png':$person->getPath()?>">
            </div>
         </center>
             <center>
