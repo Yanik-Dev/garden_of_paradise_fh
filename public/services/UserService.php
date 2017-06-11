@@ -8,6 +8,10 @@ class UserService
         return $_SESSION["user"];
     }
 
+	public static function isLogin(){
+        return isset($_SESSION["user"]);
+    }
+
     public static function setUserSession($user){
         return $_SESSION["user"] =$user;
     }

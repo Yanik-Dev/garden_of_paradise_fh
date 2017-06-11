@@ -222,8 +222,24 @@ h1, h2, h3, h4{
     margin-top: 10px;
     text-align: center;
     background-color: #fff;
-    
+    position: relative;
     background-image: url('../img/white_bg.jpg');
+}
+.card-hover{
+    transition: all ease-in 0.2s;
+}
+.card-hover:hover{
+    transform:         scale(1.01);
+    -webkit-transform: scale(1.01);
+    -ms-transform:     scale(1.01);
+    -o-transform:      scale(1.01);
+    -ms-transform:     scale(1.01);
+}
+.custom-card-footer{
+    position: absolute !important;  
+    left: 0px !important; 
+    bottom: 20px !important; 
+    width: 100% !important; 
 }
 .card ul{
     list-style: none;
@@ -598,12 +614,7 @@ h1, h2, h3, h4{
     margin-top: 10px;
 }
 
-.custom-card-footer{
-    position: absolute !important;  
-    left: 0px !important; 
-    bottom: 20  px !important; 
-    width: 100% !important; 
-}
+
 /*Packages Style*/
 
 .price_table_container{

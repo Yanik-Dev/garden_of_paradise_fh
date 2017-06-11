@@ -4,9 +4,9 @@ $title = "Home";
 require('../services/ObituaryService.php');
  
  $obituaryService = new ObituaryService();
-    $page_num = 1;
+ $page_num = 1;
     
-    $obituaryList = $obituaryService->getByLimit($page_num, 3);
+ $obituaryList = $obituaryService->getByLimit($page_num, 3);
 
 ?>
 <?php require_once('header.php'); ?>      
@@ -17,19 +17,19 @@ require('../services/ObituaryService.php');
         <div class="carousel-inner" role="listbox">
             <div class="item active moving">
                 <div class="carousel-caption">
-                <h2> Every Life Deserved A Special Time of Honouring and Celebrating</h2> 
-                <h4> Let us at Garden of Paradise assist you </h4>
+                  <h2>Granting Relief in Times of Grief</h2> 
                 </div>
             </div>
             <div class="item moving">
                 <div class="carousel-caption">
-                   <h2>Let Us Lend A Helping Hand</h2>
+                   <h2> Every Life Deserved A Special Time of Honouring and Celebrating</h2> 
+                   <h4> Let us at Garden of Paradise assist you </h4>
+                </div>
+            </div>
+            <div class="item moving">
+                <div class="carousel-caption">
+                    <h2>Let Us Lend A Helping Hand</h2>
                    <h4>Helping Families and Friends Honour Thier Loved Ones</h4>
-                </div>
-            </div>
-            <div class="item moving">
-                <div class="carousel-caption">
-                    caption 3
                 </div>
             </div>
         </div>
@@ -47,9 +47,9 @@ require('../services/ObituaryService.php');
 <div class="container-fiuld home-content">
 <div class="container">
     <div class="row welcome">
-            <div class="col-md-8 wow slideInLeft">
+            <div class="col-md-10 wow slideInLeft">
                 <h2>Welcome</h2>
-                <img src="../assets/img/building.jpg" width="300px" height="250px" alt="" align="right"> 
+                <img src="../assets/img/building.jpg" width="400px" height="350px" style="margin-left:25px" alt="" align="right"> 
                 <p>
                     We understand that under the circumstances in which our services are needed, we aim to offer the best care to your loved ones and to ensure that you receive professional services in a calm and serene environment.
                     We have created a home-like atmosphere for you to gather with family at the loss of your loved one. Strict attention is given to every detail of funeral services to ensure your satisfaction. We have expertise in all types of funeral services whether it is simple or elaborate. 
@@ -96,7 +96,7 @@ require('../services/ObituaryService.php');
      <div class="container">
          <div class="row">
             <div class="col-md-3 col-sm-6 ">
-            <div class="card wow slideInRight" data-wow-delay="0.2s">
+            <div class="card card-hover wow slideInRight" data-wow-delay="0.2s">
                     <h3>Basic Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -115,7 +115,7 @@ require('../services/ObituaryService.php');
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-            <div class="card wow slideInRight" data-wow-delay="0.4s">
+            <div class="card card-hover wow slideInRight" data-wow-delay="0.4s">
                     <h3>Garden Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -126,7 +126,7 @@ require('../services/ObituaryService.php');
                         <li>Hearse</li>
                         <li>150 Programs</li>
                         <li>150 Prayer Cards/Book Markers</li>
-                        <li>Two (2) TVJ's Death Announcement + One (1) Gleaner Advertisement</li>
+                        <li>Two (2) TVJ's Death Announcement or One (1) Gleaner Advertisement</li>
                     </ul>
                     <div class="custom-card-footer">
                       <center> <a href="./request-quote.php?type=gp" class="btn">Request Quote</a></center>
@@ -134,7 +134,7 @@ require('../services/ObituaryService.php');
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                 <div class="card wow slideInRight" data-wow-delay="0.6s">
+                 <div class="card card-hover wow slideInRight" data-wow-delay="0.6s">
                     <h3>Paradise Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -154,7 +154,7 @@ require('../services/ObituaryService.php');
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-            <div class="card wow slideInRight" data-wow-delay="0.8s">
+            <div class="card card-hover wow slideInRight" data-wow-delay="0.8s">
                     <h3>Customized Package</h3>
                    <center> <a href="#" class="btn btn-custom">Click Here To Get Started</a></center>
                 </div>

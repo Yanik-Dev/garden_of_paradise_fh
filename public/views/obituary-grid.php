@@ -1,5 +1,7 @@
 <?php 
+session_start();
 $title = "Obituary";
+ $page = 3;
 
 require('../services/ObituaryService.php');
  
@@ -22,17 +24,19 @@ require('../services/ObituaryService.php');
     }
     $numberOfPages = $obituaryService->getNumberOfPages();
 ?>
-<?php require_once('header.php'); ?>
-<div class="container">
+<?php require_once('admin-sidebar.php'); ?>
+<div class="container" style="padding-right: 50px;">
+<h3> Obituaries </h3>
+   <a href="./obituary-management.php" class="btn btn-success" style="margin-bottom: 8px;">Add New</a>
  <div class="col-md-12"> 
-            <div class="card" style="min-height: 350px !important">
+            <div class="card row" style="min-height:600px !important">
                 <form class="form-inline" >
                     <div class="col-md-10"> 
                         <input type="text" class="form-control" name="q"  style="width: 100%" placeholder="Search">
                     </div>
                     
                     <div class="col-md-2"> 
-                    <button type="submit" class="btn btn-block btn-sucess">Go</button>
+                    <button type="submit" class="cust-btn" style="height:35px !important">Search</button>
                     </div>
                 </form>
                 <br />
@@ -50,7 +54,9 @@ require('../services/ObituaryService.php');
                         <tr>
                             <td><?= $obituary->getName()?></td>
                             <td><?= $obituary->getDate()?></td>
-                            <td><?= $obituary->getDetails()?></td>
+                            <td> 
+                            <?php $end= (strlen($obituary->getDetails()) > 80 )? 80 : strlen($obituary->getDetails());  ?>
+                            <?= substr($obituary->getDetails(), 0, $end).'...'; ?></td>
                             <td>
                                 <a href=<?= './obituary-view.php?id='.$obituary->getId()?>>View</a> &nbsp|
                                 <a href=<?= './obituary-management.php?id='.$obituary->getId()?>>Edit</a> &nbsp | &nbsp

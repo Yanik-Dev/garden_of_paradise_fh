@@ -1,7 +1,10 @@
 <?php
  session_start();
+
+ $page = 2;
  $title = "Testimonal Management";
- require_once('header.php');
+ require('../services/AlbumService.php');
+ require_once('admin-sidebar.php');
  require_once('../services/TestimonyService.php');
 ?> 
 
@@ -32,34 +35,35 @@
     $numberOfPages = $testimonyService->getNumberOfPages();
 
 ?>
-<div class="container testimony-management">
+<div class="container testimony-management" style="padding-right: 50px;">
+    <h3> Testimonals </h3>
     <div class="row">
         <div class="col-md-4 col-sm-12 col-xs-12">
             <div class="card">
-                
-                <?php 
-                  if(isset($_GET["error"])){
-                      if($_GET["error"] == 1){
-                        echo"<p class='error'>*You must supply a name</p>";
-                      }
-                      if($_GET["error"] == 3){
-                        echo"<p class='error'>*You must supply a testimony</p>";
-                      }
-                      if($_GET["error"] == 3){
-                        echo"<p class='error'>*testimony already exist</p>";
-                      }
-                      if($_GET["error"] == 9){
-                        echo"<p class='error'>*Server error. contact admin.</p>";
-                      }
-                  }
-                ?>
+                <?php if(isset($_GET['error'])): ?>
+                    <div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <?php if($_GET['error'] == 2): ?>
+                            testimony already exist
+                        <?php endif; ?>
+                        <?php if($_GET['error'] == 1): ?>
+                           You must supply a name
+                        <?php endif; ?>
+                        <?php if($_GET['error'] == 3): ?>
+                           You must supply a testimony
+                        <?php endif; ?>
+                        <?php if($_GET['error'] == 9): ?>
+                        Server error. contact admin.
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
                 <form action="<?= (isset($testimony))?'../actions/testimony-actions.php?id='.$testimony->getId():'../actions/testimony-actions.php'?>" method="post">
                     <input type="text" value="<?=(isset($testimony))?$testimony->getName():''?>" class="form-control" maxlength="20" name="name" placeholder="Person Name" required>
                     <div class="form-group">
                         <label for="details"></label>
                         <textarea id="details" type="text" name="comment" maxlength="120" placeholder="Testimony" class="form-control" id="detail" required><?=(isset($testimony))?$testimony->getComment():''?></textarea>
                     </div>
-                    <button type="submit" class=""><?= (isset($testimony))?'Save Changes':'Create'?></button>
+                    <button type="submit" class="cust-btn"><?= (isset($testimony))?'Save Changes':'Insert'?></button>
                 </form>
             </div>
         </div>
@@ -71,14 +75,14 @@
                     </div>
                     
                     <div class="col-sm-2"> 
-                       <button type="submit" class="btn btn-block btn-success" style="height: 35px !important;">Go</button>
+                       <button type="submit" class="cust-btn" style="height: 35px !important;">Search</button>
                     </div>
                 </form>
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>testimony Name</th>
-                            <th>Description</th>
+                            <th>Comment</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -133,10 +137,10 @@
     </div>
 </div>
 
-              <br />
-              <br />
-              <br />
+<br />
+<br />
+<br />
 
-<?php require_once('footer.php'); ?>
+<?php require_once('admin-footer.php'); ?>
 
 <script src='../assets/lib/ckeditor/ckeditor.js'></script>

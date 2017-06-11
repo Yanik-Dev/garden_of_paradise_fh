@@ -1,6 +1,11 @@
 <?php $title = "Dedication";?>
 <?php require_once('header.php'); ?>  
-
+<style>
+.card{
+    height: auto !important;
+    margin-bottom: 40px;
+}
+</style>
 <div class="container-fiuld">
 <div class="dedication-container container">
    <div class="row">
@@ -11,8 +16,8 @@
            </div>
         </center>
     </div>
-    <div class="col-md-8">
-        <div class="text">
+    <div class="col-md-8 ">
+        <div class="text card">
             <center>
             <h3>In Memory of</h3>
             <h1>FRANCINE VESNA DILLON</h1>

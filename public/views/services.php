@@ -1,6 +1,12 @@
 <?php $title="Services"; ?>
 <?php require_once('header.php'); ?> 
 
+<style>
+  .s-block-1{
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+</style>
 <div class="container-fluid">
 <div class="row">
   <div class="col-md-12">

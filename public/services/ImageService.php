@@ -27,7 +27,7 @@ class ImageService
 		$start = $this->_LIMIT * ($page_num-1);
 	    $list = [];
 	    $limitQuery = "{$start},{$this->_LIMIT}";
-	    $nameQuery = " fk_testimony_id = {$id} ";
+	    $nameQuery = " fk_album_id = {$id} ";
 
 		if($result = $db->query("select * from images where {$nameQuery} order by id desc limit {$limitQuery}"))
 		{
@@ -41,9 +41,9 @@ class ImageService
 		 return $list;
     }
 
-    public static function findOne($id){
+    /*public static function findOne($id){
         $testimony = null;
-        if( $statement = @Database::getInstance()->prepare("SELECT * FROM testimonies WHERE id = ?")){
+        if( $statement = @Database::getInstance()->prepare("SELECT * FROM images WHERE id = ?")){
             @$statement->bind_param("i", $id);
             $statement->execute();
             if($rows = $statement->get_result()){
@@ -57,12 +57,13 @@ class ImageService
 	        }
 	    }
         return $testimony;
-    }
+    }*/
 
-    public static function insert($imagePaths = [], $testimonyId){
+    public static function insert($imagePaths = [], $albumId){
           global $_CONFIG;
           $i = 0;
           $result = true;
+          $files = [];
           Database::getInstance()->autocommit (false);
             foreach($imagePaths["tmp_name"] as $path){
                 $temp = explode(".", $imagePaths["name"][$i]);
@@ -71,8 +72,9 @@ class ImageService
                     $result = false;
                     break;
                 } 
-                if( $statement = @Database::getInstance()->prepare("INSERT INTO images SET path = ?, fk_testimony_id = ?")){
-                    $statement->bind_param("si", $imagePaths["name"][$i], $testimonyId);
+                $files[0]= $newfilename;
+                if( $statement = @Database::getInstance()->prepare("INSERT INTO images SET path = ?, fk_album_id = ?")){
+                    $statement->bind_param("si", $newfilename, $albumId);
                     $statement->execute();
                     
                 }else{
@@ -88,9 +90,9 @@ class ImageService
                     return true;
                 }
             }
-            foreach($imagePaths["tmp_name"] as $path){
+            foreach($files as $path){
                 $i=0;
-                if(@unlink($_CONFIG["UPLOADS"].$imagePaths["name"][$i])){
+                if(@unlink($_CONFIG["UPLOADS"].$path)){
                     continue;
                 }
                 $i++;

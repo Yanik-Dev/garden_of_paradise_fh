@@ -1,6 +1,11 @@
 <?php 
 session_start();
+require('../services/UserService.php');
 $title = "Login";
+if(UserService::isLogin()){
+     header("location: ./album-management.php");
+    exit;
+}
 ?>
 <?php require_once('header.php'); ?>      
 <div class="container admin-login">

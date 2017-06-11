@@ -23,11 +23,27 @@ require('../services/ObituaryService.php');
     $numberOfPages = $obituaryService->getNumberOfPages();
 ?>
 <?php require_once('header.php'); ?>
+
+<style>
+.card{
+    text-align:left;
+    min-height: 600px;
+    margin-bottom: 40px;
+}
+</style>
 <div class="container">
-    <div class="row">
+    <div class="row card">
         <div class="col-md-8 obituary-content">
             <div id="search-wrapper">
-                <input type="search" placeholder="Search Obituary">
+               <form class="form-inline" >
+                    <div class="col-sm-10"> 
+                        <input type="text" class="form-control" style="border: 1px solid #A5ADDF !important;" name="q" placeholder="Search">
+                    </div>
+                    
+                    <div class="col-sm-2"> 
+                       <button type="submit" class="btn btn-block" style="height: 40px !important; background-color:#337AB7; color: #fff">Search</button>
+                    </div>
+                </form>
                 <br>
             </div>
             <div class="search-result">  
@@ -48,7 +64,7 @@ require('../services/ObituaryService.php');
                 <?php endforeach; ?>
                 
                 <?php if(count($obituaryList) < 1): ?>
-                  <center><h3>No obituary Listed </h3></center>
+                  <center><h3>No obituary found </h3></center>
                 <?php endif; ?>
             </div>
             <div class="row text-center">

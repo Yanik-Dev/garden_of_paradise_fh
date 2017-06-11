@@ -1,24 +1,24 @@
 <?php
  session_start();
- $page = 1;
- require('../services/AlbumService.php');
- $title = "Album Management";
+ $page = 4;
+ require('../services/CategoryService.php');
+ $title = "Package Management";
  require_once('admin-sidebar.php');
 ?> 
 
 <?php
-    $albumService = new AlbumService();
+    $categoryService = new CategoryService();
     $page_num = 1;
-    $album = null;
+    $category = null;
     if(isset($_GET["id"])){
-        $album = AlbumService::findOne($_GET["id"]);
-        if($album->getId() < 1){
-            header("location: ./album-management.php");
+        $category = categoryService::findOne($_GET["id"]);
+        if($category->getId() < 1){
+            header("location: ./category-management.php");
             exit;
         }
     }
     if(isset($_GET['page_num'])){
-         if($_GET['page_num'] > 1 && $_GET['page_num'] > $albumService->getCount()){
+         if($_GET['page_num'] > 1 && $_GET['page_num'] > $categoryService->getCount()){
              $page_num = 1;
          }
          else if($_GET['page_num']>1){
@@ -26,15 +26,15 @@
          }
     }
     if(isset($_GET["q"])){
-       $albumList = $albumService->getAlbumbyLimit($page_num, 10, $_GET["q"]);
+       $categoryList = $categoryService->get($page_num, 8, $_GET["q"]);
     }else{
-       $albumList = $albumService->getAlbumbyLimit($page_num, 10);
+       $categoryList = $categoryService->get($page_num, 8);
     }
-    $numberOfPages = $albumService->getNumberOfPages();
+    $numberOfPages = $categoryService->getNumberOfPages();
 
 ?>
-<div class="container album-management" style="padding-right: 50px;">
-    <h3> Albums </h3>
+<div class="container category-management">
+    <h3> Item Categories </h3>
     <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="card">
@@ -42,23 +42,20 @@
                     <div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
                         <?php if($_GET['error'] == 2): ?>
-                            Album already exist
+                            Category already exist
                         <?php endif; ?>
                         <?php if($_GET['error'] == 1): ?>
-                           You must supply a album name
+                           You must supply a category name
                         <?php endif; ?>
                         <?php if($_GET['error'] == 9): ?>
-                        Server error. contact admin.
+                           Server error. contact admin.
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
-                <form action="<?= (isset($album))?'../actions/album-actions.php?id='.$album->getId():'../actions/album-actions.php'?>" method="post">
-                    <input type="text" value="<?=(isset($album))?$album->getName():''?>" class="form-control" name="name" placeholder="Album Name">
-                    <div class="form-group">
-                        <label for="details"></label>
-                        <textarea id="details" type="text" name="description" maxlength="120" placeholder="Description" class="form-control" id="detail" required><?=(isset($album))?$album->getDescription():''?></textarea>
-                    </div>
-                    <button type="submit" class=""><?= (isset($album))?'Save Changes':'Create'?></button>
+                <form action="<?= (isset($category))?'../actions/category-actions.php?id='.$category->getId():'../actions/category-actions.php'?>" method="post">
+                    <input type="text" value="<?=(isset($category))?$category->getName():''?>" class="form-control" name="name" style="width: 100%" placeholder="category Name">
+
+                    <button type="submit" style="margin-top: 20px" class="cust-btn"><?= (isset($category))?'Save Changes':'Create'?></button>
                 </form>
             </div>
         </div>
@@ -66,32 +63,30 @@
             <div class="card">
                 <form class="form-inline" >
                     <div class="col-sm-10"> 
-                        <input type="text" class="form-control" name="q" placeholder="Search">
+                        <input type="text" class="form-control" style="width: 100%" name="q" placeholder="Search">
                     </div>
                     
                     <div class="col-sm-2"> 
-                       <button type="submit" class="" style="height: 35px !important;">Go</button>
+                       <button type="submit" class="cust-btn" style="height: 35px !important;">Search</button>
                     </div>
                 </form>
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Album Name</th>
-                            <th>Description</th>
-                            <th>Number of Images</th>
+                            <th>Category name</th>
+                            <th>Number of Items</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($albumList as $album) :?>
+                        <?php foreach($categoryList as $category) :?>
                         <tr>
-                            <td><?= $album->getName()?></td>
-                            <td><?= $album->getDescription()?></td>
-                            <td><?= count($album->getImages())?></td>
+                            <td><?= $category->getName()?></td>
+                            <td><?= count($category->getItems())?></td>
                             <td>
-                                <a href=<?= './gallery-management.php?id='.$album->getId()?>>View Gallery</a> &nbsp|
-                                <a href=<?= './album-management.php?id='.$album->getId()?>>Edit</a> &nbsp | &nbsp
-                                <a href="<?='../actions/album-actions.php?id='.$album->getId().'&delete=yes'?>">Delete</a>
+                                <a href=<?= './item-management.php?cat_id='.$category->getId()?>>View Items</a> &nbsp|
+                                <a href=<?= './category-management.php?id='.$category->getId()?>>Edit</a> &nbsp | &nbsp
+                                <a href="<?='../actions/category-actions.php?id='.$category->getId().'&delete=yes'?>">Delete</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
@@ -103,7 +98,7 @@
                 <ul class="pagination pagination-sm">
                     <?php if($page_num != 1): ?>
                         <li class="page-item">
-                        <a class="page-link" href="album-management.php?page_num=<?=$page_num - 1?>" aria-label="Previous">
+                        <a class="page-link" href="category-management.php?page_num=<?=$page_num - 1?>" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                             <span class="sr-only">Previous</span>
                         </a>
@@ -112,14 +107,14 @@
                     
                     <?php for( $i =1; $i <= $numberOfPages; $i++):?>
                     
-                    <li class="page-item <?=($page_num == $i)?'active':''?>"><a class="page-link" <?=($page_num == $i)?' ':"href= 'album-management.php?page_num=$i'"?> > <?=$i ?></a></li>
+                    <li class="page-item <?=($page_num == $i)?'active':''?>"><a class="page-link" <?=($page_num == $i)?' ':"href= 'category-management.php?page_num=$i'"?> > <?=$i ?></a></li>
                         
                     <?php endfor;?>
                     
 
-                    <?php if($page_num != $albumService->getNumberOfPages() &&  $albumService->getNumberOfPages() != 0): ?>
+                    <?php if($page_num != $categoryService->getNumberOfPages() &&  $categoryService->getNumberOfPages() != 0): ?>
                         <li class="page-item">
-                        <a class="page-link" href="album-management.php?page_num=<?=$page_num + 1?>" aria-label="Next">
+                        <a class="page-link" href="category-management.php?page_num=<?=$page_num + 1?>" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                             <span class="sr-only">Next</span>
                         </a>

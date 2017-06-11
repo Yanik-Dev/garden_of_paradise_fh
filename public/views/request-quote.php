@@ -56,6 +56,9 @@ else{
                             if(isset($_GET["error-name"])){
                                 echo"<p class='error'>*Your name is required</p>";
                             }
+                            if(isset($_GET["error-num"])){
+                                echo"<p class='error'>*A valid phone number is required</p>";
+                            }
                             if(isset($_GET["error-email"])){
                                 echo"<p class='error'>*A valid email is required</p>";
                             }
@@ -65,10 +68,18 @@ else{
                         }
                     ?>
                     <p class="success"><?=(isset($_GET["success"]))?"Your message has been sent successfully!":""?><p>
-                    <input type="text" name="name"  class="form-control" placeholder="Name *" colspan="4" required maxlength="15" />
-                    <input type="email" name="email"  class="form-control" placeholder="Email *" required />
-                    <input type="tel" name="tel"  class="form-control" placeholder="(000) 000-0000 *" required />
-                    <textarea rows="6" cols="" name="message" placeholder="additional requests" class="form-control" require></textarea>
+                    <div class="form-group">
+                     <input type="text" name="name"  class="form-control" placeholder="Name *" colspan="4" required maxlength="15" />
+                    </div>
+                    <div class="form-group">
+                     <input type="email" name="email"  class="form-control" placeholder="Email *"  />
+                     </div>
+                    <div class="form-group">
+                      <input type="tel" name="tel"  class="form-control" placeholder="(000) 000-0000 *" required pattern="" />
+                    </div>
+                    <div class="form-group">
+                    <textarea rows="6" cols="" name="message" placeholder="additional requests" class="form-control" ></textarea>
+                    </div>
                     <center> <button class="button" type="submit">Send Request</button></center>
                 </form>
             </div>

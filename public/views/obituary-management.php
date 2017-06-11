@@ -1,8 +1,9 @@
 <?php
  session_start();
+ $page = 3;
  require('../services/ObituaryService.php');
  $title = "Obituary Management";
- require_once('header.php');
+ require_once('admin-sidebar.php');
  
 ?> 
 
@@ -33,29 +34,34 @@
     $numberOfPages = $obituaryService->getNumberOfPages();
 
 ?>
-<div class="container obituary-management">
-    
+<div class="container obituary-management" style="padding-right: 50px;">
+    <h3> Obituary Form </h3>
+   <a href="./obituary-grid.php" class="btn btn-danger" style="margin-bottom: 20px;">Back to grid</a>
                 <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-                <?php 
-                  if(isset($_GET["error"])){
-                      if($_GET["error"] == 1){
-                        echo"<p class='error'>*You must supply a obituary name</p>";
-                      }
-                      if($_GET["error"] == 3){
-                        echo"<p class='error'>*You must supply a date</p>";
-                      }
-                      if($_GET["error"] == 4){
-                        echo"<p class='error'>*You must supply details about the person</p>";
-                      }
-                      if($_GET["error"] == 2){
-                        echo"<p class='error'>*Person already exist</p>";
-                      }
-                      if($_GET["error"] == 9){
-                        echo"<p class='error'>*Server error. contact admin.</p>";
-                      }
-                  }
-                ?>
+              <?php if(isset($_GET['error'])): ?>
+                    <div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <?php if($_GET['error'] == 2): ?>
+                            Person already exist
+                        <?php endif; ?>
+                        <?php if($_GET['error'] == 5): ?>
+                           Images must be JPEG or PNG
+                        <?php endif; ?>
+                        <?php if($_GET['error'] == 1): ?>
+                           You must supply a album name
+                        <?php endif; ?>
+                        <?php if($_GET['error'] == 3): ?>
+                           You must supply a date
+                        <?php endif; ?>
+                        <?php if($_GET['error'] == 4): ?>
+                           You must supply details about the person
+                        <?php endif; ?>
+                        <?php if($_GET['error'] == 9): ?>
+                           Server error. contact admin.
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
                 <form action="<?= (isset($obituary))?'../actions/obituary-actions.php?id='.$obituary->getId():'../actions/obituary-actions.php'?>" method="post" enctype="multipart/form-data">
                      <div class="form-group">
                         <label for="exampleInputFile">Photo</label>
@@ -72,7 +78,7 @@
                         <label for="details">Details</label>
                         <textarea id="details" type="text" name="details" class="ckeditor" required><?=(isset($obituary))?$obituary->getDetails():''?></textarea>
                     </div>
-                    <button type="submit" class="btn btn-success"><?= (isset($obituary))?'Save Changes':'Create'?></button>
+                    <button type="submit" class="cust-btn"><?= (isset($obituary))?'Save Changes':'Insert'?></button>
                 </form>
                 <br />
                 <br />
@@ -82,6 +88,6 @@
 
 </div>
 
-<?php require_once('footer.php'); ?>
+<?php require_once('admin-footer.php'); ?>
 
 <script src='../assets/lib/ckeditor/ckeditor.js'></script>

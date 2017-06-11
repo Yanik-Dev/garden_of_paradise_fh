@@ -1,3 +1,12 @@
+<?php
+
+require_once('../services/UserService.php');
+
+if(!UserService::isLogin()){
+     header("location: ./admin-login.php");
+    exit;
+}
+?>
 <!Doctype html>
 <html>
     <head> 
@@ -8,8 +17,24 @@
       <link rel="stylesheet" type="Text/css" href="../assets/css/style.css">
       <link rel="stylesheet" type="Text/css" href="../assets/css/side-bar.css">
       <link rel="stylesheet" href="../assets/css/animate.css">
+      <style>
+  ul li.iactive{
+      background-color: #F1AD48 !important;
+  }
+  .cust-btn{
+    height: 50px !important;
+    width: 100% !important; 
+     background-color: #5da4ea;
+    border: none !important;
+    color: white !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-size: 16px !important;
+}
+</style>
     </head>
     <body>
+
     <nav class="navbar navbar-default sidebar" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -22,24 +47,14 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-                <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
-                <ul class="dropdown-menu forAnimate" role="menu">
-                    <li><a href="{{URL::to('createusuario')}}">Crear</a></li>
-                    <li><a href="#">Modificar</a></li>
-                    <li><a href="#">Reportar</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Informes</a></li>
-                </ul>
-                </li>          
-                <li ><a href="#">Libros<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>        
-                <li ><a href="#">Tags<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                <li class="<?=($page==1)?'iactive':''?>"><a href="./album-management.php">Album<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-image"></span></a></li>      
+                <li class="<?=($page==2)?'iactive':''?>"><a href="./testimony-management.php">Testimonies<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>        
+                <li class="<?=($page==3)?'iactive':''?>"><a href="./obituary-grid.php">Obituary<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                <li class="<?=($page==4)?'iactive':''?>"><a href="./category-management.php">Items<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                <li ><a href="../actions/logout-action.php">Login<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
             </ul>
             </div>
         </div>
     </nav>
 
-    <div class="main">
+    <div class="main" >

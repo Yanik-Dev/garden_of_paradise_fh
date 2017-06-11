@@ -17,12 +17,14 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 $from = '<'.$_POST['email'].'>';
 $to = '<yanikblake@yahoo.com>';
 $subject = $_POST['subject'];
-$body = $_POST['message']."\r\n\n"."From: \r\n\n".$_POST['name']."\n(".$_POST['email'].")";
+$body = $_POST['message']."\r\n\n"."<b>From:</b> <br />".$_POST['name']."<br /><i>(".$_POST['email'].")</i>";
 
 $headers = array(
     'From' => $from,
     'To' => $to,
-    'Subject' => $subject
+    'Subject' => $subject,
+    'MIME-Version' => 1,
+    'Content-type' => 'text/html;charset=iso-8859-1'
 );
 
 $smtp = Mail::factory('smtp', array(
@@ -30,7 +32,7 @@ $smtp = Mail::factory('smtp', array(
         'port' => '465',
         'auth' => true,
         'username' => 'yanikblake@gmail.com',
-        'password' => 'N@ruto123'
+        'password' => 'N@ruto123',
 ));
 
 $mail = $smtp->send($to, $headers, $body);

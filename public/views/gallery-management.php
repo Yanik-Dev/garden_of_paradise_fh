@@ -1,5 +1,6 @@
 <?php
  session_start();
+ $page = 1;
  require('../services/ImageService.php');
  $title = "Gallery Management";
  require_once('admin-sidebar.php');
@@ -30,16 +31,33 @@
     $imageList = $imageService->getImagesbyLimit(1, 20, $_GET['id']);
 ?>
 
-<div class="container">
+<div class="container" style="padding-right: 50px;">
+   <a href="./album-management.php" class="btn btn-danger" style="margin-bottom: 20px;">Back To Album</a>
   <form action="../actions/gallery-upload-action.php" method="post" enctype="multipart/form-data">
-     
+         <?php if(isset($_GET['error'])): ?>
+        <div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+            <?php if($_GET['error'] == 20): ?>
+                Cannot upload more than 20 images per album
+            <?php endif; ?>
+            <?php if($_GET['error'] == 0): ?>
+                You must supply at least one image
+            <?php endif; ?>
+            <?php if($_GET['error'] == 1): ?>
+                All Image formats must be either PNG or JPEG
+            <?php endif; ?>
+            <?php if($_GET['error'] == 9): ?>
+               Server error. contact admin.
+            <?php endif; ?>
+        </div>
+       <?php endif; ?>
         <div style="max-width: 400px; height:auto; background-color:#fff;padding: 20px">
            <div class="row">
             <div class="form-group col-md-9">
                 <label for="exampleInputFile">Click To select images to upload</label>
                 <input type="file" name="files[]" id="exampleInputFile" multiple>
                 <input type="hidden" name="album" id="" value=<?= $_GET['id'] ?>>
-                <p class="help-block">Limited to 20 Images</p>
+                <p class="help-block">Limited to 20 Images (JPEG or PNG)</p>
             </div>
             <div class="col-md-3">
                 <button type="submit" class="btn btn-warning" style="margin-top: 20px;">Upload</button>
@@ -48,6 +66,7 @@
     </div>
    </form>
     <div class="row">
+   
      <?php $i = 0; foreach($imageList as $image) :?>
   	    <div class="col-xs-3">
           <a href="<?= './gallery-management.php?id='.$_GET['id'].'&img_id='.$image['id'].'&delete=yes' ?>" > <span class="glyphicon glyphicon-remove" style="color:red;"></span></a>

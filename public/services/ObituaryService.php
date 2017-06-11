@@ -93,7 +93,7 @@ class ObituaryService
 
     public static function insert($obj, $file){
          global $_CONFIG;
-
+         $newfilename = "";
          if( strcmp($file["name"], "") != 0){
             $temp = explode(".", $file["name"]);
             $newfilename = round(microtime(true)) . '.' . end($temp);
@@ -116,7 +116,7 @@ class ObituaryService
                 return true;
             }
          }
-        
+        unlink($_CONFIG["UPLOADS"].$newfilename);
 
         return false;
 	}

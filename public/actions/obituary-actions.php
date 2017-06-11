@@ -6,20 +6,24 @@ $obituary = new Obituary();
 
 
 
+
     if(isset($_GET["id"])){
         $obituary->setId($_GET["id"]);
     }
     
     if(isset($_GET["delete"]) && isset($_GET["id"])){
         if(!obituaryService::delete($obituary->getId())){
-            header("location: ../views/obituary-management.php?error=9");
-            exit;
         }
-        header("location: ../views/obituary-management.php");
+        header("location: ../views/obituary-grid.php");
         exit;
     }
     
-
+    if(!strcmp($_FILES['file']['tmp_name'], "") ==0){
+        if (!in_array( $_FILES['file']['type'], array ('image/jpeg', 'image/jpg', 'image/pjpeg', 'image/png') )){
+            header("location: ../views/obituary-management.php?id=".$_POST['album']."&error=5");
+            exit;
+        }
+    }
 
     if(strcmp($_POST['name'], "") == 0){
         header("location: ../views/obituary-management.php?error=1");

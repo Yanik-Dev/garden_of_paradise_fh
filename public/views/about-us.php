@@ -1,14 +1,26 @@
 
 <?php $title = "About Us";?>
 <?php require_once('header.php'); ?>  
+<style>
+.card{
+    height: auto !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: left;
+    
+}
+.card p {
+  color: black;
+}
+</style>
     <div class="container about-us-container">
-      <div class="row">
+      <div class="row ">
       <div class="col-md-4 side-content">
           <img class="img-responsive" src="../assets/img/about-us-casket.jpg" align="middle">
           <p>
             At Garden of Paradise Funeral Home, we pride ourselves on being talented which is evident in every job we complete. Our level of professionalism is par excellence!!
           </p>
-          <div class="row">          
+          <div class="row ">          
             <div class="col-sm-12">
               <img class="side-icon" align="left" src="../assets/img/icons/real-estate.png" alt="Address">
               <p class="side-icon-info">1 North Avenue, Kingston 5</p>
@@ -28,8 +40,9 @@
           </div>
       </div>
     
-    <div class="col-md-8 content">
-        <h1>Welcome</h1>
+    <div class="col-md-8 content card">
+        <h1 align="center">Welcome</h1>
+        <br />
            <p>
           Garden of Paradise Funeral Home was established in 2006 by Sweets Lawrence (CEO/Funeral Director) and incorporated by
               The Office of the Registrar of Companies in Kingston, Jamaica on the 17th of February 2007;
