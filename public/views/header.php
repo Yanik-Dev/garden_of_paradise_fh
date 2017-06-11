@@ -57,11 +57,13 @@
               <li><a href="./dedication.php" class="<?= ($title =="Dedication")?'nav-active':''?>">Dedication</a></li>
               <li><a href="./gallery.php" class="<?= ($title =="Gallery")?'nav-active':''?>">Gallery</a></li>
               <li><a href="./about-us.php" class="<?= ($title =="About Us")?'nav-active':''?>">About Us</a></li>
+               <li><a href="./services.php" class="<?= ($title =="Services")?'nav-active':''?>">Services</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services & Packages<span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Packages<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="./services.php" class="<?= ($title =="Services")?'nav-active':''?>">Services</a></li>
-                  <li><a href="./packages.php" class="<?= ($title =="Packages")?'nav-active':''?>">Packages</a></li>
+                  <li><a href="./basicpackages.php" class="<?= ($title =="Basic Package")?'nav-active':''?>">Basic Packages</a></li>
+                  <li><a href="./gardenpackages.php" class="<?= ($title =="Garden Package")?'nav-active':''?>">Garden Packages</a></li>
+                  <li><a href="./paradisepackages.php" class="<?= ($title =="Paradise Package")?'nav-active':''?>">Paradise Packages</a></li>
                 </ul>
               </li>
             </ul>
