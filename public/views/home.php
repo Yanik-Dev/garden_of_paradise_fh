@@ -156,7 +156,7 @@ require('../services/ObituaryService.php');
             <div class="col-md-3 col-sm-6">
             <div class="card card-hover wow slideInRight" data-wow-delay="0.8s">
                     <h3>Customized Package</h3>
-                   <center> <a href="#" class="btn btn-custom">Click Here To Get Started</a></center>
+                   <center> <a href="./customize-package.php" class="btn btn-custom">Click Here To Get Started</a></center>
                 </div>
             </div>
         </div>

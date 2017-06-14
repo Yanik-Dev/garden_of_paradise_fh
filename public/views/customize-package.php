@@ -12,29 +12,50 @@
 ?>
 
 <?php require_once('header.php'); ?>
+<style>
+ .header-card{
+    min-height: auto !important;
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+ }
+</style>
 <!-- Steps Progress and Details - START -->
 <div class="container" style="margin-top: 20px; margin-bottom: 100px;">
-    <div class="page-header">
+    <div class="page-header header-card">
         <h1>Customize your package</h1>
-        <h4><small>Bootstrap template, demonstrating steps, progress indicator and additional info.</small></h4>
+        <h1><small>
+           Didn't find a package that suits you? Here you have the opportunity to submit a customized request. 
+        </small></h1>
+        <h2><small> 
+           Tick off under each category what you would like then enter your information and submit the form.
+        </small></h2>
     </div>
     <?php 
+
         if(isset($_GET["error"])){
+            echo ' <div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+                  ';
             if($_GET["error"] == 1){
-                echo"<p class='error'>*There was an error sending your quote</p>";
+                echo" class='error'> *There was an error sending your quote";
             }
-            if(isset($_GET["error-name"])){
+            if(isset($_GET["error"]) == 2){
                 echo"<p class='error'>*Your name is required</p>";
             }
-            if(isset($_GET["error-num"])){
+            if(isset($_GET["error"])==3){
                 echo"<p class='error'>*A valid phone number is required</p>";
             }
-            if(isset($_GET["error-email"])){
+            if(isset($_GET["error"]) == 4){
                 echo"<p class='error'>*A valid email is required</p>";
             }
-            if(isset($_GET["error-message"])){
+            if(isset($_GET["error"]) == 5){
                 echo"<p class='error'>*A message is required</p>";
             }
+            if(isset($_GET["error"]) == 6){
+                echo"<p class='error'>*You must select at least one item</p>";
+            }
+            echo"</div>";
         }
     ?>
     <div class="row">
@@ -49,12 +70,16 @@
         <div class="row step">
             <?php foreach($categories as $category): ?>
                 <div id="div1" class="col-md-2 activestep" onclick="javascript: resetActive(event, 0, 'step-<?=$category->getId()?>');">
+                    <span class="glyphicon  glyphicon-tags"></span>
                     <p><?= $category->getName()?></p>
                 </div>
             <?php endforeach; ?>
-            <div class="col-md-2" onclick="javascript: resetActive(event, 80, 'step-final');">
+            <?php if(count($categories)> 0):?>
+            <div class="col-md-2" onclick="javascript: resetActive(event, 100, 'step-final');">
+               <span class="glyphicon  glyphicon-th-list"></span>
                 <p>Submit Request</p>
             </div>
+            <?php endif; ?>
         </div>
     </div>
     
@@ -69,9 +94,9 @@
                        
                          <div class="row">
                             <?php foreach($items as $item): ?>
-                            <div class="col-xs-3">
+                            <div class="col-md-3 col-sm-3 col-xs-6">
                                 
-                               <input type="radio" name="<?=$category->getName()?>" 
+                               <input type="checkbox" name="<?=$item->getId()?>" 
                                                    value="<?= $item->getName() ?>"
                                                    class="form-control" id="<?= $item->getId() ?>" style="padding:10px">
                                 <a  class="thumbnail">
@@ -102,15 +127,16 @@
                     
                     <p class="success"><?=(isset($_GET["success"]))?"Your message has been sent successfully!":""?><p>
                     <div class="form-group">
-                     <input type="text" name="name"  class="form-control" placeholder="Name *" colspan="4" required maxlength="15" />
+                     <input type="text" name="name"  class="form-control" placeholder="Name *" colspan="4" required maxlength="30" />
                     </div>
                     <div class="form-group">
-                     <input type="email" name="email"  class="form-control" placeholder="Email *" />
+                     <input type="email" name="email"  class="form-control" placeholder="Email " />
                      </div>
                      <div class="form-group">
-                    <input type="tel" name="tel"  class="form-control" placeholder="000 000 0000 *" required pattern="[876][0-9]{9}" />
+                    <input type="tel" name="tel"  class="form-control" placeholder="Phone Number *" pattern="/^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i" required />
+                     <small>Expected Formats: 000-0000 or 000 000 0000</small>
                     </div>
-                    <textarea rows="6" cols="" name="message" placeholder="additional requests" class="form-control"></textarea>
+                    <textarea rows="6" cols="" name="message" placeholder="Additional requests" class="form-control"></textarea>
                     <center> <button class="button" type="submit">Send Request</button></center>
                 
             </div>
@@ -202,6 +228,7 @@
     border-top: 3px solid #5CB85C !important;
     border-bottom: 3px solid #5CB85C !important;
     vertical-align: central;
+    text-align: center;
 }
 
 .step .fa {

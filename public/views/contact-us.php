@@ -53,7 +53,7 @@
             <input type="text" name="name"  class="form-control" placeholder="Name *" colspan="4" required maxlength="15" />
             <input type="email" name="email"  class="form-control" placeholder="Email *" required />
             <input type="text" name="subject"  class="form-control" placeholder="Subject"/>
-            <textarea rows="6" cols="" name="message" placeholder="message" class="form-control" require></textarea>
+            <textarea rows="6" cols="" name="message" placeholder="Message" class="form-control" require></textarea>
         <button class="button" type="submit">Send Message</button>
             
         </form>

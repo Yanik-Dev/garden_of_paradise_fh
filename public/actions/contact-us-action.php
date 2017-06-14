@@ -1,5 +1,7 @@
 <?php
 require_once "../vendor/Mail/Mail.php";
+include_once("../config/Config.php");
+global $_CONFIG;
 
 if(strcmp($_POST['name'], "") == 0){
     header("location: ../views/contact-us.php?error-name=1");
@@ -13,15 +15,13 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
   header("location: ../views/contact-us.php?error-email=1");
     exit;
 }
-
-$from = '<'.$_POST['email'].'>';
-$to = '<yanikblake@yahoo.com>';
+$to = $_CONFIG["EMAILCRED"]["TO"];
 $subject = $_POST['subject'];
-$body = $_POST['message']."\r\n\n"."<b>From:</b> <br />".$_POST['name']."<br /><i>(".$_POST['email'].")</i>";
+$body = $_POST['message']."<br />"."<b>From:</b> <p>".$_POST['name']."</p> <i>(".$_POST['email'].")</i>";
 
 $headers = array(
-    'From' => $from,
-    'To' => $to,
+    'From' =>  $_CONFIG["EMAILCRED"]["USERNAME"],
+    'To' =>  $_CONFIG["EMAILCRED"]["TO"],
     'Subject' => $subject,
     'MIME-Version' => 1,
     'Content-type' => 'text/html;charset=iso-8859-1'
@@ -31,8 +31,8 @@ $smtp = Mail::factory('smtp', array(
         'host' => 'ssl://smtp.gmail.com',
         'port' => '465',
         'auth' => true,
-        'username' => 'yanikblake@gmail.com',
-        'password' => 'N@ruto123',
+        'username' =>  $_CONFIG["EMAILCRED"]["USERNAME"],
+        'password' =>  $_CONFIG["EMAILCRED"]["PASSWORD"]
 ));
 
 $mail = $smtp->send($to, $headers, $body);

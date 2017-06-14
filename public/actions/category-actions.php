@@ -32,6 +32,13 @@
             exit;
         }
 
+        $count = CategoryService::getCount();
+
+        if($count == 10){
+             header("location: ../views/category-management.php?error=10");
+            exit;
+        }
+
         if(!CategoryService::insert($category)){
             header("location: ../views/category-management.php?error=9");
             exit;

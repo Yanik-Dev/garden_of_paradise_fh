@@ -21,5 +21,10 @@ $_CONFIG = [
             "DATABASE" => "gardenfh_db"
         ],
         "UPLOADS"=> "..\\uploads\\",
+        "EMAILCRED" => [
+            "TO" => "yanikblake@yahoo.com",
+            "USERNAME" => "yanikblake@gmail.com",
+            "PASSWORD" => "N@ruto123",
+        ]
 ];
 

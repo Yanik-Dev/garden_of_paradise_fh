@@ -50,6 +50,9 @@
                         <?php if($_GET['error'] == 9): ?>
                            Server error. contact admin.
                         <?php endif; ?>
+                        <?php if($_GET['error'] == 10): ?>
+                           Cannot add more than 10 categories.
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <form action="<?= (isset($category))?'../actions/category-actions.php?id='.$category->getId():'../actions/category-actions.php'?>" method="post">

@@ -11,15 +11,12 @@
 </div>
 </div>
 
-
 <div class="container">
-            <div class="row">
-
-                                
+            <div class="row">                                
                 <div class="col-md-3 col-sm-6 col-xs-12 float-shadow">   
                  <div class="recommended"><strong><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>BASIC</strong></div>            
                     <div class="price_table_container">
-          <div class="price_table_heading">Basic Package</div>
+                      <div class="price_table_heading">Basic Package</div>
                         <div class="price_table_body">
                             <div class="price_table_row">Pick Up</div>
                             <div class="price_table_row">Storage</div>

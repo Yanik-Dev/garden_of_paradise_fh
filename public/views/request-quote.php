@@ -16,22 +16,113 @@ if($_GET['type'] =='bp'){
         "Casket","Casket Spray","Hearse","100 Programs","100 Prayer Cards/Book Markers",
         "TVJ's Death Announcement",
     ];
-
 }
+else if($_GET['type'] =='bpp'){
+    $title = 'Basic Personal';
+    $items = [
+        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
+        "Casket","Casket Spray","Hearse","SingleVault (Dovecot or Meadowrest)", 
+        "100 Programs", "100 Prayer Cards or Book Markers",
+        "1 TVJ's Death Announcement",
+    ];
+}
+else if($_GET['type'] =='bpd'){
+     $title = 'Basic Package - Deluxe';
+     $items = [
+        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
+        "Casket","Casket Spray","Hearse","Vault 1/2 Double (Dovecot or Meadowrest)", 
+        "100 Programs", "100 Prayer Cards or Book Markers",
+        "1 TVJ's Death Announcement", "JUTC Bus & 50 Buttons"
+    ];
+}
+
+else if($_GET['type'] =='bpdp'){
+     $title = 'Basic Package - Deluxe Personal';
+     $items = [
+        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
+        "Casket","Casket Spray","Hearse","Single Vault (Dovecot or Meadowrest)", 
+        "100 Programs", "100 Prayer Cards or Book Markers",
+        "1 TVJ's Death Announcement", "JUTC Bus & 50 Buttons"
+    ];
+}
+else if($_GET['type'] =='bps'){
+     $title = 'Basic Package - Super';
+     $items = [
+        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
+        "Casket","Casket Spray + Arrangement","Hearse","Single Vault (Dovecot or Meadowrest)", 
+        "100 Programs", "100 Prayer Cards or Book Markers",
+        "1 TVJ's Death Announcement", "JUTC Bus & 50 Buttons", "Bands for Set UP"
+    ];
+}
+
 else if($_GET['type'] =='gp'){
-$title = 'Garden Package';
+    $title = 'Garden Package';
     $items = [
         "Pick Up", "Storage","Embalm & Preparation",
         "Regular or Semi-customized Casket","Casket Spray","Hearse","150 Programs","150 Prayer Cards/Book Markers",
         "Two (2) TVJ's Death Announcement + One (1) Gleaner Advertisement",
     ];
 }
+else if($_GET['type'] =='gpp'){
+    $title = 'Garden Package - Personal';
+     $items = [
+        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
+        "Casket","Casket Spray + Arrangement","Hearse","Single Vault (Dovecot or Meadowrest)", 
+        "150 Programs", "150 Prayer Cards or Book Markers",
+        "2 TVJ's Death Announcement"
+    ];
+}
+else if($_GET['type'] =='gpd'){
+    $title = 'Garden Package - Deluxe';
+     $items = [
+        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
+        "Casket","Casket Spray","Hearse","Vault 1/2 Double (Dovecot or Meadowrest)", 
+        "150 Programs", "150 Prayer Cards or Book Markers",
+        "2 TVJ's Death Announcement"
+    ];
+}
+else if($_GET['type'] =='gpdp'){
+    $title = 'Garden Package - Deluxe Pesonal';
+     $items = [
+        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
+        "Casket","Casket Spray","Hearse","Single Vault (Dovecot or Meadowrest)", 
+        "150 Programs", "150 Prayer Cards or Book Markers",
+        "2 TVJ's Death Announcement", "JUTC Bus & 100 Buttons"
+    ]; 
+}
+else if($_GET['type'] =='gps'){   
+    $title = 'Garden Package - Super';
+     $items = [
+        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
+        "Casket","Casket Spray + Arrangement","Hearse","Single Vault (Dovecot or Meadowrest)", 
+        "150 Programs", "150 Prayer Cards or Book Markers",
+        "2 TVJ's Death Announcement", "JUTC Bus & 100 Buttons", "Bands for Set UP"
+    ];
+}       
 else if($_GET['type'] =='pp'){
-$title = 'Paradise Package';
+    $title = 'Paradise Package';
     $items = [
         "Pick Up", "Storage","Embalm & Preparation",
         "Regular or Semi-customized Casket","Casket Spray","Hearse","Wreath", "200 Programs","200 Prayer Cards/Book Markers",
         "Two (2) TVJ's Death Announcement + One (1) Gleaner Advertisement",
+    ];
+} 
+else if($_GET['type'] =='ppd'){ 
+     $title = 'Paradise Package - Deluxe';
+     $items = [
+        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
+        "Regular or Semi-Customized Casket","Casket Spray", "Wreath + Arrangement","Hearse","Single Vault (Dovecot or Meadowrest)", 
+        "200 Programs", "2000 Prayer Cards or Book Markers", "100 Buttons",
+        "2 TVJ's Death Announcement", "JUTC Bus &1 Gleaner Advertisment + 1 JUTC Bus", "Bands for Set UP"
+    ];
+}
+else if($_GET['type'] =='pps'){
+    $title = 'Paradise Package - Super';
+     $items = [
+        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
+        "Regular or Semi-Customized Casket","Casket Spray", "Wreath + Arrangement","Hearse","Single Vault (Dovecot or Meadowrest)", 
+        "200 Programs", "2000 Prayer Cards or Book Markers", "100 Buttons",
+        "2 TVJ's Death Announcement", "JUTC Bus &1 Gleaner Advertisment + 1 JUTC Bus", "Bands for Set UP"
     ];
 }
 else{
@@ -46,13 +137,14 @@ else{
             <div class="col-md-6">
                 <h1>Request Quotation</h1>
                 <div class="line"></div>
-                <form action="../actions/contact-us-action.php" method="post">
+                <form action="../actions/request-quote-action.php" method="post">
                 <div class="request">
                     <?php 
                         if(isset($_GET["error"])){
                             if($_GET["error"] == 1){
                                 echo"<p class='error'>*There was an error sending your quote</p>";
                             }
+                        }
                             if(isset($_GET["error-name"])){
                                 echo"<p class='error'>*Your name is required</p>";
                             }
@@ -61,28 +153,29 @@ else{
                             }
                             if(isset($_GET["error-email"])){
                                 echo"<p class='error'>*A valid email is required</p>";
+                            }                            
+                            if(isset($_GET["error-tel"])){
+                                echo"<p class='error'>*A valid phone number is required</p>";
                             }
-                            if(isset($_GET["error-message"])){
-                                echo"<p class='error'>*A message is required</p>";
-                            }
-                        }
                     ?>
                     <p class="success"><?=(isset($_GET["success"]))?"Your message has been sent successfully!":""?><p>
+                    <input type="hidden" name="type" value="<?=$_GET['type']?>">
                     <div class="form-group">
                      <input type="text" name="name"  class="form-control" placeholder="Name *" colspan="4" required maxlength="15" />
                     </div>
                     <div class="form-group">
-                     <input type="email" name="email"  class="form-control" placeholder="Email *"  />
+                     <input type="email" name="email"  class="form-control" placeholder="Email"  />
                      </div>
                     <div class="form-group">
-                      <input type="tel" name="tel"  class="form-control" placeholder="(000) 000-0000 *" required pattern="" />
+                      <input type="tel" name="tel"  class="form-control" placeholder="Phone Number *" pattern="/^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i" required />
+                      <small>Expected Formats: 000-0000 or 000 000 0000</small>
                     </div>
                     <div class="form-group">
-                    <textarea rows="6" cols="" name="message" placeholder="additional requests" class="form-control" ></textarea>
+                    <textarea rows="6" cols="" name="message" placeholder="Additional requests" class="form-control" ></textarea>
                     </div>
                     <center> <button class="button" type="submit">Send Request</button></center>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
        
         <div class="col-md-6">

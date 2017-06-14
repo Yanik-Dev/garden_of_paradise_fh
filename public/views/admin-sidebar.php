@@ -47,11 +47,11 @@ if(!UserService::isLogin()){
             </div>
             <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="<?=($page==1)?'iactive':''?>"><a href="./album-management.php">Album<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-image"></span></a></li>      
-                <li class="<?=($page==2)?'iactive':''?>"><a href="./testimony-management.php">Testimonies<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>        
-                <li class="<?=($page==3)?'iactive':''?>"><a href="./obituary-grid.php">Obituary<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                <li class="<?=($page==1)?'iactive':''?>"><a href="./album-management.php">Album<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-picture"></span></a></li>      
+                <li class="<?=($page==2)?'iactive':''?>"><a href="./testimony-management.php">Testimonies<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-comment"></span></a></li>        
+                <li class="<?=($page==3)?'iactive':''?>"><a href="./obituary-grid.php">Obituary<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
                 <li class="<?=($page==4)?'iactive':''?>"><a href="./category-management.php">Items<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
-                <li ><a href="../actions/logout-action.php">Login<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                <li ><a href="../actions/logout-action.php">Logout<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-off"></span></a></li>
             </ul>
             </div>
         </div>
