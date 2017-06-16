@@ -12,7 +12,7 @@
     <div class="col-md-4">
        <center> 
            <div class="woman">
-             <img src="../assets/img/Francine.png">
+             <img src="../assets/img/Francine.png" class="animated fadeInUp">
            </div>
         </center>
     </div>

@@ -13,7 +13,8 @@
   color: black;
 }
 </style>
-    <div class="container about-us-container">
+<div class="container">
+    <div class="container card about-us-container">
       <div class="row ">
       <div class="col-md-4 side-content">
           <img class="img-responsive" src="../assets/img/about-us-casket.jpg" align="middle">
@@ -40,8 +41,9 @@
           </div>
       </div>
     
-    <div class="col-md-8 content card">
-        <h1 align="center">Welcome</h1>
+    <div class="col-md-8 ">
+       <div class="content card">
+        <h1 align="center">About Us</h1>
         <br />
            <p>
           Garden of Paradise Funeral Home was established in 2006 by Sweets Lawrence (CEO/Funeral Director) and incorporated by
@@ -73,9 +75,10 @@
             <p >
               We stand by our Motto: “Granting relief in time of grief."
             </p>
+          </div>
     </div>
   </div>
 </div>
 
-
+</div>
 <?php require_once('footer.php'); ?>

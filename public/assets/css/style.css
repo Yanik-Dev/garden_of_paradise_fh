@@ -103,12 +103,12 @@ h1, h2, h3, h4{
 }
 
 .back-to-top{
-    width: 100px;
+    width: 40px;
     padding: 10px;
     text-align: center;
     background-color: #592131 !important;
     position: fixed;
-    right: 70px;
+    right: 50px;
     bottom: 10px;
     z-index: 99999;
 }
@@ -348,7 +348,7 @@ h1, h2, h3, h4{
  }
 
  .about-us-container .content{
-     padding: 20px;
+     padding: 10px;
  }
 
  .about-us-container .side-content{

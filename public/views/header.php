@@ -13,7 +13,7 @@
     <div class="header">
         <div class="container-fluid social-bar">
             <div class ="container ">
-                <div class="animated lightSpeedIn">
+                <div class="animated fadeInDown">
                 <a href="./services.php"><img src="../assets/img/icons/24hours.svg" style="color: #592131" class="social-icon" alt=""> </a>
                 <a href="./services.php"><img src="../assets/img/icons/paper.svg" class="social-icon" alt=""></a>
                 </div>
@@ -25,7 +25,7 @@
         </div>
         <div class="container-fluid">
             <div class="col-md-1 col-sm-1 col-xs-1">
-              <div class="social-sidebar">
+              <div class="social-sidebar animated fadeInUp">
                 <div class="">
                   <a href="./contact-us.php"><img src="../assets/img/icons/facebook.svg" class="social-icon social"></a>
                 </div>
@@ -88,6 +88,6 @@
         </div><!--/.container-fluid -->
       </nav>
     <div class="back-to-top">
-      <a href="#">Back to top</a>
+      <a href="#" class="symbol"><span class="glyphicon glyphicon-chevron-up"></span></a>
     </div>
     <img src="../assets/img/logo.png" class ="watermark" alt="garden_of_paradise_logo">

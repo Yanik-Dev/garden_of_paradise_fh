@@ -51,6 +51,7 @@ if(!UserService::isLogin()){
                 <li class="<?=($page==2)?'iactive':''?>"><a href="./testimony-management.php">Testimonies<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-comment"></span></a></li>        
                 <li class="<?=($page==3)?'iactive':''?>"><a href="./obituary-grid.php">Obituary<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
                 <li class="<?=($page==4)?'iactive':''?>"><a href="./category-management.php">Items<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                <li class="<?=($page==5)?'iactive':''?>"><a href="./change-password.php">Change Password<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-lock"></span></a></li>
                 <li ><a href="../actions/logout-action.php">Logout<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-off"></span></a></li>
             </ul>
             </div>

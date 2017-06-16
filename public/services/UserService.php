@@ -41,9 +41,8 @@ class UserService
 
 	public static function create($user){
         if( $statement = @Database::getInstance()->prepare("INSERT INTO fh_users SET username = ?, password = ?, salt=?")){
-			@$statement->bind_param("s", $user->getUsername());
-			@$statement->bind_param("s", $user->getPassword());
-			@$statement->bind_param("s", $user->getSalt());
+			@$statement->bind_param("sss", $user->getUsername(), $user->getPassword(), $user->getSalt());
+		
 			$statement->execute();
 
 			if($rows = $statement->get_result()){
@@ -54,10 +53,8 @@ class UserService
 	}
 
     public static function update($user){
-        if( $statement = @Database::getInstance()->prepare("INSERT INTO fh_users SET password = ?, salt=?")){
-			@$statement->bind_param("s", $user->getUsername());
-			@$statement->bind_param("s", $user->getPassword());
-			@$statement->bind_param("s", $user->getSalt());
+        if( $statement = @Database::getInstance()->prepare("UPDATE INTO fh_users SET password = ?, salt=? WHERE username=?")){
+			@$statement->bind_param("sss", $user->getPassword(), $user->getSalt(), $user->getUsername());
 			$statement->execute();
 
 			if($rows = $statement->get_result()){
