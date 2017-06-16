@@ -608,74 +608,79 @@ h1, h2, h3, h4{
 
 
 /*Packages Style*/
-
-.price_table_container{
-	text-align:center;
-	color:#666;
-	margin-top:35px;
-	font-family: 'Open Sans', sans-serif;
+ main {
+  width: 100%;
+  padding: 50px;
+  margin: 0 auto;
+  background: #fff;
 }
 
-.price_table_heading{
-	font-size:26px;
-	padding:10px;
-	background:#EEE;
+section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
 }
 
-
-.price_table_row {
-    padding:15px;
-	background: #FFF;
+input {
+  display: none;
 }
 
-
-.price_table_row:nth-of-type(even) {
-    background: #F8F8F8;
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 125px;
+  font-weight: 600;
+  text-align: center;
+  color: #666;
+  border: 1px solid transparent;
 }
-.btn{
-	border-radius:0px;
-}
 
-.recommended{
-background:#FF3A3A; 
-color:#FFF;
-padding:3px 0 3px 0;
-margin-top:10px;  
-text-align:center;
-margin-bottom:-35px;
-font-family: 'Open Sans', sans-serif;
+label:before {
+  font-weight: normal;
+  margin-right: 10px;
 }
 
 
-.btn-primary {
-  color: #fff;
-  background-color: #592131;
-  border-color: #592131;
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary.focus,
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-dark {
-  color: #fff;
-  background-color: #592131;
-  border-color: #592131;
+label:hover {
+  color: #888;
+  cursor: pointer;
 }
 
-.package-text{
-    text-align: center;
-    padding-top: 20px;
+input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid #592131;
+  border-bottom: 1px solid #fff;
 }
 
-/*Gaarden Package Style*/
 
-.added-package-photo1 img{
-    width: 530px;
-    height: 200px;
-    float: left;
-    margin-bottom: 30px;
-    border: 3px solid #d3d3d3;
-    padding: 10px;
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
 }
 
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}
+
+ table.plan td{ 
+  text-align: center;
+}
+
+table.plan tr:first-child { 
+  text-align: left;
+ }
