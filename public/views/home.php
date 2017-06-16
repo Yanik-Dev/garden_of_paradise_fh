@@ -49,7 +49,7 @@ require('../services/ObituaryService.php');
     <div class="row welcome">
             <div class="col-md-10 wow slideInLeft">
                 <h2>Welcome</h2>
-                <img src="../assets/img/building.jpg" width="400px" height="350px" style="margin-left:25px" alt="" align="right"> 
+                <img src="../assets/img/building.jpg" class="img-responsive"  width="400px" height="350px" style="margin-left:25px" alt="" align="right"> 
                 <p>
                     We understand that under the circumstances in which our services are needed, we aim to offer the best care to your loved ones and to ensure that you receive professional services in a calm and serene environment.
                     We have created a home-like atmosphere for you to gather with family at the loss of your loved one. Strict attention is given to every detail of funeral services to ensure your satisfaction. We have expertise in all types of funeral services whether it is simple or elaborate. 
@@ -70,7 +70,7 @@ require('../services/ObituaryService.php');
          <center><h1>Current Obituaries</h1></center>
          <div class="row">
             <?php foreach($obituaryList as $obituary) : ?>  
-                    <div class="col-md-4 col-sm-4 col-xs-6 row">
+                    <div class="col-md-4 col-sm-4 col-xs-6 row wow fadeInDown">
                         <div class="col-md-5">
                             <br/>
                             <img src="<?=($obituary->getPath() == null)?'../assets/img/blank.png':$obituary->getPath()?>" width="120px" height="120px">

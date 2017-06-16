@@ -48,11 +48,11 @@
                 <h2>Photo Gallery</h2>
                 <?php if(count($albumList) > 0): ?>
                 <div class="row">
-                   <div class="col-md-12">
+                    <div class="col-md-12">
                      <?php $i = 0; foreach($albumList as $album) :?>
-                       <a href="<?='gallery.php?id='.$album->getId()?>" style="text-decoration: none;"> 
-                         <img src="<?= ($album->getImages() != null)?'..\\uploads\\'.$album->getImages()[0]->getPath():'../assets/img/placeholder.png' ?>" class="photo">
-                       </a>
+                        <a href="<?='gallery.php?id='.$album->getId()?>" style="text-decoration: none;"> 
+                            <img  src="<?= ($album->getImages() != null)?'..\\uploads\\'.$album->getImages()[0]->getPath():'../assets/img/placeholder.png' ?>" class="photo ">
+                        </a>
                      <?php endforeach; ?>
                     </div>
                 </div>

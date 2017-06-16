@@ -33,20 +33,19 @@
 
 ?>
 <div class="container album-container">
- <h1>Albums</h1>  
+ <h1 align="center">Albums</h1>  
 <br>
 <div class="row">
      <?php foreach($albumList as $album) :?>
-  	    <div class="col-xs-3">
-          <a href="<?= ".\\gallery.php?id=".$album->getId() ?>">
-          <div  class="thumbnail">
+  	    <div class="col-md-3 col-sm-3 col-xs-6">
+          <div  class="thumbnail animated fadeInRightBig">
               <img src="<?= ($album->getImages() != null)?'..\\uploads\\'.$album->getImages()[0]->getPath():'../assets/img/placeholder.png' ?>" />
               <div class="caption">
                 <h4 class="title"><?= $album->getName() ?></h4>
                 <p class="description"> <?= $album->getDescription() ?></p>
+                <p><a href="<?= ".\\gallery.php?id=".$album->getId() ?>" class="btn btn-success" role="button">View Photos</a> </p>
                </div>
           </div>
-          </a>
         </div>
      <?php endforeach; ?>
       <?php if(count($albumList) < 1): ?>

@@ -36,11 +36,11 @@ require('../services/ObituaryService.php');
         <div class="col-md-8 obituary-content">
             <div id="search-wrapper">
                <form class="form-inline" >
-                    <div class="col-sm-10"> 
+                    <div class="col-sm-10 col-xs-8"> 
                         <input type="text" class="form-control" style="border: 1px solid #A5ADDF !important;" name="q" placeholder="Search">
                     </div>
                     
-                    <div class="col-sm-2"> 
+                    <div class="col-sm-2 col-xs-4"> 
                        <button type="submit" class="btn btn-block" style="height: 40px !important; background-color:#337AB7; color: #fff">Search</button>
                     </div>
                 </form>
@@ -48,10 +48,10 @@ require('../services/ObituaryService.php');
             </div>
             <div class="search-result">  
                <?php foreach($obituaryList as $obituary) : ?>  
-                    <div class="row search-item">
+                    <div class="row search-item animated fadeInDown">
                         <div class="col-md-2">
                             <br/>
-                        <img src="<?=($obituary->getPath() == null)?'../assets/img/blank.png':$obituary->getPath()?>" width="120px" height="125px">
+                        <img class="img-responsive" src="<?=($obituary->getPath() == null)?'../assets/img/blank.png':$obituary->getPath()?>" width="120px" height="125px">
                         </div>
                         <div class="col-md-10">
                             <h2> <?= $obituary->getName() ?> </h2>

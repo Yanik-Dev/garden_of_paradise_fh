@@ -1,10 +1,9 @@
 <?php
- session_start();
- require('../services/AlbumService.php');
+ob_start();
+require('../services/AlbumService.php');
  $title = "Gallery";
- require_once('header.php');
-?> 
-<?php
+require_once('header.php');
+
     if(!isset($_GET['id'])){
         header('Location: ./album.php');
     }
@@ -76,6 +75,5 @@
 </script>
 </div>
 </div>
-
-
-<?php require_once('footer.php'); ?>
+<?php require_once('footer.php'); 
+ob_end_flush();?>

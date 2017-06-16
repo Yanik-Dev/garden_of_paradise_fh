@@ -3,31 +3,33 @@
 <?php require_once('header.php'); ?>   
 <body>
     <div class="container contact-container">
-    <div class="row info-content">    
-        <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="container">    
+    <div class="row info-content animated lightSpeedIn">    
+        <div class="col-md-4 col-sm-4 col-xs-12" >
         <center>
-            <img src="../assets/img/icons/email-contact.png" alt="Email">
-            <p>gardenofparadisefh@gmail.com</p>
+            <img src="../assets/img/icons/email-contact.png"  alt="Email">
+            <h4>gardenofparadisefh@gmail.com</h4>
             </center>
         </div>
 
-        <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-12 ">
             <center>
-                <img src="../assets/img/icons/telephone-contact.png" alt="Phone">
-                <p>(1-876) 327-9729</p>
-                <p>(1-876) 870-5848</p>
+                <img src="../assets/img/icons/telephone-contact.png"   alt="Phone">
+               <h4>(1-876) 327-9729</h4>
+                <h4>(1-876) 870-5848</h4> 
             </center>
         </div>
 
-        <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-12 animated zoomIn">
             <center>
                 <img src="../assets/img/icons/location-contact.png" alt="Location">
-                <p>1 North Avenue, Kingston 5</p>
-                <p>Jamaica</p>
+                <h4>1 North Avenue, Kingston 5</h4>
+                <h4>Jamaica</h4>
             </center>
         </div>
     </div>
-    <div class="contact-us-2">
+    </div>
+    <div class="contact-us-2 container">
 
         <h1>CONTACT US TODAY</h1>
         <div class="line"></div>

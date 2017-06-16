@@ -313,35 +313,27 @@ h1, h2, h3, h4{
 }
 
 .social-sidebar{
-    height: 31%;
-    width: 3.7%;
+    z-index: 99999999;
+    margin-top: 10px;
+    height: 130px;
+    width: 50px;
     background-image: url('../img/contact-us-2-background.png');
-    position: fixed;
 }
 
-.social1 img{
-    width:30px;
-    height:30px;
-    margin:10px;
+@media( min-width: 760px){
+    .social-sidebar{
+        top: 50px;
+        position: fixed;
+    }
 }
 
-.social2 img{
+.social{
     width:30px;
     height:30px;
-    margin:10px;
+    margin:10px 10px 0px 10px;
 }
 
-.social3 img{
-    width:30px;
-    height:30px;
-    margin:10px;
-}
 
-.social4 img{
-    width:30px;
-    height:30px;
-    margin:10px;
-}
 
 
 /** About us **/
