@@ -3,26 +3,30 @@ $title = "Testimonals";
 
 require('../services/TestimonyService.php');
  
- $testimonyService = new TestimonyService();
-    $page_num = 1;
-    $album = null;
+$testimonyService = new TestimonyService();
+$page_num = 1;
+$album = null;
 
-    if(isset($_GET['page_num'])){
-         if($_GET['page_num'] > 1 && $_GET['page_num'] > $testimonyService->getCount()){
-             $page_num = 1;
-         }
-         else if($_GET['page_num']>1){
-            $page_num = $_GET['page_num'];
-         }
-    }
-    if(isset($_GET["q"])){
-       $testimonyList = $testimonyService->get($page_num, 10, $_GET["q"]);
-    }else{
-       $testimonyList = $testimonyService->get($page_num, 10);
-    }
-    $numberOfPages = $testimonyService->getNumberOfPages();
+if(isset($_GET['page_num'])){
+        if($_GET['page_num'] > 1 && $_GET['page_num'] > $testimonyService->getCount()){
+            $page_num = 1;
+        }
+        else if($_GET['page_num']>1){
+        $page_num = $_GET['page_num'];
+        }
+}
+
+if(isset($_GET["q"])){
+    $testimonyList = $testimonyService->get($page_num, 10, $_GET["q"]);
+}else{
+    $testimonyList = $testimonyService->get($page_num, 10);
+}
+
+$numberOfPages = $testimonyService->getNumberOfPages();
 ?>
+
 <?php require_once('header.php'); ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 obituary-content">
@@ -51,10 +55,10 @@ require('../services/TestimonyService.php');
                 <ul class="pagination pagination-sm">
                     <?php if($page_num != 1): ?>
                         <li class="page-item">
-                        <a class="page-link" href="obituary.php?page_num=<?=$page_num - 1?>" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
+                            <a class="page-link" href="obituary.php?page_num=<?=$page_num - 1?>" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
                         </li>
                     <?php endif; ?>
                     

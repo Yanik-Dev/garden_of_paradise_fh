@@ -33,6 +33,12 @@
     $numberOfPages = $albumService->getNumberOfPages();
 
 ?>
+<style>
+  .card{
+      
+    height: auto !important;
+  }
+</style>
 <div class="container album-management" style="padding-right: 50px;">
     <h3> Albums </h3>
     <div class="row">

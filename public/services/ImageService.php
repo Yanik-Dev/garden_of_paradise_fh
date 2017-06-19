@@ -110,10 +110,9 @@ class ImageService
             $statement->execute();
             if($rows = $statement->get_result()){
                 while ($row=$rows->fetch_assoc()) {
-                $path = $row["path"];
+                  $path = $row["path"];
                 }
             }
-
             if( $statement = @Database::getInstance()->prepare("DELETE FROM images WHERE id = ?")){
                 $statement->bind_param("i", $id);
                 $statement->execute();

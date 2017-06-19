@@ -13,7 +13,10 @@ class UserService
     }
 
     public static function setUserSession($user){
-        return $_SESSION["user"] =$user;
+        return $_SESSION["user"] = [
+			"username"=>$user->getUsername(),
+			"password"=>$user->getPassword(),
+			"salt"=>$user->getSalt(),];
     }
     
     public static function unsetUserSession(){
@@ -43,25 +46,35 @@ class UserService
         if( $statement = @Database::getInstance()->prepare("INSERT INTO fh_users SET username = ?, password = ?, salt=?")){
 			@$statement->bind_param("sss", $user->getUsername(), $user->getPassword(), $user->getSalt());
 		
-			$statement->execute();
-
+			if (!$statement->execute()) {
+                echo "Execute failed: (" . $statement->errno . ") " . $statement->error;
+                die();
+            }
 			if($rows = $statement->get_result()){
 				return true;
 			}
             return false;
-		}
+		}else{
+			echo "Execute failed: (" . $statement->errno . ") " . $statement->error;
+			die();
+        }
 	}
 
     public static function update($user){
-        if( $statement = @Database::getInstance()->prepare("UPDATE INTO fh_users SET password = ?, salt=? WHERE username=?")){
+        if( $statement = @Database::getInstance()->prepare("UPDATE fh_users SET password = ?, salt=? WHERE username=?")){
 			@$statement->bind_param("sss", $user->getPassword(), $user->getSalt(), $user->getUsername());
-			$statement->execute();
-
-			if($rows = $statement->get_result()){
-				return true;
-			}
-            return false;
-		}
+			if (!$statement->execute()) {
+                echo "Execute failed: (" . $statement->errno . ") " . $statement->error;
+                die();
+				return false;
+            }
+			return true;
+            
+		}else{
+			echo "Execute failed: (" . $statement->errno . ") " . $statement->error;
+			die();
+        }
+		return false;
 	}
 
     

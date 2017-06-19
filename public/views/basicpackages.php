@@ -1,309 +1,195 @@
-<?php 
-$title = 'Basic Package';
-$items = [];
-if($_GET['type'] =='bp'){
-    $items = [
-        "Pick Up", "Storage","Embalm & Preparation",
-        "Casket","Casket Spray","Hearse","100 Programs","100 Prayer Cards/Book Markers",
-        "TVJ's Death Announcement",
-    ];
-}
-else if($_GET['type'] =='bpp'){
-    $title = 'Basic Personal';
-    $items = [
-        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
-        "Casket","Casket Spray","Hearse","SingleVault (Dovecot or Meadowrest)", 
-        "100 Programs", "100 Prayer Cards or Book Markers",
-        "1 TVJ's Death Announcement",
-    ];
-}
-else if($_GET['type'] =='bpd'){
-     $title = 'Basic Package - Deluxe';
-     $items = [
-        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
-        "Casket","Casket Spray","Hearse","Vault 1/2 Double (Dovecot or Meadowrest)", 
-        "100 Programs", "100 Prayer Cards or Book Markers",
-        "1 TVJ's Death Announcement", "JUTC Bus & 50 Buttons"
-    ];
-}
+ <?php $title="Basic Package"; ?>
+<?php require_once('./header.php'); ?> 
 
-else if($_GET['type'] =='bpdp'){
-     $title = 'Basic Package - Deluxe Personal';
-     $items = [
-        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
-        "Casket","Casket Spray","Hearse","Single Vault (Dovecot or Meadowrest)", 
-        "100 Programs", "100 Prayer Cards or Book Markers",
-        "1 TVJ's Death Announcement", "JUTC Bus & 50 Buttons"
-    ];
-}
-else if($_GET['type'] =='bps'){
-     $title = 'Basic Package - Super';
-     $items = [
-        "Pick Up", "2 Weeks Storage","Embalm & Preparation",
-        "Casket","Casket Spray + Arrangement","Hearse","Single Vault (Dovecot or Meadowrest)", 
-        "100 Programs", "100 Prayer Cards or Book Markers",
-        "1 TVJ's Death Announcement", "JUTC Bus & 50 Buttons", "Bands for Set UP"
-    ];
-}
-?>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-12">
+    <div class="sub-gallery-nav1">
+      <h1> Basic Packages </h1>
+    </div>
+  </div>
+</div>
+</div>
 
- <div class="container">
+ <div class="container  package-container">
+     
 	<div class="row">
-	<table class=
-    "plan table table-hover table-bordered table-striped text-center">
+        <div class="pcard" style="overflow-x: auto; width: auto">
+	<table class="plan table table-hover table-responsive table-bordered table-striped text-center" width="100%">
         <thead>
             <tr>
                 <th colspan="6">
                     <h2>Features</h2>
                 </th>
-
                 <th colspan="2">
-                     <h5> Basic Package </h5>
+                    <center>
+                        <h4><b> Basic </b></h4>
+                    </center>
                 </th>
-
                 <th colspan="2">
-                    <h5>Basic Package - Personal</h5>
+                    <center>
+                        <h4><b> Basic Personal </b></h4>
+                    </center>
                 </th>
-
                 <th colspan="2">
-                    <h5>Basic Package - Deluxe</h5>
+                    <center>
+                        <h4><b>Basic Deluxe </b></h4>
+                    </center>
                 </th>
-
-                
                 <th colspan="2">
-                    <h5>Basic Package - Deluxe Personal</h5>
-                </th>
-
-                
+                    <center>
+                        <h4><b> Basic Deluxe Personal</b></h4>
+                    </center>
+                </th>                
                 <th colspan="2">
-                    <h5>Basic Package - Super</h5>
+                    <center>
+                        <h4><b> Basic Super</b></h4>
+                    </center>
                 </th>
             </tr>
         </thead>
-
         <tbody>
             <tr>
-                <td colspan="6">NUMBER OF
-                LICENSES</td>
-
-                <td colspan="2">1 LICENSE</td>
-
-                <td colspan="2">1 LICENSE</td>
-
-                <td colspan="2">CUSTOM TEAM
-                SIZE</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">UNLIMITED MEETINGS AND ATTENDEES</td>
-
-                <td colspan="2">4 MEETINGS PER MONTH</td>
-
+                <td colspan="6">Pick Up</td>
                 <td colspan="2">✔</td>
-
+                <td colspan="2">✔</td>
+                <td colspan="2">✔</td>
+                <td colspan="2">✔</td>
                 <td colspan="2">✔</td>
             </tr>
-
             <tr>
-                <td colspan="6">STREAMLINED MEETING PLANNING FUNCTION</td>
-
+                <td colspan="6">2 Weeks Storage</td>
                 <td colspan="2">✔</td>
-
                 <td colspan="2">✔</td>
-
+                <td colspan="2">✔</td>
+                <td colspan="2">✔</td>
+                <td colspan="2">✔</td>
+            </tr>
+            <tr>
+                <td colspan="6">Embalm & Preparation</td>
+                <td colspan="2">✔</td>
+                <td colspan="2">✔</td>
+                <td colspan="2">✔</td>
+                <td colspan="2">✔</td>
                 <td colspan="2">✔</td>
             </tr>
 
             <tr>
-                <td colspan="6">CLONE PREVIOUS MEETINGS FOR RAPID PLANNING</td>
-
+                <td colspan="6">Casket + Casket Spray</td>
                 <td colspan="2">✔</td>
-
                 <td colspan="2">✔</td>
-
                 <td colspan="2">✔</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">AUTOMATED AGENDA CREATION AND CALENDAR INVITE
-                DISTRIBUTION</td>
-
                 <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-
                 <td colspan="2">✔</td>
             </tr>
 
             <tr>
-                <td colspan="6">INTEGRATION WITH EVERNOTE, DROPBOX AND GOOGLE
-                DOCS</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">STREAMLINED MEETING EXECUTION FUNCTION</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">EASILY CAPTURE KEY MEETING INFORMATIN (NOTES,
-                ACTION ITEMS, DECISIONS)</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">AUTOMATED CREATION AND DISTRIBUTION OF MEETING
-                SUMMARY REPORT</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">BRANDED MEETING AGENDAS AND SUMMARY REPORTS
-                (PDF)</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">CLOUD SYNC AND ARCHIVE OF MEETING DATA</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">FULL ENCRYPTION OF DATA IN TRANSIT</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">ATTENDEE DASHBOARD FOR PERSONAL VIEW OF MEETING
-                INFO & ASSIGNMENTS</td>
-
+                <td colspan="6">Arrangement</td>
                 <td colspan="2">✗</td>
-
-                <td colspan="2">✔</td>
-
+                <td colspan="2">✗</td>
+                <td colspan="2">✗</td>
+                <td colspan="2">✗</td>
                 <td colspan="2">✔</td>
             </tr>
 
             <tr>
-                <td colspan="6">AUTOMATED EMAIL DISTRIBUTION OF MEETING
-                ASSIGNMENTS</td>
-
-                <td colspan="2">✗</td>
-
+                <td colspan="6">Hearse</td>
                 <td colspan="2">✔</td>
-
+                <td colspan="2">✔</td>
+                <td colspan="2">✔</td>
+                <td colspan="2">✔</td>
                 <td colspan="2">✔</td>
             </tr>
 
             <tr>
-                <td colspan="6">AUTOMATED WORKFLOW TO CAPTURE STATUS UPDATES
-                FOR ASSIGNMENTS</td>
-
-                <td colspan="2">✗</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
+                <td colspan="6">Vault (Dovecot or Meadowrest)</td>
+                <td colspan="2">-</td>
+                <td colspan="2">Single</td>
+                <td colspan="2">1/2 Double</td>
+                <td colspan="2">Single</td>
+                <td colspan="2">Single</td>
             </tr>
 
             <tr>
-                <td colspan="6">ADVANCED FREE FORM TEXT SEARCH ACROSS ALL
-                MEETING DATA</td>
-
+                <td colspan="6">Programs</td>
+                <td colspan="2">100</td>
+                <td colspan="2">100</td>
+                <td colspan="2">100</td>
+                <td colspan="2">100</td>
+                <td colspan="2">100</td>
+            </tr>
+            <tr>
+                <td colspan="6">Prayer Cards or Book Markers</td>
+                <td colspan="2">100</td>
+                <td colspan="2">100</td>
+                <td colspan="2">100</td>
+                <td colspan="2">100</td>
+                <td colspan="2">100</td>
+            </tr>
+            <tr>
+                <td colspan="6">Buttons</td>
+                <td colspan="2">-</td>
+                <td colspan="2">-</td>
+                <td colspan="2">50</td>
+                <td colspan="2">50</td>
+                <td colspan="2">50</td>
+            </tr>
+            <tr>
+                <td colspan="6">TVJ's Death Announcement</td>
+                <td colspan="2">1</td>
+                <td colspan="2">1</td>
+                <td colspan="2">1</td>
+                <td colspan="2">1</td>
+                <td colspan="2">1</td>
+            </tr>
+            <tr>
+                <td colspan="6">JUTC Bus</td>
                 <td colspan="2">✗</td>
-
+                <td colspan="2">✗</td>
                 <td colspan="2">✔</td>
-
+                <td colspan="2">✔</td>
                 <td colspan="2">✔</td>
             </tr>
-
             <tr>
-                <td colspan="6">PROJECT LEVEL MEETING ANALYTICS WITH OVER 20
-                KEY METRICS</td>
-
+                <td colspan="6">Bands for Set up</td>
                 <td colspan="2">✗</td>
-
-                <td colspan="2">✔</td>
-
+                <td colspan="2">✗</td>
+                <td colspan="2">✗</td>
+                <td colspan="2">✗</td>
                 <td colspan="2">✔</td>
             </tr>
-
+            
             <tr>
-                <td colspan="6">EASILY TAG & INFORM OUTSIDE PARTIES ON KEY
-                MEETING INFORMATION</td>
-
-                <td colspan="2">✗</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">COMPLETE ONLINE ACCESS TO ALL MEETING DATA</td>
-
-                <td colspan="2">✗</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">SECURE BACKUP AND RESTORE FROM CLOUD</td>
-
-                <td colspan="2">✗</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
-            </tr>
-
-            <tr>
-                <td colspan="6">PREMIUM SUPPRORT
-                ACCESS TO ASSIST WITH QUESTIONS & ENHANCEMENT REQUESTS</td>
-
-                <td colspan="2">✗</td>
-
-                <td colspan="2">✔</td>
-
-                <td colspan="2">✔</td>
+                <td colspan="6"></td>
+                <td colspan="2">
+                    <a href="./request-quote.php?type=bp" class="btn btn-block btn-primary">
+                        Request Quotation
+                    </a>
+                </td>
+                <td colspan="2">
+                    <a href="./request-quote.php?type=bpp" class="btn btn-block btn-primary">
+                        Request Quotation
+                    </a>
+                </td>
+                <td colspan="2">
+                    <a href="./request-quote.php?type=bpd" class="btn btn-block btn-primary">
+                        Request Quotation
+                    </a>
+                </td>
+                <td colspan="2">
+                    <a href="./request-quote.php?type=bpdp" class="btn btn-block btn-primary">
+                        Request Quotation
+                    </a>
+                </td>
+                <td colspan="2">
+                    <a href="./request-quote.php?type=bps" class="btn btn-block btn-primary">
+                        Request Quotation
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>
+   </div>
+</div>
+</div>
+<?php include './footer.php'; ?>

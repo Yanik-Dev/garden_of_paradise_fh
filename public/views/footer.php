@@ -28,7 +28,7 @@
                     <p>"<?=$testimonyList[0]->getComment();?>"</p>
                    <footer><cite title="Source Title"><?=$testimonyList[0]->getName();?></cite></footer>
                 </blockquote>
-                <a href="testimonals.php">View All Testimonials</a>
+                <a href="testimonals.php">View All Testimonals</a>
                
                <?php else: ?>
                     <br />

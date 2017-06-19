@@ -22,6 +22,8 @@ require_once('header.php');
 </div>
 </div>
 <div class="container">
+   <a href="./album.php" class="btn btn-danger" style="margin-bottom: 20px;">Back To Album</a>
+ 
     <div class="row">
      <?php $i = 0; foreach($imageList as $image) :?>
   	    <div class="col-xs-3">

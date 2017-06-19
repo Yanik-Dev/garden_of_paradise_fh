@@ -178,6 +178,7 @@ h1, h2, h3, h4{
     background-color: #592131;
     color: white;
     text-align: center;
+
 }
 .footer blockquote {
     border: 0 !important;
@@ -188,6 +189,18 @@ h1, h2, h3, h4{
     border: 2px solid #eee;
     width: 80px;
     height: 80px;
+}
+.custom-brand, .navbar-brand:hover{
+     z-index: 999999;
+     height: 60px; border-left: 1px solid #000;
+     border-right: 1px solid #000;
+     border-bottom: 1px solid #000; 
+     background-color: #592131 !important;
+     padding-top: 20px; 
+     margin-top: -5px !important; 
+     margin-left:-270px !important; 
+     position: absolute;
+     text-decoration: none;
 }
 
 /** home **/
@@ -229,11 +242,11 @@ h1, h2, h3, h4{
     transition: all ease-in 0.2s;
 }
 .card-hover:hover{
-    transform:         scale(1.01);
-    -webkit-transform: scale(1.01);
-    -ms-transform:     scale(1.01);
-    -o-transform:      scale(1.01);
-    -ms-transform:     scale(1.01);
+    transform:         translateY(-10px);;
+    -webkit-transform: translateY(-10px);;
+    -ms-transform:     translateY(-10px);;
+    -o-transform:      translateY(-10px);;
+    -ms-transform:     translateY(-10px);;
 }
 .custom-card-footer{
     position: absolute !important;  
@@ -250,13 +263,17 @@ h1, h2, h3, h4{
 }
 
 .card .btn{
-   background-color: #eee;
    border-radius: 0;
    text-decoration: none;
-   bottom: 10px;
-  
+   bottom: 10px; 
 }
 
+.o-btn{
+   border-radius: 0;
+   text-decoration: none;
+   border: 1px solid #d3d3d3;
+   background-color: #eee;
+}
 /** obitutary content **/
 
 .obituary-content{
@@ -313,18 +330,21 @@ h1, h2, h3, h4{
 }
 
 .social-sidebar{
+    margin-top: 5px;
     z-index: 99999999;
-    margin-top: 10px;
     height: 130px;
     width: 50px;
     background-image: url('../img/contact-us-2-background.png');
+    background-color: transparent;
 }
 
-@media( min-width: 760px){
+
+@media( min-width: 850px){
     .social-sidebar{
         top: 50px;
         position: fixed;
     }
+
 }
 
 .social{
@@ -625,41 +645,9 @@ input {
   display: none;
 }
 
-label {
-  display: inline-block;
-  margin: 0 0 -1px;
-  padding: 15px 125px;
-  font-weight: 600;
-  text-align: center;
-  color: #666;
-  border: 1px solid transparent;
-}
-
-label:before {
-  font-weight: normal;
-  margin-right: 10px;
-}
 
 
-label:hover {
-  color: #888;
-  cursor: pointer;
-}
 
-input:checked + label {
-  color: #555;
-  border: 1px solid #ddd;
-  border-top: 2px solid #592131;
-  border-bottom: 1px solid #fff;
-}
-
-
-#tab1:checked ~ #content1,
-#tab2:checked ~ #content2,
-#tab3:checked ~ #content3,
-#tab4:checked ~ #content4 {
-  display: block;
-}
 
 @media screen and (max-width: 650px) {
   label {
@@ -677,10 +665,23 @@ input:checked + label {
   }
 }
 
+
  table.plan td{ 
   text-align: center;
 }
+table.plan td:first-child { 
+  text-align: left;
+ }
 
 table.plan tr:first-child { 
   text-align: left;
+ }
+
+ .package-container .pcard{
+    position: relative;
+     margin-bottom: 60px;
+    background-color: #fff;
+    padding: 10px;
+    width: 100%;
+    background-image: url('../img/white_bg.jpg');
  }

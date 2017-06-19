@@ -33,6 +33,12 @@
     $numberOfPages = $categoryService->getNumberOfPages();
 
 ?>
+<style>
+  .card{
+      min-height: 550px;
+      height: auto !important;
+  }
+</style>
 <div class="container category-management">
     <h3> Item Categories </h3>
     <div class="row">

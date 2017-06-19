@@ -2,6 +2,7 @@
 require_once '../common/Databaseservice.php'; 
 require_once '../classes/Category.php'; 
 require_once '../classes/Item.php'; 
+require_once '../config/Config.php'; 
 
 class CategoryService 
 {
@@ -128,7 +129,7 @@ class CategoryService
 
     public static function update($category){
         
-        if( $statement = @Database::getInstance()->prepare("UPDATE categories SET category_name = ?WHERE category_id=?")){
+        if( $statement = @Database::getInstance()->prepare("UPDATE categories SET category_name = ? WHERE category_id=?")){
             @$statement->bind_param("si", $category->getName(), $category->getId());
 
             if (!$statement->execute()) {
@@ -142,15 +143,41 @@ class CategoryService
 	}
 
     public static function delete($id){
-        if( $statement = @Database::getInstance()->prepare("DELETE FROM categories WHERE category_id = ?")){
+        global $_CONFIG;
+        $paths = [];
+        $i = 0;
+
+        Database::getInstance()->autocommit (false);
+        if( $statement = @Database::getInstance()->prepare("SELECT path FROM items WHERE fk_category_id = ?")){
             $statement->bind_param("i", $id);
             $statement->execute();
-                Database::getInstance()->commit();
-            return true;
-        }else{
-            Database::getInstance()->rollback();
-        }
+
+            if($rows = $statement->get_result()){
+                while($row = $rows->fetch_assoc()){
+                    $paths[$i] = $row["path"];
+                    $i++;
+                }
+            }else{
+                Database::getInstance()->rollback();
+                return false;
+            }
+
+            if( $statement = @Database::getInstance()->prepare("DELETE FROM categories WHERE category_id = ?")){
+                $statement->bind_param("i", $id);
                 
+                if (!$statement->execute()) {
+                    echo "Execute failed: (" . $statement->errno . ") " . $statement->error;
+                    return false;
+                }
+                Database::getInstance()->commit();
+                foreach($paths as $path){
+                      unlink($_CONFIG["UPLOADS"].$path);
+                }
+                return true;
+            }else{
+                Database::getInstance()->rollback();
+            }
+        } 
         return false;
     }
 

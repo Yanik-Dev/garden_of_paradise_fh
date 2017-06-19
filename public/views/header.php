@@ -15,10 +15,9 @@
             <div class ="container ">
                 <div class="animated fadeInDown">
                 <a href="./services.php"><img src="../assets/img/icons/24hours.svg" style="color: #592131" class="social-icon" alt=""> </a>
-                <a href="./services.php"><img src="../assets/img/icons/paper.svg" class="social-icon" alt=""></a>
+                <a href="./obituary.php"><img src="../assets/img/icons/paper.svg" class="social-icon" alt=""></a>
                 </div>
                 <a href="./contact-us.php" class="animated lightSpeedIn" id="location" style="color: #592131; text-decoration: none"> 
-                  <img style="border: 5px solid #E0E0E0" src="../assets/img/phone.jpg" width="40px" height="40px" class="" alt="" align="left">              
                   (1-876) 327-9729 | (1-876) 870-5848 
                 </a>
             </div>
@@ -54,22 +53,23 @@
             </div>
         </div>
          <nav class="navbar navbar-default">
-          <div class="container">
-          <div class="navbar-header">
+          <div class="container" style="position: relative">
+          <div class="navbar-header" >
             <button type="button"  class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="nav-bar" href="#">Garden Of Paradise FH</a>
+            <a class="navbar-brand custom-brand" id="nav-bar" href="#" style="" align="center">Garden Of Paradise FH</a>
+            <a class="navbar-brand" id="nav-bar" href="#" align="center">Garden Of Paradise FH</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="./home.php" class="<?= ($title =="Home")?'nav-active':''?>">Home</a></li>
               <li><a href="./obituary.php" class="<?= ($title =="Obituary")?'nav-active':''?>">Obituary</a></li>
               <li><a href="./dedication.php" class="<?= ($title =="Dedication")?'nav-active':''?>">Dedication</a></li>
-              <li><a href="./album.php" class="<?= ($title =="Gallery")?'nav-active':''?>">Gallery</a></li>
+              <li><a href="./album.php" class="<?= ($title =="Gallery" || $title =="Albums")?'nav-active':''?>">Gallery</a></li>
               <li><a href="./about-us.php" class="<?= ($title =="About Us")?'nav-active':''?>">About Us</a></li>
                <li><a href="./services.php" class="<?= ($title =="Services")?'nav-active':''?>">Services</a></li>
               <li class="dropdown">
@@ -78,6 +78,8 @@
                   <li><a href="./basicpackages.php" class="<?= ($title =="Basic Package")?'nav-active':''?>">Basic Packages</a></li>
                   <li><a href="./gardenpackages.php" class="<?= ($title =="Garden Package")?'nav-active':''?>">Garden Packages</a></li>
                   <li><a href="./paradisepackages.php" class="<?= ($title =="Paradise Package")?'nav-active':''?>">Paradise Packages</a></li>
+                  <li><a href="./customize-package.php" class="<?= ($title =="Customize Package")?'nav-active':''?>">Customize Package</a></li>
+                  <li><a href="./prearrangements.php" class="<?= ($title =="Pre-Arrangements")?'nav-active':''?>">Pre-Arrangements</a></li>
                 </ul>
               </li>
             </ul>

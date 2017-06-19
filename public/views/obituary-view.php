@@ -20,7 +20,12 @@
  }
 ?>
 <?php require_once('header.php'); ?>  
-
+<style>
+.card{
+    
+    height: auto !important;
+}
+</style>
 <div class="container-fiuld">
 <div class="dedication-container container">
    <div class="row">

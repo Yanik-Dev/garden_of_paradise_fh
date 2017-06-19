@@ -2,6 +2,7 @@
 require_once '../common/Databaseservice.php'; 
 require_once '../classes/Album.php'; 
 require_once '../classes/Image.php'; 
+require_once '../config/Config.php'; 
 
 class AlbumService 
 {

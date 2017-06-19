@@ -35,6 +35,12 @@
     $numberOfPages = $testimonyService->getNumberOfPages();
 
 ?>
+<style>
+  .card{
+      min-height: 550px;
+      height: auto !important;
+  }
+</style>
 <div class="container testimony-management" style="padding-right: 50px;">
     <h3> Testimonals </h3>
     <div class="row">
@@ -92,7 +98,6 @@
                             <td><?= $testimony->getName()?></td>
                             <td><?= $testimony->getComment()?></td>
                             <td>
-                                <a href=<?= './gallery-management.php?id='.$testimony->getId()?>>View Gallery</a> &nbsp|
                                 <a href=<?= './testimony-management.php?id='.$testimony->getId()?>>Edit</a> &nbsp | &nbsp
                                 <a href="<?='../actions/testimony-actions.php?id='.$testimony->getId().'&delete=yes'?>">Delete</a>
                             </td>

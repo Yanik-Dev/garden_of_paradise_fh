@@ -112,8 +112,8 @@ else if($_GET['type'] =='ppd'){
      $items = [
         "Pick Up", "2 Weeks Storage","Embalm & Preparation",
         "Regular or Semi-Customized Casket","Casket Spray", "Wreath + Arrangement","Hearse","Single Vault (Dovecot or Meadowrest)", 
-        "200 Programs", "2000 Prayer Cards or Book Markers", "100 Buttons",
-        "2 TVJ's Death Announcement", "JUTC Bus &1 Gleaner Advertisment + 1 JUTC Bus", "Bands for Set UP"
+        "200 Programs", "200 Prayer Cards or Book Markers", "100 Buttons",
+        "2 TVJ's Death Announcement", "1 Gleaner Advertisment + 1 JUTC Bus", "Bands for Set UP"
     ];
 }
 else if($_GET['type'] =='pps'){
@@ -121,8 +121,8 @@ else if($_GET['type'] =='pps'){
      $items = [
         "Pick Up", "2 Weeks Storage","Embalm & Preparation",
         "Regular or Semi-Customized Casket","Casket Spray", "Wreath + Arrangement","Hearse","Single Vault (Dovecot or Meadowrest)", 
-        "200 Programs", "2000 Prayer Cards or Book Markers", "100 Buttons",
-        "2 TVJ's Death Announcement", "JUTC Bus &1 Gleaner Advertisment + 1 JUTC Bus", "Bands for Set UP"
+        "200 Programs", "200 Prayer Cards or Book Markers", "100 Buttons",
+        "2 TVJ's Death Announcement", "1 Gleaner Advertisment + 1 JUTC Bus", "Bands for Set UP"
     ];
 }
 else{
@@ -131,7 +131,8 @@ else{
 }
 ?> 
 <body>
-  <div class="container contact-container">
+  <div class="contact-container">
+      <div class="container">
     <div class="contact-us-2">
         <div class="row">
             <div class="col-md-6">
@@ -142,21 +143,37 @@ else{
                     <?php 
                         if(isset($_GET["error"])){
                             if($_GET["error"] == 1){
-                                echo"<p class='error'>*There was an error sending your quote</p>";
+                                echo'
+                                <div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                        There was an error sending your quote
+                                </div>';
                             }
                         }
                             if(isset($_GET["error-name"])){
-                                echo"<p class='error'>*Your name is required</p>";
-                            }
-                            if(isset($_GET["error-num"])){
-                                echo"<p class='error'>*A valid phone number is required</p>";
+                                echo'<div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
+                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                        Your name is required
+                                    </div>';
                             }
                             if(isset($_GET["error-email"])){
-                                echo"<p class='error'>*A valid email is required</p>";
+                                echo'<div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
+                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                       A valid email is required
+                                     </div>';
                             }                            
                             if(isset($_GET["error-tel"])){
-                                echo"<p class='error'>*A valid phone number is required</p>";
+                                echo'<div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
+                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                       A valid phone number is required
+                                     </div>';
                             }
+                        if(isset($_GET["success"])){
+                            echo ' <div class="alert alert-success  alert-dismissible" role="alert"  id="error-alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                        Thank you for making Garden of Paradise Funeral Home your choice. We will respond to you within 24 hours.
+                                    </div>';
+                        }
                     ?>
                     <p class="success"><?=(isset($_GET["success"]))?"Your message has been sent successfully!":""?><p>
                     <input type="hidden" name="type" value="<?=$_GET['type']?>">
@@ -192,6 +209,7 @@ else{
             </ul>
         </div>
        </div>
+    </div>
     </div>
 </div>
 </br>

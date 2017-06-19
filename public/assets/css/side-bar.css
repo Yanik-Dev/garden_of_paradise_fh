@@ -1,5 +1,5 @@
 body,html{
-    height: 100vh;
+    height: 100%;
   }
 
   nav.sidebar, .main{
@@ -69,7 +69,6 @@ body,html{
 
     nav.sidebar{
       width: 200px;
-      height: 100%;
       margin-left: -160px;
       float: left;
       margin-bottom: 0px;

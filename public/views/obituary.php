@@ -16,9 +16,9 @@ require('../services/ObituaryService.php');
          }
     }
     if(isset($_GET["q"])){
-       $obituaryList = $obituaryService->getByLimit($page_num, 10, $_GET["q"]);
+       $obituaryList = $obituaryService->getByLimit($page_num, 8, $_GET["q"]);
     }else{
-       $obituaryList = $obituaryService->getByLimit($page_num, 10);
+       $obituaryList = $obituaryService->getByLimit($page_num, 8);
     }
     $numberOfPages = $obituaryService->getNumberOfPages();
 ?>
@@ -28,6 +28,7 @@ require('../services/ObituaryService.php');
 .card{
     text-align:left;
     min-height: 600px;
+    height: auto !important;
     margin-bottom: 40px;
 }
 </style>
@@ -62,7 +63,7 @@ require('../services/ObituaryService.php');
                         </div>
                     </div>
                 <?php endforeach; ?>
-                
+               
                 <?php if(count($obituaryList) < 1): ?>
                   <center><h3>No obituary found </h3></center>
                 <?php endif; ?>

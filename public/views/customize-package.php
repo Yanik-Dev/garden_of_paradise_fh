@@ -20,60 +20,55 @@
     text-align: center;
  }
 </style>
-<!-- Steps Progress and Details - START -->
 <div class="container" style="margin-top: 20px; margin-bottom: 100px;">
     <div class="page-header header-card">
         <h1>Customize your package</h1>
-        <h1><small>
-           Didn't find a package that suits you? Here you have the opportunity to submit a customized request. 
-        </small></h1>
-        <h2><small> 
-           Tick off under each category what you would like then enter your information and submit the form.
-        </small></h2>
-    </div>
-    <?php 
-
+        <h4 style="font-family:'helvetica' !important;">
+           Tick off under each category what you would like then enter your information under the submit request.
+        </h4>
+        <?php 
         if(isset($_GET["error"])){
             echo ' <div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
                   ';
             if($_GET["error"] == 1){
-                echo" class='error'> *There was an error sending your quote";
+                echo"  *There was an error sending your quote";
             }
-            if(isset($_GET["error"]) == 2){
-                echo"<p class='error'>*Your name is required</p>";
+            if($_GET["error"] == 2){
+                echo"Your name is required";
             }
-            if(isset($_GET["error"])==3){
-                echo"<p class='error'>*A valid phone number is required</p>";
+            if( $_GET["error"] ==3){
+                echo"A valid phone number is required";
             }
-            if(isset($_GET["error"]) == 4){
-                echo"<p class='error'>*A valid email is required</p>";
+            if($_GET["error"] == 4){
+                echo"A valid email is required";
             }
-            if(isset($_GET["error"]) == 5){
-                echo"<p class='error'>*A message is required</p>";
-            }
-            if(isset($_GET["error"]) == 6){
-                echo"<p class='error'>*You must select at least one item</p>";
+            if($_GET["error"] == 6){
+                echo"You must select at least one item";
             }
             echo"</div>";
         }
-    ?>
+         if(isset($_GET["success"])){
+            echo ' <div class="alert alert-success  alert-dismissible" role="alert"  id="error-alert">
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        Thank you for making Garden of Paradise Funeral Home your choice. We will respond to you within 24 hours.
+                  </div>';
+        }
+       ?>
+    </div>
+    
     <div class="row">
-       <!-- <div class="progress" id="progress1">
-            <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
-            </div>
-            <span class="progress-type">Overall Progress</span>
-            <span class="progress-completed">20%</span>
-        </div> -->
+      
     </div>
     <div class="row">
         <div class="row step">
+        <?php $i=0; ?>
             <?php foreach($categories as $category): ?>
-                <div id="div1" class="col-md-2 activestep" onclick="javascript: resetActive(event, 0, 'step-<?=$category->getId()?>');">
+                <div id="div<?=$category->getId()?>" class="col-md-2 <?=($i ==0 )?'activestep':''?>" onclick="javascript: resetActive(event, 0, 'step-<?=$category->getId()?>');">
                     <span class="glyphicon  glyphicon-tags"></span>
                     <p><?= $category->getName()?></p>
                 </div>
-            <?php endforeach; ?>
+            <?php $i++;endforeach; ?>
             <?php if(count($categories)> 0):?>
             <div class="col-md-2" onclick="javascript: resetActive(event, 100, 'step-final');">
                <span class="glyphicon  glyphicon-th-list"></span>
@@ -83,9 +78,10 @@
         </div>
     </div>
     
-    <form action="" method="post">
+    <form action="../actions/custom-request-action.php" method="post">
+        <?php $i=0; ?>
         <?php foreach($categories as $category): ?>
-            <div class="row setup-content step activeStepInfo " id="step-<?=$category->getId()?>">
+            <div class="row setup-content step <?=($i ==0 )?'activeStepInfo':''?> " id="step-<?=$category->getId()?>">
                 <div class="col-xs-12">
                     <div class="col-md-12 well text-center">
                         <h1><?= $category->getName()?></h1>
@@ -117,7 +113,7 @@
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>
+        <?php $i++;endforeach; ?>
     <div class="row setup-content step hiddenStepInfo" id="step-final">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
@@ -278,9 +274,17 @@
         $(id).addClass("activeStepInfo");
     }
 </script>
-
+<?php
+  if(count($categories) > 1){
+    echo "<script>
+        $('#div".$categories[1]->getId()."').trigger('click');
+        $('#div".$categories[0]->getId()."').trigger('click');
+    </script>";
+  }
+ ?>
 <script>
     $(document).ready(function(){
+        
    $('a img').on('click',function(){
         var src = $(this).attr('src');
         var img = '<img src="' + src + '" class="img-responsive"/>';

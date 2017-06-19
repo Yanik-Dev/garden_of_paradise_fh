@@ -37,19 +37,29 @@
         <div class="contact-send">
              <?php 
                   if(isset($_GET["error"])){
+                       echo ' <div class="alert alert-success  alert-dismissible" role="alert"  id="error-alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+                            ';
                       if($_GET["error"] == 1){
-                        echo"<p class='error'>*There was an error sending your email</p>";
+                        echo"There was an error sending your email";
                       }
                       if(isset($_GET["error-name"])){
-                        echo"<p class='error'>*Your name is required</p>";
+                        echo"Your name is required";
                       }
                       if(isset($_GET["error-email"])){
-                        echo"<p class='error'>*A valid email is required</p>";
+                        echo"A valid email is required";
                       }
                       if(isset($_GET["error-message"])){
-                        echo"<p class='error'>*A message is required</p>";
+                        echo"A message is required";
                       }
+                      echo '</div>';
                   }
+                  if(isset($_GET["success"])){
+                        echo ' <div class="alert alert-success  alert-dismissible" role="alert"  id="error-alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                    Thank you for making Garden of Paradise Funeral Home your choice. We will respond to you within 24 hours.
+                            </div>';
+                    }
                 ?>
             <p class="success"><?=(isset($_GET["success"]))?"Your message has been sent successfully!":""?><p>
             <input type="text" name="name"  class="form-control" placeholder="Name *" colspan="4" required maxlength="15" />

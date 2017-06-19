@@ -174,7 +174,7 @@ class ItemService
 
             if($rows = $statement->get_result()){
                 while($row = $rows->fetch_assoc()){
-                    $path[i] = $row["path"];
+                    $paths[$i] = $row["path"];
                     $i++;
                 }
             }else{
@@ -188,7 +188,7 @@ class ItemService
                 foreach($paths as $path){
                     unlink($_CONFIG["UPLOADS"].$path);
                 }
-                    Database::getInstance()->commit();
+                Database::getInstance()->commit();
                 return true;
             }else{
                 Database::getInstance()->rollback();

@@ -17,7 +17,8 @@
     <div class="container card about-us-container">
       <div class="row ">
       <div class="col-md-4 side-content">
-          <img class="img-responsive" src="../assets/img/about-us-casket.jpg" align="middle">
+          <img class="img-responsive" src="../assets/img/building.jpg" align="middle">
+          <p></p>
           <p>
             At Garden of Paradise Funeral Home, we pride ourselves on being talented which is evident in every job we complete. Our level of professionalism is par excellence!!
           </p>
@@ -73,7 +74,7 @@
               fulfilling experience that meets the unique needs of each family.
             </p>
             <p >
-              We stand by our Motto: “Granting relief in time of grief."
+              We stand by our Motto: “Granting relief in times of grief."
             </p>
           </div>
     </div>

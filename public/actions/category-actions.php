@@ -26,13 +26,13 @@
 
     if( $category->getId() == 0){
         $exist = CategoryService::exist($category);
-
+        $categoryService = new CategoryService();
         if($exist){
             header("location: ../views/category-management.php?error=2");
             exit;
         }
 
-        $count = CategoryService::getCount();
+        $count = $categoryService->getCount();
 
         if($count == 10){
              header("location: ../views/category-management.php?error=10");

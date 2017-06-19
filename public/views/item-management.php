@@ -52,8 +52,13 @@
     $numberOfPages = $itemService->getNumberOfPages();
 
 ?>
+<style>
+  .card{
+      min-height: 500px;
+      height: auto !important;
+  }
+</style>
 <div class="container item-management">
-
         <a href="./category-management.php" class="btn btn-danger" style="margin-bottom: 20px;">Back To Categories</a>
     <div class="row">
         <h2>Category: <?=$category->getName()?> </h2>
@@ -91,7 +96,7 @@
                     <input type="text" value="<?=(isset($item))?$item->getName():''?>" class="form-control" name="name" placeholder="item Name" maxlength="120" required>
                     </div>
                     <div class="form-group">
-                        <textarea style="text-align: left;" class="form-control" name="description" placeholder="Item Description"><?=(isset($item))?$item->getDescription():''?></textarea>
+                        <textarea style="text-align: left;" class="form-control" name="description" placeholder="Item Description" required><?=(isset($item))?$item->getDescription():''?></textarea>
                     </div>
 
                     <button type="submit" class="cust-btn"><?= (isset($item))?'Save Changes':'Insert'?></button>
