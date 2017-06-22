@@ -34,6 +34,11 @@ require('../services/ObituaryService.php');
 </style>
 <div class="container">
     <div class="row card">
+        <img src="../assets/img/leaf.png" class="img-responsive card-leaf-left"  width="100px" height="150px"style="" alt="" > 
+        <img src="../assets/img/leaf_flip.png" class="img-responsive card-leaf-bottom-left"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/leaf_flip.png" class="img-responsive card-leaf-top-right"  width="100px" height="150px" alt="" > 
+		
         <div class="col-md-8 obituary-content">
             <div id="search-wrapper">
                <form class="form-inline" >
@@ -42,7 +47,8 @@ require('../services/ObituaryService.php');
                     </div>
                     
                     <div class="col-sm-2 col-xs-4"> 
-                       <button type="submit" class="btn btn-block" style="height: 40px !important; background-color:#337AB7; color: #fff">Search</button>
+                       <button type="submit" class="btn btn-block" style="height: 40px !important; background-color:#337AB7; color: #fff">
+                           <span class="glyphicon glyphicon-search"><span></button>
                     </div>
                 </form>
                 <br>
@@ -66,6 +72,10 @@ require('../services/ObituaryService.php');
                
                 <?php if(count($obituaryList) < 1): ?>
                   <center><h3>No obituary found </h3></center>
+                <?php else: ?>
+                <br />
+                <br />
+                <br />
                 <?php endif; ?>
             </div>
             <div class="row text-center">

@@ -17,12 +17,12 @@ require('../services/ObituaryService.php');
         <div class="carousel-inner" role="listbox">
             <div class="item active moving">
                 <div class="carousel-caption">
-                  <h2>Granting Relief in Times of Grief</h2> 
+                  <h2 style="color: #830506;">Granting Relief in Times of Grief</h2> 
                 </div>
             </div>
             <div class="item moving">
                 <div class="carousel-caption">
-                   <h2> Every Life Deserved A Special Time of Honouring and Celebrating</h2> 
+                   <h2 > Every Life Deserved A Special Time of Honouring and Celebrating</h2> 
                    <h4> Let us at Garden of Paradise assist you </h4>
                 </div>
             </div>
@@ -64,7 +64,7 @@ require('../services/ObituaryService.php');
         </div> 
       </div> 
    </div> 
-  <div class="container-fiuld home-obituary">
+  <div class="container-fiuld home-obituary gray-bg">
      <div class="container">
          <center><h1>Current Obituaries</h1></center>
          <div class="row">
@@ -96,6 +96,9 @@ require('../services/ObituaryService.php');
          <div class="row">
             <div class="col-md-3 col-sm-6 ">
             <div class="card card-hover wow slideInRight" data-wow-delay="0.2s">
+                 <img src="../assets/img/leaf.png" class="img-responsive card-leaf-left"  width="50px" height="100px"style="" alt="" > 
+            <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right"  width="50px" height="100px" alt="" > 
+		
                     <h3>Basic Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -115,6 +118,9 @@ require('../services/ObituaryService.php');
             </div>
             <div class="col-md-3 col-sm-6">
             <div class="card card-hover wow slideInRight" data-wow-delay="0.4s">
+                
+                 <img src="../assets/img/leaf.png" class="img-responsive card-leaf-left"  width="50px" height="100px"style="" alt="" > 
+            <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right"  width="50px" height="100px" alt="" > 
                     <h3>Garden Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -134,6 +140,9 @@ require('../services/ObituaryService.php');
             </div>
             <div class="col-md-3 col-sm-6">
                  <div class="card card-hover wow slideInRight" data-wow-delay="0.6s">
+                     
+                 <img src="../assets/img/leaf.png" class="img-responsive card-leaf-left"  width="50px" height="100px"style="" alt="" > 
+            <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right"  width="50px" height="100px" alt="" > 
                     <h3>Paradise Package</h3>
                     <ul>
                         <li>Pick Up</li>
@@ -154,6 +163,8 @@ require('../services/ObituaryService.php');
             </div>
             <div class="col-md-3 col-sm-6">
             <div class="card card-hover wow slideInRight" data-wow-delay="0.8s">
+                 <img src="../assets/img/leaf.png" class="img-responsive card-leaf-left"  width="50px" height="100px"style="" alt="" > 
+                 <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right"  width="50px" height="100px" alt="" > 
                     <h3>Customized Package</h3>
                     <br />
                     <h4>
@@ -166,6 +177,7 @@ require('../services/ObituaryService.php');
      </div>
  </div> 
 </div>
+<div class="contianer-fluid gray-bg">
 <div class="container">
     <div class="row welcome">
         <div class="col-md-10 wow slideInLeft">
@@ -181,6 +193,7 @@ require('../services/ObituaryService.php');
         <div class="col-md-4"></div>
     </div> 
 </div> 
+</div>
 <?php require_once('footer.php'); ?>
 <script>
     $('#carousel').carousel();

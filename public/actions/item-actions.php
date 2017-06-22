@@ -11,13 +11,13 @@ $item = new Item();
     if(isset($_GET["delete"]) && isset($_GET["id"])){
         if(!itemService::delete($item->getId())){
         }
-        header("location: ../views/item-management.php?cat_id=".$_POST["category"]);
+        header("location: ../views/category-management.php");
         exit;
     }
     
     if(!strcmp($_FILES['file']['tmp_name'], "") ==0){
         if (!in_array( $_FILES['file']['type'], array ('image/jpeg', 'image/jpg', 'image/pjpeg', 'image/png') )){
-            header("location: ../views/item-management.php?id=".$_POST['category']."&error=5");
+            header("location: ../views/item-management.php?cat_id=".$_POST['category']."&error=5");
             exit;
         }
     }

@@ -16,11 +16,7 @@
          header("location: ./category-management.php");
         exit;
     }
-    if($_GET['cat_id'] < 1){
-        header("location: ./category-management.php");
-        exit;
-    }
-    
+       
     $category = CategoryService::findOne($_GET['cat_id']);
     
     if(isset($_GET["id"])){
@@ -87,9 +83,13 @@
                 <?php endif; ?>
                 <form action="<?= (isset($item))?'../actions/item-actions.php?id='.$item->getId().'&cat_id='.$_GET['cat_id']:'../actions/item-actions.php?cat_id='.$_GET['cat_id']?>" enctype="multipart/form-data" method="post">
                     <input type="hidden" value="<?=$category->getId()?>" class="form-control" name="category">
+                    <div  class="form-group"> 
+                        <label style="width:100%">Preview</label>
+                        <img id="img-output" src="<?=((isset($item))?($item->getPath()!=null)?$item->getPath():'../assets/img/logo.png':'../assets/img/logo.png')?>"  width="70px" height="70px">
+                    </div>
                     <div class="form-group">
                         <label for="" style="float:left">Image of Item</label>
-                        <input type="file" name="file" id="">
+                        <input type="file" name="file" id="" onchange="previewImage(event)">
                         <p class="help-block"></p>
                     </div>
                     <div class="form-group">
@@ -175,3 +175,13 @@
 <?php require_once('admin-footer.php'); ?>
 
 <script src='../assets/lib/ckeditor/ckeditor.js'></script>
+<script>
+ /**
+  * Shows the preview of an image in an image tag with the id 'img-ouput'
+  * @param {$event} event  
+  */
+ var previewImage = function(event) {
+    var output = document.getElementById('img-output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+ };
+</script>

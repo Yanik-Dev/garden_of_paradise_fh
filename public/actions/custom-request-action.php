@@ -51,7 +51,7 @@ $body ="<h3>Requested By: </h3>"
        ."<p>".$_POST['name']."</p>"
        ."<p>".$_POST['tel'].((isset($_POST['email']))?" | ".$_POST['email']."</p>":"</p>")
        .((isset($_POST['message']))?"<h4> Additional Request </h4> <p>".$_POST['message']."</p>":"")
-       ."<h4>Details</h4> <p>{$title}</p>".$packageDetails;
+       ."<h4>Details</h4>".$packageDetails;
 
 $headers = array(
     'From' =>  $_CONFIG["EMAILCRED"]["USERNAME"],
@@ -69,13 +69,13 @@ $smtp = Mail::factory('smtp', array(
         'password' =>  $_CONFIG["EMAILCRED"]["PASSWORD"]
 ));
 
-$mail = $smtp->send($to, $headers, $body);
+$mail = $smtp->send($_CONFIG["EMAILCRED"]["TO"], $headers, $body);
 
 if (PEAR::isError($mail)) {
     echo('<p>' . $mail->getMessage() . '</p>');
-   header("location: ../views/contact-us.php?error=1");
-   exit;
-} else {
-    header("location: ../views/contact-us.php?success=true");
     exit;
+   header("location: ../views/customize-package.php?error=1");
+} else {
+    header("location: ../views/customize-package.php?success=true");
 }
+exit;

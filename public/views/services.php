@@ -23,18 +23,21 @@
     <div class="service-block">
       <div class="col-md-4 col-sm-4 col-xs-12">
       <div class="s-block-1 wow slideInRight" data-wow-delay="0.2s">
+         <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
           <img src="../assets/img/icons/24hours.svg">
           <p>24 Hour Service</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
       <div class="s-block-1 wow slideInRight" data-wow-delay="0.4s">
+         <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
         <img src="../assets/img/icons/limo.svg">
           <p>Family Vehicle</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="0.6s">
+         <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
         <img src="../assets/img/icons/arrangement.svg">
         <p>Pre-Funeral Arrangements</p>
         </div>
@@ -46,19 +49,22 @@
     <div class="service-block">
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="0.8s">
-          <img src="../assets/img/icons/jamaica.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/jamaica.svg">
           <p>All Island Pick Up</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="1s">
-          <img src="../assets/img/icons/icon.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/icon.svg">
           <p>Complete Funeral Arrangements</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="1.2s">
-          <img src="../assets/img/icons/coffin.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/coffin.svg">
           <p>Customized and Local Caskets</p>
         </div>
       </div>
@@ -69,19 +75,22 @@
     <div class="service-block">
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="0.2s">
-          <img src="../assets/img/icons/twop.svg">
+          <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+         <img src="../assets/img/icons/twop.svg">
           <p>Grief Counseling</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="0.4s">
-          <img src="../assets/img/icons/megaphone.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/megaphone.svg">
           <p>Death Announcements</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="0.6s">
-          <img src="../assets/img/icons/vase.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/vase.svg">
           <p>Creamation</p>
         </div>
       </div>
@@ -92,19 +101,22 @@
     <div class="service-block">
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="0.8s">
-          <img src="../assets/img/icons/limo.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/limo.svg">
           <p>Limousine</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="1s">
-          <img src="../assets/img/icons/arrangement.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/arrangement.svg">
           <p>Exquisite Funeral Arrangements</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="1.2s">
-          <img src="../assets/img/icons/dove.svg">
+          <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+         <img src="../assets/img/icons/dove.svg">
           <p>Dove Release</p>
         </div>
       </div>
@@ -115,19 +127,22 @@
     <div class="service-block">
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="1.4s">
-          <img src="../assets/img/icons/grave.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/grave.svg">
           <p>Customized Headstones</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="1.6s">
-          <img src="../assets/img/icons/group.svg">
+          <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+         <img src="../assets/img/icons/group.svg">
           <p>Buttons</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="1.8s">
-          <img src="../assets/img/icons/keyring.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/keyring.svg">
           <p>Key Rings</p>
         </div>
       </div>
@@ -138,19 +153,22 @@
     <div class="service-block">
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="0.2s">
-          <img src="../assets/img/icons/shirt.svg">
+          <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+         <img src="../assets/img/icons/shirt.svg">
           <p>T-Shrits</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="0.4s">
-          <img src="../assets/img/icons/mug.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/mug.svg">
           <p>Mugs & Cups</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="0.6s">
-          <img src="../assets/img/icons/umbrella.svg">
+          <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+         <img src="../assets/img/icons/umbrella.svg">
           <p>Umbrellas</p>
         </div>
       </div>
@@ -161,19 +179,22 @@
     <div class="service-block">
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="0.8s">
-          <img src="../assets/img/icons/bag.svg">
+          <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+         <img src="../assets/img/icons/bag.svg">
           <p>Tote Bags</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="1s">
-          <img src="../assets/img/icons/paper.svg">
+          <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+         <img src="../assets/img/icons/paper.svg">
           <p>Online Obituaries</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="1.2s">
-          <img src="../assets/img/icons/button.svg">
+          <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+         <img src="../assets/img/icons/button.svg">
           <p>Clocks</p>
         </div>
       </div>
@@ -184,13 +205,15 @@
     <div class="service-block">
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="1.4s">
-          <img src="../assets/img/icons/button.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/button.svg">
           <p>Watches</p>
         </div>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="s-block-1 wow slideInRight" data-wow-delay="1.6s">
-          <img src="../assets/img/icons/gift.svg">
+           <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right img"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/icons/gift.svg">
           <p>Other Memorabilia</p>
         </div>
       </div>

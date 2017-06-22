@@ -73,8 +73,7 @@
        <script type="text/JavaScript" src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
        <script src="../assets/lib/wow.min.js"></script>
         <script>
-            wow = new WOW(
-            {
+            wow = new WOW({
                 animateClass: 'animated',
                 offset:       100,
                 callback:     function(box) {
@@ -83,6 +82,15 @@
             }
             );
             wow.init();
+
+            $("#dropdown").hover(function(event){
+                $("#drop-menu").addClass("animated rotateInDownRight")
+            })
+
+            $(function () { 
+                $("[data-toggle='tooltip']").tooltip();
+            });
+            
         </script>
     </body>
 </html>

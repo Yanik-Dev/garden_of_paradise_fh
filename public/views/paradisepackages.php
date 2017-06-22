@@ -58,10 +58,24 @@
             </tr>
 
             <tr>
-                <td colspan="6">Casket + Casket Spray</td>
+                <td colspan="6">Casket</td>
                 <td colspan="2">Regular or Semi-Customized Casket</td>
                 <td colspan="2">Regular or Semi-Customized Casket</td>
                 <td colspan="2">Regular or Semi-Customized Casket</td>
+            </tr>
+
+<tr>
+                <td colspan="6">Casket Spray</td>
+                <td colspan="2">✗</td>
+                <td colspan="2">✔</td>
+                <td colspan="2">✔</td>
+            </tr>
+
+            <tr>
+                <td colspan="6">Casket Piece</td>
+                <td colspan="2">✔</td>
+                <td colspan="2">✗</td>
+                <td colspan="2">✗</td>
             </tr>
 
             <tr>
@@ -130,7 +144,7 @@
             <tr>
                 <td colspan="6">Bands for Set up</td>
                 <td colspan="2">✗</td>
-                <td colspan="2">✔</td>
+                <td colspan="2">✗</td>
                 <td colspan="2">✔</td>
             </tr>
              <tr>

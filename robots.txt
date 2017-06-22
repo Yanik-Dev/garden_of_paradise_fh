@@ -1,0 +1,12 @@
+User-Agent: *
+Disallow: /cgi-bin
+Disallow: /stats
+Disallow: /actions
+Disallow: /classes
+Disallow: /common
+Disallow: /config
+Disallow: /services
+Disallow: /assets
+Disallow: /vendor
+Disallow: /uploads
+Disallow: /sql

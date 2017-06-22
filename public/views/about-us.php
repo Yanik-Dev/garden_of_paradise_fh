@@ -15,6 +15,9 @@
 </style>
 <div class="container">
     <div class="container card about-us-container">
+      <img src="../assets/img/leaf.png" class="img-responsive card-leaf-left"  width="70px" height="120px"style="" alt="" > 
+            <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right"  width="70px" height="120px" alt="" > 
+		
       <div class="row ">
       <div class="col-md-4 side-content">
           <img class="img-responsive" src="../assets/img/building.jpg" align="middle">
@@ -44,6 +47,7 @@
     
     <div class="col-md-8 ">
        <div class="content card">
+         
         <h1 align="center">About Us</h1>
         <br />
            <p>

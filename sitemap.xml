@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	  	  
+<!-- www.check-domains.com sitemap generator -->
+
+<url>
+   <loc>http://www.gardenofparadisefh.com/views/home.php</loc>
+   <lastmod>2017-06-21T16:46:11+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>http://www.gardenofparadisefh.com/views/services.php</loc>
+   <lastmod>2017-06-21T16:46:11+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://www.gardenofparadisefh.com/views/obituary.php</loc>
+   <lastmod>2017-06-21T16:46:11+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://www.gardenofparadisefh.com/views/contact-us.php</loc>
+   <lastmod>2017-06-21T16:46:11+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://www.gardenofparadisefh.com/views/dedication.php</loc>
+   <lastmod>2017-06-21T16:46:11+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://www.gardenofparadisefh.com/views/album.php</loc>
+   <lastmod>2017-06-21T16:46:11+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://www.gardenofparadisefh.com/views/about-us.php</loc>
+   <lastmod>2017-06-21T16:46:11+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://www.gardenofparadisefh.com/views/basicpackages.php</loc>
+   <lastmod>2017-06-21T16:46:11+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://www.gardenofparadisefh.com/views/gardenpackages.php</loc>
+   <lastmod>2017-06-21T16:46:11+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>http://www.gardenofparadisefh.com/views/paradisepackages.php</loc>
+   <lastmod>2017-06-21T16:46:11+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.6400</priority>
+</url>
+</urlset>

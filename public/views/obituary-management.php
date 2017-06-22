@@ -6,6 +6,11 @@
  require_once('admin-sidebar.php');
  
 ?> 
+<style>
+ .card{
+     height: auto !important;
+ }
+</style>
 
 <?php
     $obituaryService = new ObituaryService();
@@ -38,7 +43,7 @@
     <h3> Obituary Form </h3>
    <a href="./obituary-grid.php" class="btn btn-danger" style="margin-bottom: 20px;">Back to grid</a>
                 <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12 card">
               <?php if(isset($_GET['error'])): ?>
                     <div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
@@ -63,9 +68,13 @@
                     </div>
                 <?php endif; ?>
                 <form action="<?= (isset($obituary))?'../actions/obituary-actions.php?id='.$obituary->getId():'../actions/obituary-actions.php'?>" method="post" enctype="multipart/form-data">
-                     <div class="form-group">
+                    <div  class="form-group"> 
+                        <label style="width:100%">Preview</label>
+                        <img id="img-output" src="<?=((isset($obituary))?($obituary->getPath()!=null)?$obituary->getPath():'../assets/img/logo.png':'../assets/img/logo.png')?>"  width="70px" height="70px">
+                    </div>
+                    <div class="form-group">
                         <label for="exampleInputFile">Photo</label>
-                        <input type="file" name="file" id="exampleInputFile">
+                        <input type="file" name="file" id="exampleInputFile" onchange="previewImage(event)">
                         <p class="help-block"></p>
                     </div>
                     <div class="form-group">
@@ -91,3 +100,13 @@
 <?php require_once('admin-footer.php'); ?>
 
 <script src='../assets/lib/ckeditor/ckeditor.js'></script>
+<script>
+ /**
+  * Shows the preview of an image in an image tag with the id 'img-ouput'
+  * @param {$event} event  
+  */
+ var previewImage = function(event) {
+    var output = document.getElementById('img-output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+ };
+</script>

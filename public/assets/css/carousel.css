@@ -59,7 +59,7 @@ body,
 }
 
 .item:nth-child(1) {
-    background-image: url("../img/paradise1.jpg");
+    background-image: url("../img/carousel1.png");
 }
 
 .item:nth-child(2) {
@@ -67,7 +67,7 @@ body,
 }
 
 .item:nth-child(3) {
-    background-image: url("../img/paradise1.jpg");
+    background-image: url("../img/carousel2.jpg");
 }
 
 

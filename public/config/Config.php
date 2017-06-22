@@ -15,12 +15,12 @@ global $_CONFIG;
 
 $_CONFIG = [
         "DATABASECONFIG" => [
-            "SERVER" =>"127.0.0.1",
+            "SERVER" =>"localhost",
             "USERNAME" => "root",
-            "PASSWORD" => "",
+            "PASSWORD" => '',
             "DATABASE" => "gardenfh_db"
         ],
-        "UPLOADS"=> "..\\uploads\\",
+        "UPLOADS"=> "../uploads/",
         "EMAILCRED" => [
             "TO" => "yanikblake@yahoo.com",
             "USERNAME" => "yanikblake@gmail.com",

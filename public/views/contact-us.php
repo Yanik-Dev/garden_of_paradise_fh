@@ -1,32 +1,50 @@
 
 <?php $title = "Contact Us";?>
-<?php require_once('header.php'); ?>   
+<?php require_once('header.php'); ?>  
+<style>
+ .card{
+     height: auto !important;
+     width: 95%;
+     margin: 0 auto;
+     
+    -webkit-box-shadow: 0 5px 6px -6px #000;
+       -moz-box-shadow: 0 5px 6px -6px #000;
+            box-shadow: 0 5px 6px -6px #000;
+ }
+</style> 
 <body>
     <div class="container contact-container">
     <div class="container">    
-    <div class="row info-content animated lightSpeedIn">    
-        <div class="col-md-4 col-sm-4 col-xs-12" >
-        <center>
-            <img src="../assets/img/icons/email-contact.png"  alt="Email">
-            <h4>gardenofparadisefh@gmail.com</h4>
-            </center>
-        </div>
-
-        <div class="col-md-4 col-sm-4 col-xs-12 ">
+    <div class="row info-content animated lightSpeedIn card"> 
+         <img src="../assets/img/leaf.png" class="img-responsive card-leaf-left"  width="100px" height="150px"style="" alt="" > 
+        <img src="../assets/img/leaf_flip.png" class="img-responsive card-leaf-bottom-left"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/leaf.png" class="img-responsive card-leaf-right"  width="100px" height="150px" alt="" > 
+        <img src="../assets/img/leaf_flip.png" class="img-responsive card-leaf-top-right"  width="100px" height="150px" alt="" > 
+		
+        <div class="">
+            <div class="col-md-4 col-sm-12 col-xs-12" >
             <center>
-                <img src="../assets/img/icons/telephone-contact.png"   alt="Phone">
-               <h4>(1-876) 327-9729</h4>
-                <h4>(1-876) 870-5848</h4> 
-            </center>
-        </div>
+                <img src="../assets/img/icons/email-contact.png"  alt="Email">
+                <h4>gardenofparadisefh@gmail.com</h4>
+                </center>
+            </div>
 
-        <div class="col-md-4 col-sm-4 col-xs-12 animated zoomIn">
-            <center>
-                <img src="../assets/img/icons/location-contact.png" alt="Location">
-                <h4>1 North Avenue, Kingston 5</h4>
-                <h4>Jamaica</h4>
-            </center>
-        </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 ">
+                <center>
+                    <img src="../assets/img/icons/telephone-contact.png"   alt="Phone">
+                <h4>(1-876) 327-9729</h4>
+                    <h4>(1-876) 870-5848</h4> 
+                </center>
+            </div>
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <center>
+                    <img src="../assets/img/icons/location-contact.png" alt="Location">
+                    <h4>1 North Avenue, Kingston 5</h4>
+                    <h4>Jamaica</h4>
+                </center>
+            </div>
+        </div>   
     </div>
     </div>
     <div class="contact-us-2 container">
@@ -37,7 +55,7 @@
         <div class="contact-send">
              <?php 
                   if(isset($_GET["error"])){
-                       echo ' <div class="alert alert-success  alert-dismissible" role="alert"  id="error-alert">
+                       echo ' <div class="alert alert-danger  alert-dismissible" role="alert"  id="error-alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></button>
                             ';
                       if($_GET["error"] == 1){

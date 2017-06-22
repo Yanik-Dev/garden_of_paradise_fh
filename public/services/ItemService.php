@@ -1,6 +1,6 @@
 <?php 
-require_once '../common/Databaseservice.php'; 
-require_once '../classes/Item.php'; 
+require_once dirname(__FILE__).'/../common/DatabaseService.php'; 
+require_once dirname(__FILE__).'/../classes/Item.php'; 
 
 class ItemService 
 {

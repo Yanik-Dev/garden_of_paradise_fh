@@ -1,7 +1,7 @@
 <?php 
-require_once '../common/Databaseservice.php'; 
-require_once '../classes/Image.php'; 
-include_once("../config/Config.php");
+require_once dirname(__FILE__).'/../common/DatabaseService.php'; 
+require_once dirname(__FILE__).'/../classes/Image.php'; 
+include_once dirname(__FILE__).'/../config/Config.php';
 
 class ImageService 
 {

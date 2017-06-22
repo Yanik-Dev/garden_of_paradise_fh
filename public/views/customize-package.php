@@ -96,7 +96,7 @@
                                                    value="<?= $item->getName() ?>"
                                                    class="form-control" id="<?= $item->getId() ?>" style="padding:10px">
                                 <a  class="thumbnail">
-                                    <img src="<?= '..\\uploads\\'.$item->getPath() ?>" />
+                                    <img src="<?= $item->getPath() ?>" />
                                     <div class="caption">
                                         <h4 class="title"><?= $item->getName() ?></h4>
                                         <p class="description"> <?= $item->getDescription() ?></p>

@@ -32,30 +32,52 @@
     $numberOfPages = $albumService->getNumberOfPages();
 
 ?>
-<div class="container album-container">
- <h1 align="center">Albums</h1>  
+
+<style>
+.card{
+    text-align:left;
+    min-height: 600px;
+    height: auto !important;
+    margin-bottom: 40px;
+}
+body{
+    overflow-x: hidden;
+}
+</style>
+<div class="container card">
+      <img src="../assets/img/leaf.png" class="img-responsive card-leaf-left"  width="70px" height="120px" style="" alt="" > 
+      <img src="../assets/img/leaf_flip.png" class="img-responsive card-leaf-top-right"  width="70px" height="120px" alt="" > 
+		
+ <h1 align="center">Our Gallery</h1>  
 <br>
 <div class="row">
      <?php foreach($albumList as $album) :?>
-  	    <div class="col-md-3 col-sm-3 col-xs-6">
-          <div  class="thumbnail animated fadeInRightBig">
-              <img src="<?= ($album->getImages() != null)?'..\\uploads\\'.$album->getImages()[0]->getPath():'../assets/img/placeholder.png' ?>" />
-              <div class="caption">
+              <div class="col-md-12">
                 <h4 class="title"><?= $album->getName() ?></h4>
                 <p class="description"> <?= $album->getDescription() ?></p>
-                <p><a href="<?= ".\\gallery.php?id=".$album->getId() ?>" class="btn btn-success" role="button">View Photos</a> </p>
                </div>
-          </div>
-        </div>
+       <div class="row">
+        <?php $imageList = $album->getImages(); foreach($imageList as $image) :?>
+            <div class="col-xs-3">
+            <a class="thumbnail gallery" style="border-radius: 0; padding: 0" data-toggle="tooltip" data-placement="top" title="click to view larger">
+                <img src="<?= '..\\uploads\\'.$image->getPath() ?>" />
+            </a>
+            </div>
+            <?php endforeach; ?>
+            <?php if(count($imageList) < 1): ?>
+            <div style="margin-bottom: 60px;">
+                <center><h3>No Images has been added to this album as yet </h3></center>
+            </div>
+            <?php endif; ?>
+       </div>
      <?php endforeach; ?>
-      <?php if(count($albumList) < 1): ?>
+       <?php if(count($albumList) < 1): ?>
           <div style="margin-bottom: 60px;">
             <center><h3>No Album has been added as yet </h3></center>
           </div>
-     <?php endif; ?>
+      <?php endif; ?>
 </div>
-    
-<div class="row text-center">
+   <div class="row text-center">
 <!--Pagination -->
 <nav aria-label="..." style=" position: relative; margin: auto 0;">
 <ul class="pagination pagination-sm">
@@ -85,8 +107,42 @@
     <?php endif; ?>
 </ul>
 </nav>
-<!--end Pagination -->
-</div>
+<!--end Pagination --> 
  </div>
-            
+
+</div>
+<div style="z-index: 999999999" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <?php require_once('footer.php'); ?>
+<script>
+    $(document).ready(function(){
+   $('a img').on('click',function(){
+        var src = $(this).attr('src');
+        var img = '<img src="' + src + '" class="img-responsive"/>';
+
+          //Start of new code
+        var index = $(this).parent('a').index();
+        var html = '';
+        html += img;
+        html += '<div style="height:25px;clear:both;display:block;">';
+        html += '<a class="controls next" href="'+ (index+2) + '">next &raquo;</a>';
+        html += '<a class="controls previous" href="' + (index) + '">&laquo; prev</a>';
+        html += '</div>';
+        //End of new code
+
+        $('#myModal').modal();
+        $('#myModal').on('shown.bs.modal', function(){
+            $('#myModal .modal-body').html(img);
+        });
+        $('#myModal').on('hidden.bs.modal', function(){
+            $('#myModal .modal-body').html('');
+        });
+   });
+})
+</script>

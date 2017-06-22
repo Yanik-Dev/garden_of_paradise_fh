@@ -6,14 +6,41 @@
 body{
     padding:0;
     margin:0;
-    
-    background-image: url('../img/top_bg.jpg')
+    /*592131*/
+    background-image: url('../img/f_bg.jpg');
+    background-size: cover;
+}
+
+.white-bg{
+    background-image: url('../img/white_bg.jpg');
+}
+.gray-bg{
+    background-image: url('../img/top_bg.jpg');
+}
+.img-bg{
+    background-image: url('../img/f_bg.jpg');
+    background-size: cover;
+}
+
+.feather{
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+.gallery{
+     -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+.text-shadow{
+     text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff;
 }
 
 h1, h2, h3, h4{
     
     font-family : "cinzel" !important;
 }
+
 
 .watermark
 {
@@ -33,20 +60,35 @@ h1, h2, h3, h4{
 /** social bar styles **/
 .social-bar{
     padding: 5px;
-    border-bottom: 1px  solid #E0E0E0;
+    /*border-bottom: 1px  solid #E0E0E0;*/
 }
+	
 
+.o-header{
+    background-image: url('../img/white_bg.jpg'); 
+    opacity : 0.5;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    z-index: 2px;
+}
 .social-icon{
     display: block;
     float: left;
     width: 28px;
     height: 28px;
     margin-right: 5px;
+    border: 2px solid #eee; 
+    border-radius: 50%;
     -webkit-transition: -webkit-transform .8s ease-in-out;
     -moz-transition: -moz-transform .8s ease-in-out;
     -ms-transition: -ms-transform .8s ease-in-out;
     -o-transition: -o-transform .8s ease-in-out;
-          transition:         transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+.social-no-border{
+    border:0; 
+    border-radius: 0;
 }
 
 .social-icon:hover{
@@ -59,18 +101,12 @@ h1, h2, h3, h4{
 
 #location {
    display: block;
-   float: right;
    text-decoration: none;
+   padding: 5px 10px 5px 10px; 
+   background-color: #fff;   
 }
 
 
-#location img{
-    width: 24px;
-    height: 24px; 
-    margin-right: 5px;
-    display: block;
-    float: left;
-}
 
 /** header content styles **/
 .header{
@@ -106,7 +142,7 @@ h1, h2, h3, h4{
     width: 40px;
     padding: 10px;
     text-align: center;
-    background-color: #592131 !important;
+    background-color: #830506 !important;
     position: fixed;
     right: 50px;
     bottom: 10px;
@@ -121,8 +157,11 @@ h1, h2, h3, h4{
 /** nav bar styles **/
 .navbar{
     border-radius: 0px !important;
-    background-color: #592131 !important;
+    background-color: #830506 !important;
     border: 0px !important;  
+    -webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
 }
 
 .navbar-toggle{
@@ -145,6 +184,8 @@ h1, h2, h3, h4{
 }
 .nav-active, .navbar li a:hover, .navbar .open{
     background-color: #F1AD48 !important;
+  transition: background-color ease 1s;
+  -moz-transition: background-color ease 1s;
 }
 .navbar-nav > li.dropdown.active.open > a, 
 .navbar-nav > li.dropdown.active.open > ul.dropdown-menu a:hover,
@@ -157,9 +198,13 @@ h1, h2, h3, h4{
 }
 
 .dropdown-menu{
-    margin-top:8px !important;
+    border-top: 7px solid transparent;
+    margin-top:0px !important;
     border-radius: 0px !important;
-    background-color: #592131 !important;
+    background-color: #830506 !important; 
+    -webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
 }
 
 /** footer styles **/
@@ -175,7 +220,7 @@ h1, h2, h3, h4{
 
 .sub-footer{
     padding: 10px;
-    background-color: #592131;
+    background-color: #830506;
     color: white;
     text-align: center;
 
@@ -190,16 +235,75 @@ h1, h2, h3, h4{
     width: 80px;
     height: 80px;
 }
-.custom-brand, .navbar-brand:hover{
+
+@media (max-width: 1100px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+}
+.custom-brand{
      z-index: 999999;
-     height: 60px; border-left: 1px solid #000;
-     border-right: 1px solid #000;
-     border-bottom: 1px solid #000; 
-     background-color: #592131 !important;
+     height: 60px; border-bottom: 2px solid #fff;
+     background-color: #830506 !important;
      padding-top: 20px; 
      margin-top: -5px !important; 
      margin-left:-270px !important; 
      position: absolute;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+     text-decoration: none;
+}
+
+.navbar-brand:hover{
+     background-color: #830506 !important;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.custom-brand-edge{
+     z-index: 999999;
+     height: 60px; border-bottom: 2px solid #fff;
+     background-color: #830506 !important;
+     padding-top: 20px; 
+     margin-top: -5px !important; 
+     position: absolute;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
      text-decoration: none;
 }
 
@@ -211,11 +315,15 @@ h1, h2, h3, h4{
 }
 
 .home-content img{
-    border:5px solid #eee;
+    border:5px solid #E39E02;
+    
+    -webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
 }
 .packages{
     
-    background-image: url("../img/paradise1.jpg");
+    background-image: url("../img/f_bg.jpg");
     padding: 20px;
     background-attachment: fixed;
     background-position: center;
@@ -228,6 +336,7 @@ h1, h2, h3, h4{
 .home-obituary img{
     border: 5px solid #fff;
 }
+
 .card{
     height: 400px !important;
     border: 1px solid #eee;
@@ -266,6 +375,42 @@ h1, h2, h3, h4{
    border-radius: 0;
    text-decoration: none;
    bottom: 10px; 
+}
+
+.card-leaf-left{
+    z-index: 1;
+    top: 0px; 
+    position:absolute; 
+    left: 0px; 
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.card-leaf-top-right{
+    z-index: 1;
+    top: 0px; 
+    position:absolute; 
+    right: 0px; 
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.card-leaf-bottom-left{
+    z-index: 1;
+    bottom: 0px; 
+    position:absolute; 
+    left: 0px; 
+}
+
+.card-leaf-right{
+    z-index: 1;
+    right: 0px; position:absolute; bottom: 0px
 }
 
 .o-btn{
@@ -321,7 +466,7 @@ h1, h2, h3, h4{
 
 .sub-gallery-nav{
     text-align: center;
-    color: #592131;
+    color: #830506;
 }
 
 .sub-gallery-nav h1{
@@ -334,12 +479,11 @@ h1, h2, h3, h4{
     z-index: 99999999;
     height: 130px;
     width: 50px;
-    background-image: url('../img/contact-us-2-background.png');
     background-color: transparent;
 }
 
 
-@media( min-width: 850px){
+@media( min-width: 1300px){
     .social-sidebar{
         top: 50px;
         position: fixed;
@@ -397,8 +541,6 @@ h1, h2, h3, h4{
     }
     
     .contact-container .info-content img{
-        margin-top: 40px;
-        margin-bottom: 20px;
         width: 60px;
         height: 60px;
     }
@@ -574,6 +716,10 @@ h1, h2, h3, h4{
     background-image: url('../img/contact-us-2-background.png');
    margin-bottom: 30px;
    padding-top: 20px;
+   position: relative;
+   -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 }
 
 .s-block-1 img{
@@ -583,20 +729,26 @@ h1, h2, h3, h4{
    margin-right: auto;
    height: 50px;
    width: 50px;
-   background-color: #592131;
+   background-color: #830506;
    border-radius: 50%;
+}
+.s-block-1 .img{
+   padding: 0px;
+   display: block;
+   background-color: transparent;
+   border-radius: 0;
 }
 
 .s-block-1 p{
     padding: 10px;
     text-align: center;
     font-family: 'Franklin Gothic Book';
-    color: #592131;
+    color: #830506;
 }
 
 .sub-gallery-nav1{
     text-align: center;
-    color: #592131;
+    color: #830506;
 }
 
 .sub-gallery-nav1 h1{
@@ -685,3 +837,15 @@ table.plan tr:first-child {
     width: 100%;
     background-image: url('../img/white_bg.jpg');
  }
+
+ @media( max-width:345px){
+    .header-icons{
+        display: none;
+    }
+    #location{
+        margin: 0 auto;
+    }
+    .navbar-brand{
+        font-size: 15px !important;
+    }
+}

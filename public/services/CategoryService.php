@@ -1,8 +1,8 @@
 <?php 
-require_once '../common/Databaseservice.php'; 
-require_once '../classes/Category.php'; 
-require_once '../classes/Item.php'; 
-require_once '../config/Config.php'; 
+require_once dirname(__FILE__).'/../common/DatabaseService.php'; 
+require_once dirname(__FILE__).'/../classes/Category.php'; 
+require_once dirname(__FILE__).'/../classes/Item.php'; 
+require_once dirname(__FILE__).'/../config/Config.php'; 
 
 class CategoryService 
 {

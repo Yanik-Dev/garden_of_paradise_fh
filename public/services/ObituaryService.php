@@ -1,6 +1,7 @@
 <?php 
-require_once '../common/Databaseservice.php'; 
+
 require_once '../classes/Obituary.php'; 
+require_once '../common/DatabaseService.php'; 
 
 class ObituaryService 
 {
