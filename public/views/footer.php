@@ -65,7 +65,7 @@
         </div>
         <div class="sub-footer">
             <div class="container ">
-                <p>Nik&Div© 2017 All Rights Reserved Terms of Use and Privacy Policy</p>
+                <p>Nik© 2017 All Rights Reserved Terms of Use and Privacy Policy</p>
             </div>
             </div>
         </div>   
