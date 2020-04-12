@@ -22,9 +22,9 @@ $_CONFIG = [
         ],
         "UPLOADS"=> "../uploads/",
         "EMAILCRED" => [
-            "TO" => "yanikblake@yahoo.com",
-            "USERNAME" => "yanikblake@gmail.com",
-            "PASSWORD" => "N@ruto123",
+            "TO" => "example@yahoo.com",
+            "USERNAME" => "example@gmail.com",
+            "PASSWORD" => "admin123",
         ]
 ];
 
